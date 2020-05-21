@@ -1,0 +1,31 @@
+include mixins.pug
+block variables
+
+
+doctype html
+html(lang='ru')
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		title #{title}
+		meta(name="keywords" content="" )
+		meta(name="description" content="" )
+		link( rel="stylesheet" href="libs/bootstrap/bootstrap.min.css")
+		//- link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous")
+		//- script(src="https://use.fontawesome.com/f80c99f7fb.js")
+		link( href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" )
+		link(rel="shortcut icon" href="img/favicon.png"  type="image/x-icon" )
+		link(rel="stylesheet", href="css/main.css")
+
+	body
+
+
+		block content
+
+		script(src="libs/jquery/jquery-3.0.0.min.js")
+		script(src="libs/bootstrap/bootstrap.min.js")
+		
+		script(src="https://kit.fontawesome.com/82e9f58f04.js")
+		//- script(src='js/gamburger.js')
+		
+		script(src='js/main.js')

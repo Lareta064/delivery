@@ -1,0 +1,180 @@
+@font-face {
+	font-family: "Neuron-Bold";
+	src: url(../fonts/neuron/Neuron-Bold.eot) format("eot"),
+		url(../fonts/neuron/Neuron-Bold.woff) format("woff"),
+		url(../fonts/neuron/Neuron-Bold.ttf) format("truetype");
+
+}
+
+@font-face {
+	font-family: "Neuron-Light";
+	src: url(../fonts/neuron/Neuron-Light.eot) format("eot"),
+		url(../fonts/neuron/Neuron-Light.woff) format("woff"),
+		url(../fonts/neuron/Neuron-Light.ttf) format("truetype");
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-family: @basic;
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+.page-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px;
+	border: 3px solid @light;
+	height: 150px;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+p {
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	max-width: 100%
+}
+
+input {
+	outline: none;
+}
+
+
+
+.container {
+	width: 100%;
+	max-width: 1170px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 0 auto;
+
+	@media(min-width: 992px) {
+		padding: 0px 25px;
+	}
+
+	@media(min-width: 1200px) {
+		padding: 0px;
+	}
+}
+
+/* typography*/
+.title-1 {
+	font-family: @title;
+	font-size: 46px;
+	line-height: 1.087;
+}
+
+.title-2 {
+	font-family: @title;
+	font-size: 34px;
+	line-height: 1.177;
+}
+
+.title-3 {
+	font-family: @title;
+	font-size: 24px;
+	line-height: 1.208;
+}
+
+.title-4 {
+	font-family: @title;
+	font-size: 25px;
+	line-height: 1.2;
+}
+
+.title-light {
+	font-family: @titleLight;
+	font-size: 25px;
+	line-height: 1.2;
+}
+
+.text-2 {
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.text-12 {
+	font-size: 12px;
+	line-height: 19px;
+}
+
+.btn-text {
+	font-size: 20px;
+	line-height: 28px;
+}
+
+/* --typography*/
+
+@keyframes rotateElement {
+	0% {
+		transform: rotateY(0deg)
+	}
+
+	50% {
+		transform: rotateY(-180deg)
+	}
+
+	100% {
+		transform: rotateY(0deg)
+	}
+}
+
+@keyframes showSlow {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(.8)
+	}
+
+	50% {
+		transform: scale(1)
+	}
+
+	75% {
+		transform: scale(1)
+	}
+
+	100% {
+		transform: scale(.8)
+	}
+}

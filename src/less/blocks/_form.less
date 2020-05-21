@@ -1,0 +1,65 @@
+/*FORM STYLE*/
+
+.form-group {
+	position: relative;
+	width: 100%;
+}
+
+.form-group input {
+	width: 100%;
+	display: block;
+	outline: none;
+	border-radius: 4px;
+	height: 48px;
+	font-size: 14px;
+	line-height: 22px;
+	color: @black ;
+	background-color: white;
+	border: 1px solid @grey;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-weight: 400;
+
+
+
+	&::placeholder {
+		font-size: 14px;
+		line-height: 22px;
+		color: @dark ;
+		font-weight: 400;
+	}
+
+}
+
+.form-group input:focus {
+	background-color: @light;
+}
+
+
+.form-group.error input {
+	border-color: @red;
+}
+
+.form-group.error .error-text {
+	color: @red;
+	.text-12;
+	position: absolute;
+	left: 0px;
+	bottom: -20px;
+}
+
+.form-group .error-notify {
+	position: absolute;
+	display: block;
+	right: 17px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	background: url(../img/warning.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+
+/*--FORM STYLE*/
