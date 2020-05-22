@@ -1,22 +1,6 @@
 header.header
 	.container
 		.header-content
-			.header-column
-				a(href="index.html").logo
-					img(src="img/logo.png", alt="logo")
-				.header-nav
-					.header-nav__row
-						.working-hours.text-2
-							.working-hours__title прием заказов:
-							.working-hours__info СР,ЧТ, ВС  с 15:00 - 00:00;   ПТ, СБ с 15:00 - 02:00;   ПН, ВТ - выходные дни
-						+social-icons
-					nav.header-menu
-						a(href="#").active Главная
-						a(href="#") Меню
-						a(href="#") Доставка и оплата
-						a(href="#") Новости и акции
-						a(href="#") О нас
-						a(href="#") Контакты
 			.header-column.header-column--left
 				.contact-phone
 					a(href="tel:+79055555555") +7 (905) 555-55-55
@@ -28,6 +12,37 @@ header.header
 						a(href="#")
 							+cart-icon
 							span.basket-value 2
+				.menu-toggle
+					span
+			.header-column
+				a(href="index.html").logo
+					img(src="img/logo.png", alt="logo")
+				.header-nav
+					.header-nav__row
+						.working-hours.text-2.d-none.d-xl-flex
+							.working-hours__title прием заказов:
+							.working-hours__info СР,ЧТ, ВС  с 15:00 - 00:00;   ПТ, СБ с 15:00 - 02:00;   ПН, ВТ - выходные дни
+						+social-icons
+					nav.header-menu
+						a(href="#").active Главная
+						a(href="#") Меню
+						a(href="#") Доставка и оплата
+						a(href="#") Новости и акции
+						a(href="#") О нас
+						a(href="#") Контакты
+			//- .header-column.header-column--left
+			//- 	.contact-phone
+			//- 		a(href="tel:+79055555555") +7 (905) 555-55-55
+			//- 	.user-controls
+			//- 		.user-log-in
+			//- 			a(href="#")
+			//- 				+log-in
+			//- 		.user-basket
+			//- 			a(href="#")
+			//- 				+cart-icon
+			//- 				span.basket-value 2
+			//- 	.menu-toggle
+			//- 		span
 
 
 

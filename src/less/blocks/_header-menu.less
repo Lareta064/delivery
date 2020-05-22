@@ -1,6 +1,18 @@
 .header-menu {
 	display: flex;
 	position: relative;
+
+	@media(max-width:1199px) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100%;
+		max-width: 400px;
+		background-color: yellow;
+		z-index: 10;
+		height: 100vh;
+		flex-direction: column;
+	}
 }
 
 .header-menu a {
@@ -9,6 +21,7 @@
 	font-weight: 700;
 	margin-right: 24px;
 	color: @black;
+	width: fit-content;
 
 	&.active {
 		color: @yellow;
@@ -35,5 +48,44 @@
 		&:after {
 			width: 100%;
 		}
+	}
+}
+
+.menu-toggle {
+	display: none;
+	position: relative;
+
+	@media(max-width:1199px) {
+		display: block;
+		z-index: 20;
+		margin-left: 40px;
+	}
+
+	span {
+		position: relative;
+		display: block;
+		width: 40px;
+		height: 2px;
+		background-color: @black;
+
+
+	}
+
+	span:after,
+	span:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		height: 2px;
+		background-color: @black;
+		right: 0;
+	}
+
+	span:after {
+		top: -10px;
+	}
+
+	span:before {
+		bottom: -10px;
 	}
 }
