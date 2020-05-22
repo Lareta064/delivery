@@ -6,7 +6,7 @@
 	padding-top: 15px;
 	padding-bottom: 15px;
 	background-color: #fff;
-	height: 130px;
+	min-height: 130px;
 	overflow: hidden;
 }
 
@@ -14,6 +14,7 @@
 	display: flex;
 	align-items: center;
 	flex-direction: row-reverse;
+	justify-content: space-between;
 
 	@media(max-width:767px) {
 		flex-direction: column;
@@ -34,6 +35,11 @@
 .logo {
 	margin-right: 68px;
 	width: 230px;
+
+	@media(max-width:991px) {
+		width: 180px;
+		margin-right: 20px;
+	}
 
 	@media(max-width:767px) {
 		width: 150px;
@@ -104,17 +110,42 @@
 	}
 
 	@media(max-width:767px) {
+		width: 540px;
+
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 0;
+	}
+
+	@media(max-width:575px) {
+		width: 100%;
+
+
+	}
+
+}
+
+.add-wrapper {
+	@media(max-width:767px) {
 		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		padding-left: 15px;
 		padding-right: 15px;
-		height: 70px;
+		height: 65px;
 		z-index: 5;
 		margin-top: 0;
+		padding-top: 15px;
+		border-bottom: 1px solid @dark;
 	}
 
+	// @media(max-width:767px) {
+
+	// 	padding-left: 15px;
+	// 	padding-right: 15px;
+
+	// }
 }
 
 .contact-phone {
@@ -125,6 +156,10 @@
 		margin-right: 40px;
 		margin-bottom: 0;
 		padding-top: 0;
+	}
+
+	@media(max-width:767px) {
+		margin-right: 25px;
 	}
 
 	@media(max-width:359px) {
@@ -179,7 +214,7 @@
 .user-log-in {
 	margin-right: 35px;
 
-	@media(max-width:574px) {
+	@media(max-width:991px) {
 		margin-right: 20px;
 	}
 }
