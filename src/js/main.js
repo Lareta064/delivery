@@ -7,7 +7,7 @@ $(document).ready(function () {
         if (this.classList.contains('active')) {
             this.classList.remove('active');
             mobMenu.classList.remove('active');
-            overlayBlock.remove('active');
+            overlayBlock.classList.remove('active');
             bodyEl.classList.remove('active');
         } else {
             this.classList.add('active');
