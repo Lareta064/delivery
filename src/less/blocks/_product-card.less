@@ -28,6 +28,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-bottom: 5px;
 
 }
 
@@ -50,6 +51,7 @@
 
 .product-card__filters {
 	display: flex;
+	padding-top: 10px;
 }
 
 .filter-name {
@@ -97,4 +99,117 @@
 	border: 1px solid @lgYellow;
 	cursor: pointer;
 
+}
+
+.product-card__calc {
+	display: flex;
+	justify-content: space-between;
+}
+
+.product-card__prises {
+	display: flex;
+	align-items: baseline;
+}
+
+.new-price {
+	margin-right: 25px;
+	font-size: 35px;
+	font-family: @title;
+	color: @mainText;
+}
+
+.old-price {
+	font-size: 25px;
+	color: @red;
+	font-family: @title;
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 48%;
+		left: -10px;
+		right: -10px;
+		height: 1.5px;
+		background-color: @red;
+	}
+}
+
+span.dim {
+	font-family: @title, sans-serif;
+	font-size: .7em;
+	font-weight: 700;
+	margin-left: 5px;
+}
+
+.product-counter {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
+
+.product-counter span {
+	margin-right: 14px;
+	display: inline-block;
+
+}
+
+.product-counter--num {
+	border-width: 1px;
+	border-color: rgb(191, 191, 191);
+	border-style: solid;
+	border-radius: 10px;
+	background-color: rgb(238, 238, 238);
+	height: 23px;
+	width: 33px;
+	text-align: center;
+	line-height: 21px;
+	color: #000;
+	font-weight: 700;
+}
+
+.product-counter span:last-child {
+	margin-right: 0;
+}
+
+.product-counter .product-counter--plus,
+.product-counter .product-counter--minus {
+	position: relative;
+	cursor: pointer;
+	width: 15px;
+	height: 15px;
+	color: #000;
+	font-weight: 700;
+	font-size: 21px;
+
+}
+
+.product-counter .product-counter--plus:after {
+	position: absolute;
+	content: "+";
+	top: 7px;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.product-counter .product-counter--minus:after {
+	position: absolute;
+	content: "\2013";
+	top: 5px;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.product-counter .product-counter--plus:hover,
+.product-counter .product-counter--minus:hover {
+	opacity: .7;
 }

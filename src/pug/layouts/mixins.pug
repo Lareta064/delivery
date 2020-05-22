@@ -8,6 +8,13 @@ mixin social-icons
 			+whatsapp
 		a(href="#")
 			+instagram
+mixin counter
+	.product-counter&attributes(attributes)
+		span.product-counter--minus
+		span.product-counter--num 1
+		span.product-counter--plus
+		input(type="hidden" name="product_count" value='1')
+
 //-восклиц знак в кружке
 mixin error-icon
 	svg(width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")

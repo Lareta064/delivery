@@ -52,5 +52,13 @@ section
 								label
 									input(type="radio" name="product_testo" value="Тонкое")
 									.fake-radiobutton Тонкое
-				.product-card__price
+				.product-card__calc
+					.product-card__prises
+						span.new-price
+							span.value 500
+							span.dim &#8381;
+						span.old-price
+							span.value 800
+							span.dim &#8381;
+					+counter
 				.product-card__buttons

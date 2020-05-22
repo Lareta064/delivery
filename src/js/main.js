@@ -42,4 +42,32 @@ $(document).ready(function () {
         $('.lazy').lazy();
     });
 
+    /** Счетчик количества **/
+
+    let plusBtn = $('.product-counter--plus');
+    let minusBtn = $('.product-counter--minus');
+
+
+    plusBtn.on('click', function () {
+        startCount = $(this).siblings('.product-counter--num').html();
+        if (startCount < 20) {
+            startCount = ++startCount;
+            $(this).siblings('.product-counter--num').html(startCount);
+            $(this).closest('.product-counter').children('input').val(startCount)
+        }
+
+    });
+
+    minusBtn.on('click', function () {
+        startCount = $(this).siblings('.product-counter--num').html();
+        if (startCount > 1) {
+            startCount = --startCount;
+            $(this).siblings('.product-counter--num').html(startCount);
+            $(this).closest('.product-counter').children('input').val(startCount)
+
+        }
+    });
+
+    /** //Счетчик количества **/
+
 })
