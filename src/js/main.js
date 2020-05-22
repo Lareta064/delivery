@@ -25,7 +25,7 @@ $(document).ready(function () {
     //main-slider
     $('.banner-slider').owlCarousel({
         items: 1,
-        nav: true,
+        nav: false,
         loop: true,
         smartSpeed: 800,
         dots: true,
