@@ -13,3 +13,44 @@ section
 			span.error-notify
 			span.error-text field empty
 		+social-icons
+	.container
+		.product-card
+			form(action="#")
+				input(type="hidden" name="product_name"  value="Пицца Карбонара")
+				input(type="hidden" name="product_weight" value="500 гр")
+				.product-card__img
+					img(class="lazy" data-src="img/products/prod1@1x.jpg", alt="product")
+				.product-card__title
+					h2.product-title(title="Пицца Карбонара") Пицца Карбонара
+					span.card-text 500 гр
+				.product-card__deskrip
+					
+					p Сливки, сыр Моцарелла, сыр Пармезан, бекон, шампиньоны
+					.product-card__filters
+						span.filter-name Размеры:
+						.filters-type
+							.filters-type__item
+								label
+									input(type= "radio" name="product_diameter" value="26см")
+									.fake-radiobutton 26см
+							.filters-type__item
+								label
+									input(type= "radio" name="product_diameter" value="33см")
+									.fake-radiobutton 33см
+							.filters-type__item
+								label
+									input(type= "radio" name="product_diameter" value="40см")
+									.fake-radiobutton 40см
+					.product-card__filters
+						span.filter-name Тесто:
+						.filters-type
+							.filters-type__item
+								label
+									input(type="radio" name="product_testo" value="Традиционное")
+									.fake-radiobutton Традиционное
+							.filters-type__item
+								label
+									input(type="radio" name="product_testo" value="Тонкое")
+									.fake-radiobutton Тонкое
+				.product-card__price
+				.product-card__buttons
