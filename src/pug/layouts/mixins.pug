@@ -15,6 +15,12 @@ mixin counter
 		span.product-counter--plus +
 		input(type="hidden" name="product_count" value='1')
 
+mixin inputCheckbox(inpuName, text)
+	label.form-label
+		input.form-checkbox(type="checkbox" name=''+ inpuName )
+		span.custom-checkbox
+		| #{text}
+
 //-восклиц знак в кружке
 mixin error-icon
 	svg(width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")

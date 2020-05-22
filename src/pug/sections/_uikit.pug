@@ -14,6 +14,11 @@ section
 			span.error-text field empty
 		+social-icons
 	.container
+		label.form-label
+			input.form-checkbox(type="checkbox" name="form-checkbox")
+			span.custom-checkbox
+			
+	.container
 		.product-card
 			form(action="#")
 				input(type="hidden" name="product_name"  value="Пицца Карбонара")
@@ -62,7 +67,41 @@ section
 							span.dim &#8381;
 					+counter
 				.product-card__addition
-					
+					.products-group
+						h4.products-group__title Соусы
+						.products-group__List
+							ul
+								li
+									+inputCheckbox('group1', 'острый соус 40гр.')
+									span 50&#8381;
+								li
+									+inputCheckbox('group1', 'острый соус 40гр.')
+									span 50&#8381;
+								li
+									+inputCheckbox('group1', 'острый соус 40гр.')
+									span 50&#8381;
+								li
+									+inputCheckbox('group1', 'острый соус 40гр.')
+									span 50&#8381;
+					.products-group
+						h4.products-group__title Соусы
+						.products-group__List
+							ul
+								li
+									+inputCheckbox('group1', 'острый соус 40гр.')
+									span 50&#8381;
+								li
+									+inputCheckbox('group1', 'острый соус 40гр.')
+									span 50&#8381;
+								li
+									+inputCheckbox('group1', 'острый соус 40гр.')
+									span 50&#8381;
+								li
+									+inputCheckbox('group1', 'острый соус 40гр.')
+									span 50&#8381;
+
+
+
 				.product-card__buttons
 					button.page-button--light.page-button Дополнительно
 					.form-btn
