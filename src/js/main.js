@@ -21,5 +21,13 @@ $(document).ready(function () {
         overlayBlock.classList.remove('active');
         bodyEl.classList.remove('active');
         mobMenu.classList.remove('active');
+    });
+    //main-slider
+    $('.banner-slider').owlCarousel({
+        items: 1,
+        nav: true,
+        loop: true,
+        smartSpeed: 450,
+        // autoplay: true
     })
 })
