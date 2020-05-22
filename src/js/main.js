@@ -21,5 +21,17 @@ $(document).ready(function () {
         overlayBlock.classList.remove('active');
         bodyEl.classList.remove('active');
         mobMenu.classList.remove('active');
+    });
+    //main-slider
+    $('.banner-slider').owlCarousel({
+        items: 1,
+        nav: false,
+        loop: true,
+        smartSpeed: 800,
+        dots: true,
+        navSpeed: 800,
+        dotsSpeed: 800,
+        navText: ["<span class='arrow-left'><i class='fas fa-chevron-left'></i></span>", "<span class='arrow-left'><i class='fas fa-chevron-right'></i></span>"],
+
     })
 })
