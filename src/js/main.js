@@ -27,8 +27,10 @@ $(document).ready(function () {
         items: 1,
         nav: true,
         loop: true,
-        smartSpeed: 450,
+        smartSpeed: 800,
         dots: true,
+        navSpeed: 800,
+        dotsSpeed: 800,
         navText: ["<span class='arrow-left'><i class='fas fa-chevron-left'></i></span>", "<span class='arrow-left'><i class='fas fa-chevron-right'></i></span>"],
 
     })
