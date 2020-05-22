@@ -28,6 +28,8 @@ $(document).ready(function () {
         nav: true,
         loop: true,
         smartSpeed: 450,
-        // autoplay: true
+        dots: true,
+        navText: ["<span class='arrow-left'><i class='fas fa-chevron-left'></i></span>", "<span class='arrow-left'><i class='fas fa-chevron-right'></i></span>"],
+
     })
 })
