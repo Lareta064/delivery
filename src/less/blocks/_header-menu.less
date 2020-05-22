@@ -1,0 +1,39 @@
+.header-menu {
+	display: flex;
+	position: relative;
+}
+
+.header-menu a {
+	display: block;
+	position: relative;
+	font-weight: 700;
+	margin-right: 24px;
+	color: @black;
+
+	&.active {
+		color: @yellow;
+
+		&:after {
+			width: 100%;
+		}
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -1px;
+		width: 0;
+		height: 2px;
+		background-color: @yellow;
+		transition: .3s;
+	}
+
+	&:hover {
+		color: @yellow;
+
+		&:after {
+			width: 100%;
+		}
+	}
+}

@@ -20,17 +20,86 @@
 }
 
 .logo {
-	margin-right: 30px;
-	width: 260px;
+	margin-right: 68px;
+	width: 230px;
+}
+
+.header-nav__row {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	padding-top: 6px;
 }
 
 .working-hours {
 	display: flex;
 	align-items: center;
+	margin-right: 60px;
+
 }
 
 .working-hours__title {
 	text-transform: uppercase;
 	font-weight: 700;
 	margin-right: 6px;
+}
+
+.user-basket {
+	position: relative;
+}
+
+.basket-value {
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+	background-color: @yellow;
+	display: block;
+	color: @black;
+
+}
+
+.header-column--left {
+	flex-direction: column;
+	margin-left: auto;
+
+}
+
+.contact-phone {
+	margin-bottom: 15px;
+	padding-top: 5px;
+}
+
+.contact-phone a {
+	font-size: 18px;
+	font-weight: 700;
+	color: @black;
+	line-height: 27px;
+	white-space: nowrap;
+}
+
+.user-controls {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	font-size: 0;
+	line-height: 1;
+}
+
+.user-controls a {
+	display: block;
+
+	svg {
+		width: 30px;
+		height: 30px;
+	}
+}
+
+.user-log-in {
+	margin-right: 35px;
 }
