@@ -68,6 +68,35 @@ $(document).ready(function () {
         }
     });
 
-    /** //Счетчик количества **/
+
+    /*показать/скрыть обратную сторону карточки товара на главной*/
+    const mainProductCard = document.querySelectorAll('.product-card');
+    if (mainProductCard) {
+        for (let card of mainProductCard) {
+            const cardBackSide = card.querySelector('.product-card__addition');
+            const cardBtnShowBack = card.querySelector('.show-back');
+            const cardBtnHideBack = card.querySelector('.hide-back');
+
+            card.addEventListener('click', function (e) {
+                e.stopPropagation;
+                e.preventDefault;
+                if (e.target == cardBtnShowBack) {
+                    cardBackSide.classList.add('active')
+                }
+            });
+            card.addEventListener('click', function (e) {
+                e.stopPropagation;
+                console.log('555');
+                if (e.target == cardBtnHideBack) {
+                    cardBackSide.classList.remove('active')
+                }
+
+            });
+
+
+
+        }
+
+    }
 
 })
