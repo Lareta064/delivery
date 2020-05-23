@@ -92,11 +92,21 @@ $(document).ready(function () {
                 }
 
             });
-
-
-
         }
-
     }
+
+    /* MIXITUP3*/
+    let containerEl = document.querySelector('.menu-products__content');
+
+    let mixer = mixitup(containerEl, {
+        classNames: {
+            block: ""
+        },
+        load: {
+            filter: '.cat1'
+        }
+    })
+
+
 
 })
