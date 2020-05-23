@@ -97,15 +97,17 @@ $(document).ready(function () {
 
     /* MIXITUP3*/
     let containerEl = document.querySelector('.menu-products__content');
+    if (containerEl) {
+        let mixer = mixitup(containerEl, {
+            classNames: {
+                block: ""
+            },
+            load: {
+                filter: '.cat1'
+            }
+        })
+    }
 
-    let mixer = mixitup(containerEl, {
-        classNames: {
-            block: ""
-        },
-        load: {
-            filter: '.cat1'
-        }
-    })
 
 
 
