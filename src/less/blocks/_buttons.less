@@ -9,13 +9,83 @@
 	padding-right: 65px;
 	color: #fff;
 	border-radius: 10px;
-	background-color: @red;
+
 	max-width: 240px;
 	font-size: 16px;
 	.tr;
+
+
+}
+
+.page-button--red {
+	background-color: @red;
 
 	&:hover {
 		background-color: @hoverred;
 		color: #fff;
 	}
+}
+
+.page-button--yellow {
+	background-color: @yellow;
+	color: @mainText;
+	border: 2px solid @yellow;
+
+	&:hover {
+		background-color: @lgYellow;
+		color: @mainText;
+		border: 2px solid @lgYellow;
+	}
+}
+
+.page-button--light {
+	background-color: transparent;
+	border: 2px solid @mainText;
+	color: @mainText;
+
+	&:hover {
+		opacity: .6;
+		color: @mainText;
+	}
+}
+
+.product-card .page-button--yellow,
+.product-card .page-button--light {
+	height: 36px;
+	line-height: 30px;
+	width: 130px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.form-checkbox {
+	width: 0.01px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+.form-checkbox:focus+.custom-checkbox {
+	// border: 1px solid #eee;
+}
+
+.custom-checkbox {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: #EEEEEE;
+	box-shadow: 0px 0px 1px rgba(31, 31, 31, 0.35);
+	border-radius: 4px;
+
+	background-image: url(../img/check.png);
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position: center -15px;
+	transition: 0.3s ease-out;
+	margin-right: 10px;
+
+}
+
+.form-checkbox:checked+.custom-checkbox {
+	background-position: center;
+
 }
