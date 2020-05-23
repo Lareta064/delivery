@@ -1,0 +1,97 @@
+/*****ГЛАВНАЯ - СЕКЦИЯ КАРТОЧКИ МЕНЮ****/
+.main-menu {
+	padding-top: 95px;
+	padding-bottom: 90px;
+	color: @mainText;
+
+	.title-group {
+		margin-bottom: 35px;
+
+		@media(max-width:767px) {
+			margin-bottom: 25px;
+		}
+	}
+
+	@media(max-width:1199px) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	@media(max-width:767px) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+}
+
+.main-menu .title-2 {
+	text-transform: uppercase;
+	margin-bottom: 0.54em;
+}
+
+.menu-products__controls {
+	margin-bottom: 20px;
+	text-align: center;
+
+	@media(max-width:1199px) {
+
+		margin-bottom: 20px;
+	}
+
+	@media(max-width:767px) {
+
+		margin-bottom: 0;
+	}
+}
+
+.menu-products__controls button {
+	position: relative;
+	text-transform: uppercase;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	margin-right: 1em;
+
+
+	&last-child {
+		margin-right: 0;
+	}
+
+	@media(max-width:991px) {
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+
+	@media(max-width:767px) {
+		margin-bottom: 10px;
+		font-size: 18px;
+	}
+
+}
+
+.menu-products__controls button:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 0;
+	bottom: -1px;
+	height: 2px;
+	background-color: #ffa800;
+	.tr;
+}
+
+.menu-products__controls button:hover:after {
+	width: 100%;
+}
+
+.menu-products .control-active {
+	color: @red;
+
+	&:after {
+		width: 100%;
+	}
+}
+
+.menu-products__content {
+	padding-top: 20px;
+}

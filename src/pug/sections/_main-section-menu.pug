@@ -1,0 +1,47 @@
+section.main-menu
+	.container
+		.title-group.text-center
+			h2.title-2 Меню
+			p Не будь жадиной - приводи своих друзей!<br>Пусть они тоже попробуют нашe божественную пиццу!
+		.menu-products
+			.menu-products__controls
+				button.title-4.control-active(data-filter=".cat1") Пицца
+				button.title-4(data-filter=".cat2") шашлыки
+				button.title-4(data-filter=".cat3") Вторые блюда
+				button.title-4(data-filter=".cat4") салаты
+				button.title-4(data-filter=".cat5") закуски
+				button.title-4(data-filter=".cat6") напитки
+			.menu-products__content
+				.row
+					.col-md-6.col-xl-4(class="mix cat1")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat1")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat1")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat4")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat4")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat3")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat3")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat2")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat2")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat5")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat5")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat5")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat6")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat6")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat6")
+						+main-product-card
+					.col-md-6.col-xl-4(class="mix cat6")
+						+main-product-card

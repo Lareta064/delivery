@@ -1,0 +1,41 @@
+/*****ГЛАВНАЯ - ПАРАЛЛАКС-БЛОК****/
+.main-cta {
+	position: relative;
+
+	h2,
+	p {
+		color: #fff;
+	}
+
+	.title-group {
+		position: absolute;
+		top: 100px;
+		left: 0;
+		right: 0;
+
+		z-index: 2;
+
+		h2 {
+			text-transform: uppercase;
+			margin-bottom: 25px;
+
+		}
+
+		p {
+			max-width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.parallax {
+
+		// background-image: url("../img/parallax@1x.png");
+		height: 300px;
+		background-attachment: fixed;
+		background-position: left top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+	}
+}
