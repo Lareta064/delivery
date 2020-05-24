@@ -23,8 +23,25 @@ $(document).ready(function () {
             bodyEl.classList.remove('noscroll');
             mobMenu.classList.remove('active');
         });
+        mobMenu.addEventListener('click', function () {
+            this.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlayBlock.classList.remove('active');
+            bodyEl.classList.remove('noscroll');
+        })
     }
-
+    /**PageNav */
+    $(".header-menu").onePageNav({
+        currentClass: "active",
+        changeHash: false,
+        scrollSpeed: 750,
+        scrollThreshold: 0.5,
+        filter: "",
+        easing: "swing",
+        begin: function () {},
+        end: function () {},
+        scrollChange: function ($currentListItem) {}
+    });
     //main-slider
     $('.banner-slider').owlCarousel({
         items: 1,
@@ -107,8 +124,4 @@ $(document).ready(function () {
             }
         })
     }
-
-
-
-
 })
