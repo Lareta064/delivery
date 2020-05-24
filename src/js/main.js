@@ -30,18 +30,7 @@ $(document).ready(function () {
             bodyEl.classList.remove('noscroll');
         })
     }
-    /**PageNav */
-    $(".header-menu").onePageNav({
-        currentClass: "active",
-        changeHash: false,
-        scrollSpeed: 750,
-        scrollThreshold: 0.5,
-        filter: "",
-        easing: "swing",
-        begin: function () {},
-        end: function () {},
-        scrollChange: function ($currentListItem) {}
-    });
+
     //main-slider
     $('.banner-slider').owlCarousel({
         items: 1,
@@ -124,4 +113,90 @@ $(document).ready(function () {
             }
         })
     }
+
+
+    // маска для телефона
+    $(".phone").mask("+7(999)999-99-99");
+    $.fn.setCursorPosition = function (pos) {
+        if ($(this).get(0).setSelectionRange) {
+            $(this).get(0).setSelectionRange(pos, pos);
+        } else if ($(this).get(0).createTextRange) {
+            var range = $(this).get(0).createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    };
+    $('input.phone').click(function () {
+        $(this).setCursorPosition(3); // set position number
+    });
+
+    const requiredInputs = document.querySelectorAll('#contact-form input[type="text"]');
+    const agreeInput = document.querySelector('#contact-form input[type="checkbox"]');
+    const chekboxLabel = document.querySelector('#contact-form label');
+    let chekboxStatus = agreeInput.getAttribute('checked');
+
+    //по клику по кастомному чекбоксу меняем чекед реального, скрытого под кастомным
+    chekboxLabel.addEventListener('click', function () {
+        this.classList.remove('error');
+        chekboxStatus !== chekboxStatus;
+        if (agreeInput.getAttribute('checked') == false) {
+            this.classList.add('error')
+        }
+    })
+
+    //по клику в текстовый инпут убираем восклиц знак
+    for (let item of requiredInputs) {
+        item.addEventListener('click', function () {
+            this.closest('.form-group').classList.remove('error');
+        })
+    }
+
+
+    /*ВАЛИДАЦИЯ ФОРМЫ */
+    $("#contact-form").on('submit', function (event) {
+        event.preventDefault();
+
+        let success = false;
+
+        for (let item of requiredInputs) {
+            const thisParent = item.closest('.form-group');
+
+            if (item.value.length == 0) {
+                thisParent.classList.add('error');
+                success = false;
+
+            } else {
+                if (agreeInput.checked) {
+                    success = true;
+                } else {
+                    chekboxLabel.classList.add('error');
+
+                }
+            }
+        }
+        console.log(success);
+        if (success) {
+            var string = $("#contact-form").serialize(); // Соханяем данные введенные в форму в строку.
+
+            // Формируем ajax запрос
+            $.ajax({
+                type: "POST", // Тип запроса - POST
+                url: "php/mail.php", // Куда отправляем запрос
+                data: string, // Какие даные отправляем, в данном случае отправляем переменную string
+
+                // Функция если все прошло успешно
+                success: function (html) {
+                    $("#contact-form").slideUp(800);
+                    $('#answer').html(html);
+                }
+            });
+
+            // Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепчку срабатывания остальных функций
+            return false;
+        }
+
+    });
+
 })
