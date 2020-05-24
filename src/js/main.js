@@ -9,18 +9,18 @@ $(document).ready(function () {
                 this.classList.remove('active');
                 mobMenu.classList.remove('active');
                 overlayBlock.classList.remove('active');
-                bodyEl.classList.remove('active');
+                bodyEl.classList.remove('noscroll');
             } else {
                 this.classList.add('active');
                 mobMenu.classList.add('active');
                 overlayBlock.classList.add('active');
-                bodyEl.classList.add('active');
+                bodyEl.classList.add('noscroll');
             }
         });
         window.addEventListener('resize', function () {
             menuToggle.classList.remove('active');
             overlayBlock.classList.remove('active');
-            bodyEl.classList.remove('active');
+            bodyEl.classList.remove('noscroll');
             mobMenu.classList.remove('active');
         });
     }

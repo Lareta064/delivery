@@ -6,6 +6,10 @@
 	font-size: 13px;
 	position: relative;
 
+	@media(max-width:767px) {
+		padding-top: 15px;
+	}
+
 	&:after {
 		content: '';
 		position: absolute;
@@ -15,6 +19,12 @@
 		width: 40%;
 		background-color: #000;
 		z-index: 1;
+
+		@media(max-width:767px) {
+			display: none;
+			padding-top: 0;
+		}
+
 	}
 
 	.page-btn2 {
@@ -29,6 +39,11 @@
 		left: 0;
 		right: 0;
 		filter: grayscale();
+
+		@media(max-width:767px) {
+			position: relative;
+			margin-bottom: 25px;
+		}
 	}
 }
 
@@ -61,12 +76,33 @@
 
 }
 
+.footer-contacts {
+	flex-direction: row;
+
+	@media(max-width:991px) {
+		flex-direction: column;
+	}
+}
+
 .footer-contacts a {
 	color: #fff;
 	font-size: 20px;
 	margin-right: 2em;
+	white-space: nowrap;
+
+	@media(max-width:991px) {
+		margin-bottom: 10px;
+	}
 
 	&:hover {
 		opacity: .5;
+	}
+}
+
+.copyright-text span {
+	display: inline-block;
+
+	@media(max-width:991px) {
+		display: block;
 	}
 }
