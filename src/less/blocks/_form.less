@@ -31,6 +31,25 @@
 
 }
 
+.form-group textarea {
+	width: 100%;
+	resize: none;
+	border: 1px solid @grey;
+	padding: 15px;
+	outline: none;
+	border-radius: 4px;
+	color: @black ;
+	background-color: white;
+
+	&::placeholder {
+		font-size: 14px;
+		line-height: 22px;
+		color: @dark ;
+		font-weight: 400;
+	}
+
+}
+
 .form-group input:focus {
 	background-color: @light;
 }
@@ -40,26 +59,144 @@
 	border-color: @red;
 }
 
+.form-group .error-text {
+	display: none;
+}
+
 .form-group.error .error-text {
+	display: block;
 	color: @red;
 	.text-12;
-	position: absolute;
-	left: 0px;
-	bottom: -20px;
+	padding-top: 3px;
+
 }
 
 .form-group .error-notify {
 	position: absolute;
 	display: block;
 	right: 17px;
-	top: 50%;
-	transform: translateY(-50%);
+	top: 14px;
 	width: 20px;
 	height: 20px;
 	background: url(../img/warning.svg);
 	background-position: center;
 	background-repeat: no-repeat;
+	display: none;
 
+}
+
+.form-group.error .error-notify {
+	display: block;
+}
+
+.form-group textarea {
+	width: 100%;
+	resize: none;
+	border: 1px solid @grey;
+	padding: 15px;
+
+}
+
+.form-group input[type='checkbox'] {
+	width: 0.01px;
+	height: 0.1px;
+	border: 0px;
+	padding: 0;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+.form-checkbox {
+	width: 0.01px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+.form-checkbox:focus+.custom-checkbox {
+	// border: 1px solid #eee;
+}
+
+.custom-checkbox {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: #EEEEEE;
+	box-shadow: 0px 0px 1px rgba(31, 31, 31, 0.35);
+	border-radius: 4px;
+	border: 1px solid #939393;
+
+	background-image: url(../img/check.png);
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position: center -15px;
+	transition: 0.3s ease-out;
+	margin-right: 10px;
+
+}
+
+.form-checkbox:checked+.custom-checkbox {
+	background-position: center;
+
+}
+
+.feedback-form .custom-checkbox {
+	position: relative;
+	top: 1px;
+}
+
+.feedback-form {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+
+	h3 {
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 20px;
+		font-weight: 700;
+	}
+
+	.agree-text {
+		font-size: 12px;
+		cursor: pointer;
+	}
+
+	.agree-text.error {
+		color: @red;
+
+		.custom-checkbox {
+			border-color: @red;
+		}
+	}
+
+}
+
+.form-group p {
+	color: @red;
+	font-size: 13px;
+}
+
+.modal-form-title button.close {
+	width: 16px;
+	height: 16px;
+	outline: none;
+	position: absolute;
+	display: block;
+	top: -5px;
+	right: 5px;
+	color: #000;
+	z-index: 5;
+	line-height: 1;
+
+	&:hover {
+		color: @red;
+	}
+
+
+	span {
+		line-height: 1;
+		font-size: 40px;
+	}
 }
 
 /*--FORM STYLE*/

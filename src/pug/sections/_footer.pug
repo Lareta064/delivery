@@ -16,8 +16,40 @@ footer.footer#footer
 					.footer-contacts.d-flex
 						a(href="tel:+79055555555") +7 (905) 555-55-55
 						+social-icons
-					button.page-btn2 Написать нам
+					button.page-btn2(data-toggle="modal" data-target="#callForm") Написать нам
 						i.far.fa-envelope
 					.copyright-text
 						span  &copy; 2018-2020. 
 						span Пицца и роллы | Доставка пиццы и роллов
+
+#callForm.modal.fade(tabindex="-1" role="dialog"  aria-hidden="true")
+	.modal-dialog.modal-dialog-centered(role="document")
+		.modal-content
+			.modal-form-title
+				button.close(type="button" data-dismiss="modal" aria-label="Close")
+					span(aria-hidden="true") ×
+			.modal-body
+				//- input(type="checkbox").textCheck
+				.feedback-form
+					form#contact-form
+						h3 Оставьте свою заявку, и мы перезвоним вам в течение 5&nbsp;минут!
+						.form-group
+							input(type="text" name="userName" placeholder="Имя*")
+							span.error-notify
+							span.error-text field empty
+						.form-group 
+							input(type="text" name="whatsApp" placeholder="Телефон*" class="phone")
+							span.error-notify
+							span.error-text field empty							
+						.form-group
+							textarea(type="text" name="message" rows="3" placeholder="Сообщение")
+						.form-group 
+							label.form-label.agree-text
+								input.form-checkbox(type="checkbox" name="form-checkbox")
+								span.custom-checkbox
+								| Согласен на обработку персональных данных
+							p * -поля обязательны для заполнения
+						.form-group
+							
+							input.page-btn2(type="submit" value="Отправить")
+					#answer
