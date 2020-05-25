@@ -92,7 +92,6 @@ $(document).ready(function () {
             });
             card.addEventListener('click', function (e) {
                 e.stopPropagation;
-                console.log('555');
                 if (e.target == cardBtnHideBack) {
                     cardBackSide.classList.remove('active')
                 }
@@ -132,24 +131,51 @@ $(document).ready(function () {
         $(this).setCursorPosition(3); // set position number
     });
 
-    //по клику в текстовый инпут убираем восклиц знак
-    const requiredInputs = document.querySelectorAll('.form-field');
-    for (let item of requiredInputs) {
-        item.addEventListener('focus', function () {
-            const thisParent = this.closest('.form-group')
-            thisParent.classList.remove('error');
-            thisParent.querySelector('.fake-placeholder').classList.add('active');
-            console.log('555');
+
+    const checkboxGroup = document.querySelectorAll('label.form-label');
+    const requiredInputs = document.querySelectorAll('.form-group  input[type="text"]');
+    const textareaElement = document.querySelector('.form-group textarea');
+
+    //фейк-чекбокс
+    for (let checkbox of checkboxGroup) {
+        const thisParent = checkbox.closest('li');
+        const thisInputCheckbox = thisParent.querySelector('input');
+        checkbox.addEventListener('click', function () {
+            thisInputCheckbox.checked != thisInputCheckbox.checked;
+            if (thisInputCheckbox.checked) {
+                thisParent.classList.add('check-item');
+            } else {
+                thisParent.classList.remove('check-item');
+            }
         })
     }
+
     for (let item of requiredInputs) {
+        //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
+        const thisParent = item.closest('.form-group');
+        item.addEventListener('focus', function () {
+            thisParent.classList.remove('error');
+            thisParent.querySelector('.fake-placeholder').classList.add('active');
+
+        });
+        //по блюру у пустого инпута деактивируем плейсхолдер
         item.addEventListener('blur', function () {
-            if (item.value.length == 0) {
-                const thisParent = this.closest('.form-group')
+            if (this.value == 0) {
                 thisParent.querySelector('.fake-placeholder').classList.remove('active');
             }
         })
     }
+    // для текстареа активируем и деактивируем плейсхолдер при фокусе и блюре
+    textareaElement.addEventListener('focus', function () {
+        const thisParent = this.closest('.form-group');
+        thisParent.querySelector('.fake-placeholder').classList.add('active');
+
+    });
+    textareaElement.addEventListener('blur', function () {
+        if (this.value == 0) {
+            thisParent.querySelector('.fake-placeholder').classList.remove('active');
+        }
+    });
 
     /*ВАЛИДАЦИЯ ФОРМЫ */
     $("#contact-form").on('submit', function (event) {

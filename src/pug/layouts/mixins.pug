@@ -10,10 +10,10 @@ mixin social-icons
 			+instagram
 mixin main-product-card
 	.product-card&attributes(attributes)
-		.card-labels
-			span.card-label.card-label--sale Акция!
-			span.card-label.card-label--new Новинка
-			span.card-label.card-label--favorite Популярное
+		.card-badges
+			span.card-badge.card-badge--sale Акция!
+			span.card-badge.card-badge--new Новинка
+			span.card-badge.card-badge--favorite Популярное
 		form(action="#")
 			input(type="hidden" name="product_name"  value="Пицца Карбонара")
 			input(type="hidden" name="product_weight" value="500 гр")

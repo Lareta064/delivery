@@ -10,7 +10,7 @@
 	height: 550px;
 	font-size: 15px;
 	padding: 2.7em 1.6em 2em;
-	color: #939393;
+	color: @black;
 	font-family: @basic;
 	position: relative;
 	overflow: hidden;
@@ -296,7 +296,7 @@ span.dim {
 .products-group__List li {
 	display: flex;
 	justify-content: space-between;
-
+	color: #a3a7b4;
 	align-items: center;
 
 	label {
@@ -304,6 +304,10 @@ span.dim {
 		align-items: center;
 		// color: @mainText;
 	}
+}
+
+.products-group__List li.check-item {
+	color: @black;
 }
 
 .products-group__List .custom-checkbox {
@@ -323,14 +327,14 @@ svg.left-arr {
 	pointer-events: none;
 }
 
-.card-labels {
+.card-badges {
 	position: absolute;
 	top: 10px;
 	left: 10px;
 
 }
 
-.card-label {
+.card-badge {
 	display: inline-block;
 	height: 20px;
 	padding-left: 10px;
@@ -341,17 +345,17 @@ svg.left-arr {
 	margin-right: 10px;
 }
 
-.card-label--new {
+.card-badge--new {
 	right: 20px;
 	background-color: #0dc440;
 }
 
-.card-label--favorite {
+.card-badge--favorite {
 	right: 20px;
 	background-color: #00b9ee;
 }
 
-.card-label--sale {
+.card-badge--sale {
 	right: 20px;
 	background-color: #d7001a;
 }
