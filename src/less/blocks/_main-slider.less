@@ -59,6 +59,20 @@
 	font-size: 35px;
 	position: relative;
 	margin-top: -20px;
+	position: relative;
+
+	.sale-amimate {
+		position: absolute;
+		right: 0;
+		top: 10%;
+		max-width: 400px;
+		width: 50%;
+		animation-name: swingElement;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		z-index: 1;
+	}
 
 	.page-button {
 		margin-top: 40px;
@@ -113,6 +127,8 @@
 	// font-family: @title;
 	font-family: "Neuron-Black";
 	line-height: 1;
+	position: relative;
+	z-index: 2;
 }
 
 .product-descrip {
