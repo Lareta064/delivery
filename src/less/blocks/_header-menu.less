@@ -8,16 +8,42 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 80%;
-		max-width: 360px;
+		width: 82%;
+		max-width: 400px;
 		background-color: @primary;
 		z-index: 10;
 		height: 100vh;
 		flex-direction: column;
 		transform: translateX(-100%);
 		transition: .5s;
-		padding-top: 15px;
+		padding-top: 30px;
 		padding-left: 20px;
+
+		@media(max-width:767px) {
+			padding-top: 20px;
+		}
+	}
+
+	.menu-social {
+		display: none;
+
+		@media(max-width:1199px) {
+			display: block;
+			margin-top: 20px;
+		}
+	}
+
+	.menu-logo {
+		display: none;
+
+		@media(max-width:1199px) {
+			display: block;
+			margin-bottom: 50px;
+		}
+
+		@media(max-width:767px) {
+			width: 100;
+		}
 	}
 }
 
@@ -72,9 +98,9 @@
 	&:hover {
 		color: @yellow;
 
-		@media(max-width:1199px) {
-			color: @red;
-		}
+		// @media(max-width:1199px) {
+		// 	color: @red;
+		// }
 
 		&:after {
 			width: 100%;

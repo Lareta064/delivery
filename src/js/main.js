@@ -133,18 +133,6 @@ $(document).ready(function () {
     });
 
     const requiredInputs = document.querySelectorAll('#contact-form input[type="text"]');
-    const agreeInput = document.querySelector('#contact-form input[type="checkbox"]');
-    const chekboxLabel = document.querySelector('#contact-form label');
-    let chekboxStatus = agreeInput.getAttribute('checked');
-
-    //по клику по кастомному чекбоксу меняем чекед реального, скрытого под кастомным
-    chekboxLabel.addEventListener('click', function () {
-        this.classList.remove('error');
-        chekboxStatus !== chekboxStatus;
-        if (agreeInput.getAttribute('checked') == false) {
-            this.classList.add('error')
-        }
-    })
 
     //по клику в текстовый инпут убираем восклиц знак
     for (let item of requiredInputs) {
@@ -168,15 +156,10 @@ $(document).ready(function () {
                 success = false;
 
             } else {
-                if (agreeInput.checked) {
-                    success = true;
-                } else {
-                    chekboxLabel.classList.add('error');
-
-                }
+                success = true;
             }
         }
-        console.log(success);
+
         if (success) {
             var string = $("#contact-form").serialize(); // Соханяем данные введенные в форму в строку.
 
