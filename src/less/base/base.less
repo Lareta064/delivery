@@ -191,6 +191,41 @@ input {
 	line-height: 28px;
 }
 
+/*кнопка вверх*/
+#back-top {
+	position: fixed;
+	z-index: 10;
+	bottom: 20px;
+	right: 10px;
+
+	@media(min-width: 768px) {
+		right: 30px;
+	}
+
+	@media(min-width: 992px) {
+		right: 50px;
+	}
+}
+
+#back-top span {
+	display: none;
+	text-align: center;
+	width: 47px;
+	height: 47px;
+	display: block;
+	margin-bottom: 7px;
+
+	&:hover {
+		opacity: .8
+	}
+
+}
+
+#back-top span i {
+	color: @yellow;
+	font-size: 46px;
+	font-weight: 700;
+}
 
 
 // @keyframes rotateElement {
