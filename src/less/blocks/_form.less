@@ -31,11 +31,16 @@
 
 }
 
+input:-webkit-autofill {
+	box-shadow: 0 0 0px 1000px white inset;
+}
+
+
 .form-group textarea {
 	width: 100%;
 	resize: none;
 	border-bottom: 1px solid @grey;
-
+	padding-top: 15px;
 	outline: none;
 
 	color: @black ;
@@ -50,9 +55,9 @@
 
 }
 
-.form-group input:focus {
-	background-color: @light;
-}
+// .form-group input:focus {
+// 	background-color: @light;
+// }
 
 
 .form-group.error input {
@@ -98,6 +103,21 @@
 	padding: 0;
 	-moz-appearance: none;
 	-webkit-appearance: none;
+}
+
+.form-group .fake-placeholder {
+	position: absolute;
+	left: 0;
+	top: 15px;
+	font-size: 14px;
+	.tr;
+	pointer-events: none;
+}
+
+.form-group .fake-placeholder.active {
+	top: -8px;
+	color: @yellow;
+	.tr;
 }
 
 .form-checkbox {
@@ -204,6 +224,11 @@
 	span {
 		line-height: 1;
 		font-size: 22px;
+	}
+
+	@media(max-width:767px) {
+		top: 2px;
+		right: 5px;
 	}
 }
 

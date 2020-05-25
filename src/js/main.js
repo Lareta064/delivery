@@ -132,15 +132,24 @@ $(document).ready(function () {
         $(this).setCursorPosition(3); // set position number
     });
 
-    const requiredInputs = document.querySelectorAll('#contact-form input[type="text"]');
-
     //по клику в текстовый инпут убираем восклиц знак
+    const requiredInputs = document.querySelectorAll('.form-field');
     for (let item of requiredInputs) {
-        item.addEventListener('click', function () {
-            this.closest('.form-group').classList.remove('error');
+        item.addEventListener('focus', function () {
+            const thisParent = this.closest('.form-group')
+            thisParent.classList.remove('error');
+            thisParent.querySelector('.fake-placeholder').classList.add('active');
+            console.log('555');
         })
     }
-
+    for (let item of requiredInputs) {
+        item.addEventListener('blur', function () {
+            if (item.value.length == 0) {
+                const thisParent = this.closest('.form-group')
+                thisParent.querySelector('.fake-placeholder').classList.remove('active');
+            }
+        })
+    }
 
     /*ВАЛИДАЦИЯ ФОРМЫ */
     $("#contact-form").on('submit', function (event) {
