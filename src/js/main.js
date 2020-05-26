@@ -136,7 +136,7 @@ $(document).ready(function () {
     const requiredInputs = document.querySelectorAll('.form-group  input[type="text"]');
     const textareaElement = document.querySelector('.form-group textarea');
 
-    //фейк-чекбокс
+    //активировать чекбокс по клику на фейковый
     for (let checkbox of checkboxGroup) {
         const thisParent = checkbox.closest('li');
         const thisInputCheckbox = thisParent.querySelector('input');
