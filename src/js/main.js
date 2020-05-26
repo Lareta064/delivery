@@ -160,7 +160,7 @@ $(document).ready(function () {
         });
         //по блюру у пустого инпута деактивируем плейсхолдер
         item.addEventListener('blur', function () {
-            if (this.value == 0) {
+            if (this.value.length == 0) {
                 thisParent.querySelector('.fake-placeholder').classList.remove('active');
             }
         })
@@ -172,8 +172,10 @@ $(document).ready(function () {
 
     });
     textareaElement.addEventListener('blur', function () {
-        if (this.value == 0) {
+        const thisParent = this.closest('.form-group');
+        if (this.value.length == '0') {
             thisParent.querySelector('.fake-placeholder').classList.remove('active');
+            console.log('');
         }
     });
 

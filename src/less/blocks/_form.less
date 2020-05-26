@@ -3,6 +3,8 @@
 .form-group {
 	position: relative;
 	width: 100%;
+	margin: 0;
+	margin-bottom: 25px;
 }
 
 .form-group input {
@@ -42,7 +44,7 @@ input:-webkit-autofill {
 	border-bottom: 1px solid @grey;
 	padding-top: 15px;
 	outline: none;
-
+	height: 130px;
 	color: @black ;
 	background-color: white;
 
@@ -181,6 +183,7 @@ input:-webkit-autofill {
 
 		a {
 			color: @yellow;
+			border-bottom: 1px solid @yellow;
 
 			&:hover {
 				opacity: .5;
@@ -191,14 +194,19 @@ input:-webkit-autofill {
 
 }
 
+.modal-content {
+	border-radius: 20px;
+	background-color: #fff;
+}
+
 @media (min-width: 768px) {
 	.modal-dialog {
-		max-width: 630px;
+		max-width: 570px;
 	}
 
 	.modal-body {
 		padding-top: 60px;
-		padding-bottom: 60px;
+		padding-bottom: 35px;
 	}
 }
 
