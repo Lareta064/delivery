@@ -92,7 +92,6 @@ $(document).ready(function () {
             });
             card.addEventListener('click', function (e) {
                 e.stopPropagation;
-                console.log('555');
                 if (e.target == cardBtnHideBack) {
                     cardBackSide.classList.remove('active')
                 }
@@ -132,27 +131,51 @@ $(document).ready(function () {
         $(this).setCursorPosition(3); // set position number
     });
 
-    const requiredInputs = document.querySelectorAll('#contact-form input[type="text"]');
-    const agreeInput = document.querySelector('#contact-form input[type="checkbox"]');
-    const chekboxLabel = document.querySelector('#contact-form label');
-    let chekboxStatus = agreeInput.getAttribute('checked');
 
-    //по клику по кастомному чекбоксу меняем чекед реального, скрытого под кастомным
-    chekboxLabel.addEventListener('click', function () {
-        this.classList.remove('error');
-        chekboxStatus !== chekboxStatus;
-        if (agreeInput.getAttribute('checked') == false) {
-            this.classList.add('error')
-        }
-    })
+    const checkboxGroup = document.querySelectorAll('label.form-label');
+    const requiredInputs = document.querySelectorAll('.form-group  input[type="text"]');
+    const textareaElement = document.querySelector('.form-group textarea');
 
-    //по клику в текстовый инпут убираем восклиц знак
-    for (let item of requiredInputs) {
-        item.addEventListener('click', function () {
-            this.closest('.form-group').classList.remove('error');
+    //активировать чекбокс по клику на фейковый
+    for (let checkbox of checkboxGroup) {
+        const thisParent = checkbox.closest('li');
+        const thisInputCheckbox = thisParent.querySelector('input');
+        checkbox.addEventListener('click', function () {
+            thisInputCheckbox.checked != thisInputCheckbox.checked;
+            if (thisInputCheckbox.checked) {
+                thisParent.classList.add('check-item');
+            } else {
+                thisParent.classList.remove('check-item');
+            }
         })
     }
 
+    for (let item of requiredInputs) {
+        //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
+        const thisParent = item.closest('.form-group');
+        item.addEventListener('focus', function () {
+            thisParent.classList.remove('error');
+            thisParent.querySelector('.fake-placeholder').classList.add('active');
+
+        });
+        //по блюру у пустого инпута деактивируем плейсхолдер
+        item.addEventListener('blur', function () {
+            if (this.value == 0) {
+                thisParent.querySelector('.fake-placeholder').classList.remove('active');
+            }
+        })
+    }
+    // для текстареа активируем и деактивируем плейсхолдер при фокусе и блюре
+    textareaElement.addEventListener('focus', function () {
+        const thisParent = this.closest('.form-group');
+        thisParent.querySelector('.fake-placeholder').classList.add('active');
+
+    });
+    textareaElement.addEventListener('blur', function () {
+        if (this.value == 0) {
+            thisParent.querySelector('.fake-placeholder').classList.remove('active');
+        }
+    });
 
     /*ВАЛИДАЦИЯ ФОРМЫ */
     $("#contact-form").on('submit', function (event) {
@@ -168,15 +191,10 @@ $(document).ready(function () {
                 success = false;
 
             } else {
-                if (agreeInput.checked) {
-                    success = true;
-                } else {
-                    chekboxLabel.classList.add('error');
-
-                }
+                success = true;
             }
         }
-        console.log(success);
+
         if (success) {
             var string = $("#contact-form").serialize(); // Соханяем данные введенные в форму в строку.
 
@@ -196,6 +214,19 @@ $(document).ready(function () {
             // Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепчку срабатывания остальных функций
             return false;
         }
+
+    });
+    /*кнопка вверх */
+    $("#back-top").hide();
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('#back-top').fadeIn();
+            } else {
+                $('#back-top').fadeOut();
+            }
+        });
 
     });
 

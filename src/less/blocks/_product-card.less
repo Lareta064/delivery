@@ -10,7 +10,7 @@
 	height: 550px;
 	font-size: 15px;
 	padding: 2.7em 1.6em 2em;
-	color: #939393;
+	color: @black;
 	font-family: @basic;
 	position: relative;
 	overflow: hidden;
@@ -164,7 +164,7 @@
 		top: 48%;
 		left: -10px;
 		right: -10px;
-		height: 1.5px;
+		height: 1px;
 		background-color: @red;
 	}
 }
@@ -207,7 +207,7 @@ span.dim {
 	width: 33px;
 	text-align: center;
 	line-height: 21px;
-	color: #000;
+	color: @black;
 	font-weight: 700;
 }
 
@@ -219,9 +219,8 @@ span.dim {
 .product-counter .product-counter--minus {
 	position: relative;
 	cursor: pointer;
-	// width: 15px;
-	// height: 15px;
-	color: #000;
+
+	color: @black;
 	font-weight: 700;
 	font-size: 21px;
 
@@ -229,12 +228,14 @@ span.dim {
 
 .product-counter .product-counter--plus {
 	margin-right: 0;
+	user-select: none;
 }
 
 .product-counter .product-counter--minus {
 	font-size: 26px;
 	position: relative;
 	top: -1px;
+	user-select: none;
 }
 
 .product-counter .product-counter--plus:hover,
@@ -270,11 +271,11 @@ span.dim {
 	background-color: #fff;
 	padding-bottom: 40px;
 	transition: .5s;
-	transform: translateY(-100%)
+	transform: translateX(-100%)
 }
 
 .product-card__addition.active {
-	transform: translateY(0%)
+	transform: translateX(0%)
 }
 
 .products-group__wrapper {
@@ -297,7 +298,7 @@ span.dim {
 .products-group__List li {
 	display: flex;
 	justify-content: space-between;
-
+	color: #a3a7b4;
 	align-items: center;
 
 	label {
@@ -305,6 +306,10 @@ span.dim {
 		align-items: center;
 		// color: @mainText;
 	}
+}
+
+.products-group__List li.check-item {
+	color: @black;
 }
 
 .products-group__List .custom-checkbox {
@@ -324,14 +329,14 @@ svg.left-arr {
 	pointer-events: none;
 }
 
-.card-labels {
+.card-badges {
 	position: absolute;
 	top: 10px;
 	left: 10px;
 
 }
 
-.card-label {
+.card-badge {
 	display: inline-block;
 	height: 20px;
 	padding-left: 10px;
@@ -342,22 +347,17 @@ svg.left-arr {
 	margin-right: 10px;
 }
 
-.card-label--new {
+.card-badge--new {
 	right: 20px;
 	background-color: #0dc440;
 }
 
-.card-label--favorite {
+.card-badge--favorite {
 	right: 20px;
 	background-color: #00b9ee;
 }
 
-.card-label--sale {
+.card-badge--sale {
 	right: 20px;
 	background-color: #d7001a;
 }
-
-// /*.product-card--short*/
-// .product-card--short {
-// 	height: 520px;
-// }

@@ -9,15 +9,15 @@
 	width: 100%;
 	display: block;
 	outline: none;
-	border-radius: 4px;
+
 	height: 48px;
 	font-size: 14px;
 	line-height: 22px;
 	color: @black ;
 	background-color: white;
-	border: 1px solid @grey;
-	padding-left: 15px;
-	padding-right: 15px;
+	border-bottom: 1px solid @grey;
+
+
 	font-weight: 400;
 
 
@@ -31,13 +31,18 @@
 
 }
 
+input:-webkit-autofill {
+	box-shadow: 0 0 0px 1000px white inset;
+}
+
+
 .form-group textarea {
 	width: 100%;
 	resize: none;
-	border: 1px solid @grey;
-	padding: 15px;
+	border-bottom: 1px solid @grey;
+	padding-top: 15px;
 	outline: none;
-	border-radius: 4px;
+
 	color: @black ;
 	background-color: white;
 
@@ -50,9 +55,9 @@
 
 }
 
-.form-group input:focus {
-	background-color: @light;
-}
+// .form-group input:focus {
+// 	background-color: @light;
+// }
 
 
 .form-group.error input {
@@ -89,13 +94,7 @@
 	display: block;
 }
 
-.form-group textarea {
-	width: 100%;
-	resize: none;
-	border: 1px solid @grey;
-	padding: 15px;
 
-}
 
 .form-group input[type='checkbox'] {
 	width: 0.01px;
@@ -104,6 +103,21 @@
 	padding: 0;
 	-moz-appearance: none;
 	-webkit-appearance: none;
+}
+
+.form-group .fake-placeholder {
+	position: absolute;
+	left: 0;
+	top: 15px;
+	font-size: 14px;
+	.tr;
+	pointer-events: none;
+}
+
+.form-group .fake-placeholder.active {
+	top: -8px;
+	color: @yellow;
+	.tr;
 }
 
 .form-checkbox {
@@ -145,57 +159,76 @@
 }
 
 .feedback-form {
-	max-width: 400px;
+	max-width: 490px;
 	margin-left: auto;
 	margin-right: auto;
 
 	h3 {
 		text-align: center;
-		font-size: 20px;
-		margin-bottom: 20px;
+		font-size: 24px;
+		line-height: 29px;
+		margin-bottom: 30px;
 		font-weight: 700;
+		max-width: 420px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.agree-text {
-		font-size: 12px;
-		cursor: pointer;
-	}
+		font-size: 16px;
+		line-height: 24px;
+		color: @black;
 
-	.agree-text.error {
-		color: @red;
+		a {
+			color: @yellow;
 
-		.custom-checkbox {
-			border-color: @red;
+			&:hover {
+				opacity: .5;
+			}
 		}
 	}
 
+
 }
 
-.form-group p {
-	color: @red;
-	font-size: 13px;
+@media (min-width: 768px) {
+	.modal-dialog {
+		max-width: 630px;
+	}
+
+	.modal-body {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
 }
 
 .modal-form-title button.close {
-	width: 16px;
-	height: 16px;
+
 	outline: none;
 	position: absolute;
 	display: block;
-	top: -5px;
-	right: 5px;
-	color: #000;
+	top: 20px;
+	right: 20px;
+	color: @red;
 	z-index: 5;
 	line-height: 1;
+	opacity: .9;
+	.tr;
+	text-shadow: none;
 
 	&:hover {
-		color: @red;
+		opacity: .7;
 	}
 
 
 	span {
 		line-height: 1;
-		font-size: 40px;
+		font-size: 22px;
+	}
+
+	@media(max-width:767px) {
+		top: 2px;
+		right: 5px;
 	}
 }
 
