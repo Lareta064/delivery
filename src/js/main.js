@@ -1,7 +1,18 @@
 $(document).ready(function () {
+
+    //-фиксироват меню при прокрутке
+    window.addEventListener('scroll', function () {
+        if (this.pageYOffset > 0) {
+            document.querySelector('header').classList.add('header--fixed');
+        } else {
+            document.querySelector('header').classList.remove('header--fixed');
+        }
+    })
     const menuToggle = document.querySelector('.menu-toggle');
     const mobMenu = document.querySelector('.header-menu');
     const overlayBlock = document.querySelector('#overlay');
+    const backTopButton = document.querySelector('#back-top');
+
     const bodyEl = document.body;
     if (menuToggle) {
         menuToggle.addEventListener('click', function () {
@@ -10,11 +21,13 @@ $(document).ready(function () {
                 mobMenu.classList.remove('active');
                 overlayBlock.classList.remove('active');
                 bodyEl.classList.remove('noscroll');
+
             } else {
                 this.classList.add('active');
                 mobMenu.classList.add('active');
                 overlayBlock.classList.add('active');
                 bodyEl.classList.add('noscroll');
+
             }
         });
         window.addEventListener('resize', function () {
@@ -22,12 +35,14 @@ $(document).ready(function () {
             overlayBlock.classList.remove('active');
             bodyEl.classList.remove('noscroll');
             mobMenu.classList.remove('active');
+
         });
         mobMenu.addEventListener('click', function () {
             this.classList.remove('active');
             menuToggle.classList.remove('active');
             overlayBlock.classList.remove('active');
             bodyEl.classList.remove('noscroll');
+
         })
     }
 
@@ -36,6 +51,9 @@ $(document).ready(function () {
         items: 1,
         nav: false,
         loop: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        autoplayTimeout: 5000,
         smartSpeed: 800,
         dots: true,
         navSpeed: 800,
@@ -54,7 +72,8 @@ $(document).ready(function () {
     let minusBtn = $('.product-counter--minus');
 
 
-    plusBtn.on('click', function () {
+    plusBtn.on('click', function (e) {
+        e.preventDefault()
         startCount = $(this).siblings('.product-counter--num').html();
         if (startCount < 20) {
             startCount = ++startCount;
@@ -64,7 +83,8 @@ $(document).ready(function () {
 
     });
 
-    minusBtn.on('click', function () {
+    minusBtn.on('click', function (e) {
+        e.preventDefault()
         startCount = $(this).siblings('.product-counter--num').html();
         if (startCount > 1) {
             startCount = --startCount;
@@ -220,6 +240,7 @@ $(document).ready(function () {
     });
     /*кнопка вверх */
     $("#back-top").hide();
+
 
     $(function () {
         $(window).scroll(function () {
