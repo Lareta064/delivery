@@ -1,20 +1,18 @@
 /*****ШАПКА****/
 .header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
+	position: relative;
+
 	padding-top: 15px;
 
 	background-color: #fff;
 	height: 130px;
-	overflow: hidden;
+	// overflow: hidden;
 	z-index: 5;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 
 	@media(max-width:1199px) {
 		height: 100px;
-		min-height: 100px;
+
 
 	}
 
@@ -22,13 +20,24 @@
 		height: auto;
 		position: relative;
 		padding-bottom: 10px;
+		padding-top: 0;
+		height: 70px;
+		// overflow: hidden;
 	}
+}
+
+.header.header--fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 .header-content {
 	display: flex;
 	align-items: center;
-	flex-direction: row-reverse;
+	// flex-direction: row-reverse;
+	flex-direction: row;
 	justify-content: space-between;
 
 	@media(max-width:767px) {
@@ -43,7 +52,7 @@
 	@media(max-width:767px) {
 		justify-content: space-between;
 		width: 100%;
-		margin-top: 60px;
+		margin-top: 5px;
 	}
 }
 
@@ -147,7 +156,7 @@
 .fix-wrapper {
 	@media(max-width:767px) {
 		position: fixed;
-		top: 0;
+		bottom: 0;
 		left: 0;
 		right: 0;
 		padding-left: 15px;
@@ -158,6 +167,7 @@
 		padding-top: 15px;
 		border-bottom: 1px solid @dark;
 		background-color: #fff;
+		box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.3);
 	}
 }
 

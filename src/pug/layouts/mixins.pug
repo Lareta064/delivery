@@ -1,9 +1,9 @@
 mixin social-icons
 	.social-icons&attributes(attributes)
 		a(href="#")
-			+telegram
-		a(href="#")
 			+viber
+		a(href="#")
+			+telegram
 		a(href="#")
 			+whatsapp
 		a(href="#")
@@ -118,9 +118,9 @@ mixin arrow
 
 mixin counter
 	.product-counter&attributes(attributes)
-		span.product-counter--minus -
+		button.product-counter--minus -
 		span.product-counter--num 1
-		span.product-counter--plus +
+		button.product-counter--plus +
 		input(type="hidden" name="product_count" value='1')
 
 mixin inputCheckbox(inpuName, text)
