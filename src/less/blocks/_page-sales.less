@@ -11,7 +11,9 @@
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	.tr;
 	display: block;
-
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
 	overflow: hidden;
 
 	.title-3 {
@@ -58,9 +60,6 @@
 	background-repeat: no-repeat;
 
 	overflow: hidden;
-
-
-
 }
 
 .sale-card__desckrip {
@@ -69,7 +68,13 @@
 	position: relative;
 	padding-right: 150px;
 
-	@media(max-width:574px) {
+	@media(max-width:1199px) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 15px;
+	}
+
+	@media(max-width:991px) {
 		padding: 20px 15px;
 		padding-right: 15px;
 	}
@@ -99,7 +104,7 @@
 	color: #FBD10E;
 	animation: pulse 3.5s linear infinite;
 
-	@media(max-width:574px) {
+	@media(max-width:991px) {
 		right: 0;
 		top: 10px;
 		transform: translateY(-100%);
