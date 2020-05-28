@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     //-фиксироват меню при прокрутке
     window.addEventListener('scroll', function () {
-        if (this.pageYOffset > 0) {
+        if (this.pageYOffset > 100) {
             document.querySelector('header').classList.add('header--fixed');
         } else {
             document.querySelector('header').classList.remove('header--fixed');
