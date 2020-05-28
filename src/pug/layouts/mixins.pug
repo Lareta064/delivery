@@ -8,6 +8,16 @@ mixin social-icons
 			+whatsapp
 		a(href="#")
 			+instagram
+mixin saleCard(imgName, periodDate, title, text)
+	a(href="#!").sale-card.m-auto
+		span.card__badge  Акции
+		.sale-card__img.lazy(data-src="img/"+ imgName +".jpg")
+		.sale-card__desckrip
+			.sale-card__period
+				p Действует до&nbsp;#[span #{periodDate}]
+			.sale-card__text
+				h3.title-3 !{title}
+				p !{text}
 mixin main-product-card
 	.product-card&attributes(attributes)
 		.card-badges
