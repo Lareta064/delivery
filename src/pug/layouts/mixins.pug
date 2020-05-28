@@ -147,7 +147,12 @@ mixin inputCheckbox(inpuName, text)
 //- 		mask#mask0(mask-type="alpha" maskunits="userSpaceOnUse" x="9" y="5" width="2" height="11")
 //- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10.7063 5H9.30001V11.875H10.7063V5ZM10.9375 14.6875C10.9375 15.2053 10.5178 15.625 10 15.625C9.48223 15.625 9.0625 15.2053 9.0625 14.6875C9.0625 14.1697 9.48223 13.75 10 13.75C10.5178 13.75 10.9375 14.1697 10.9375 14.6875Z" fill="white")
 //- 		g(mask="url(#mask0)")
-
+mixin times(wid, hei)
+	svg(width= wid height= hei viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+		path(fill-rule="evenodd" clip-rule="evenodd" d="M8.707 8L12 4.707L11.293 4L8 7.293L4.707 4L4 4.707L7.293 8L4 11.293L4.707 12L8 8.707L11.293 12L12 11.293L8.707 8Z" fill="#D7001A")
+		mask#mask0(mask-type="alpha" maskunits="userSpaceOnUse" x="4" y="4" width="8" height="8")
+			path(fill-rule="evenodd" clip-rule="evenodd" d="M8.707 8L12 4.707L11.293 4L8 7.293L4.707 4L4 4.707L7.293 8L4 11.293L4.707 12L8 8.707L11.293 12L12 11.293L8.707 8Z" fill="white")
+		
 mixin telegram
 	svg(width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg")
 		path(d="M12.8 24C19.4274 24 24.8 18.6274 24.8 12C24.8 5.37258 19.4274 0 12.8 0C6.17257 0 0.799988 5.37258 0.799988 12C0.799988 18.6274 6.17257 24 12.8 24Z" fill="url(#paint0_linear)")
