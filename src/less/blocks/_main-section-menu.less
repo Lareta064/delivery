@@ -1,8 +1,11 @@
 /*****ГЛАВНАЯ - СЕКЦИЯ КАРТОЧКИ МЕНЮ****/
 .main-menu {
 	padding-top: 95px;
+	padding-top: 145px;
+	margin-top: -55px;
 	padding-bottom: 90px;
-	color: @mainText;
+	color: @black;
+	position: relative;
 
 	.title-group {
 		margin-bottom: 35px;
@@ -13,13 +16,15 @@
 	}
 
 	@media(max-width:1199px) {
-		padding-top: 60px;
+		padding-top: 115px;
+		margin-top: -55px;
 		padding-bottom: 60px;
 	}
 
 	@media(max-width:767px) {
-		padding-top: 40px;
+		padding-top: 100px;
 		padding-bottom: 40px;
+		margin-top: -70px;
 	}
 
 }
@@ -51,9 +56,11 @@
 	background-color: transparent;
 	cursor: pointer;
 	margin-right: 1em;
+	padding-left: 2px;
+	padding-right: 2px;
 
 
-	&last-child {
+	&:last-child {
 		margin-right: 0;
 	}
 

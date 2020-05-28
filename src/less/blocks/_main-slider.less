@@ -1,24 +1,25 @@
 /*****ГЛАВНАЯ - СЛАЙДЕР В ШАПКЕ****/
 .banner {
-	@media(max-width:767px) {
-		height: 100vh;
-	}
+	// @media(max-width:767px) {
+	// 	height: calc(~'100vh - 145px');
+	// }
 }
 
-.banner-layout {
-	height: 130px;
+// .banner-layout {
+// 	height: 130px;
 
-	@media(max-width:991px) {
-		height: 100px;
-	}
+// 	@media(max-width:1199px) {
 
-	@media(max-width:767px) {
-		height: 130px;
-	}
-}
+// 		height: 100px;
+// 	}
+
+// 	@media(max-width:767px) {
+// 		height: 0px;
+// 	}
+// }
 
 .banner-item {
-	height: 640px;
+	height: 570px;
 	background-position: right bottom;
 	background-size: cover;
 	position: relative;
@@ -28,11 +29,12 @@
 	}
 
 	@media(max-width:991px) {
-		height: 400px;
+		height: 450px;
 	}
 
 	@media(max-width:767px) {
 		height: calc(~'100vh - 130px');
+		height: 400px;
 	}
 
 }
@@ -50,13 +52,28 @@
 .slide-content {
 	color: #fff;
 	font-family: @titleLight;
-	height: 640px;
+	height: 570px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	max-width: 95%;
 	font-size: 35px;
 	position: relative;
+	margin-top: -20px;
+	position: relative;
+
+	.sale-amimate {
+		position: absolute;
+		right: 0;
+		top: 10%;
+		max-width: 400px;
+		width: 50%;
+		animation-name: swingElement;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		z-index: 1;
+	}
 
 	.page-button {
 		margin-top: 40px;
@@ -66,6 +83,7 @@
 	}
 
 	@media(max-width:1199px) {
+		margin-top: 0;
 		max-width: 95%;
 		height: 500px;
 		font-size: 24px;
@@ -74,14 +92,14 @@
 	}
 
 	@media(max-width:991px) {
-		height: 400px;
+		height: 450px;
 		font-size: 20px;
 	}
 
 	@media(max-width:767px) {
 		max-width: 100%;
 		font-size: 18px;
-		height: calc(~'100vh - 130px');
+		height: 400px;
 
 	}
 
@@ -107,8 +125,11 @@
 .slide-title {
 	font-size: 120px;
 	font-size: 3.4285em;
-	font-family: @title;
+
+	.title;
 	line-height: 1;
+	position: relative;
+	z-index: 2;
 }
 
 .product-descrip {
@@ -167,8 +188,11 @@
 	left: 0;
 	right: 0;
 	z-index: 2;
-
 	justify-content: center;
+
+	@media(max-width: 767px) {
+		display: none;
+	}
 
 }
 

@@ -1,7 +1,18 @@
 $(document).ready(function () {
+
+    //-фиксироват меню при прокрутке
+    window.addEventListener('scroll', function () {
+        if (this.pageYOffset > 100) {
+            document.querySelector('header').classList.add('header--fixed');
+        } else {
+            document.querySelector('header').classList.remove('header--fixed');
+        }
+    })
     const menuToggle = document.querySelector('.menu-toggle');
     const mobMenu = document.querySelector('.header-menu');
     const overlayBlock = document.querySelector('#overlay');
+    const backTopButton = document.querySelector('#back-top');
+
     const bodyEl = document.body;
     if (menuToggle) {
         menuToggle.addEventListener('click', function () {
@@ -9,20 +20,30 @@ $(document).ready(function () {
                 this.classList.remove('active');
                 mobMenu.classList.remove('active');
                 overlayBlock.classList.remove('active');
-                bodyEl.classList.remove('active');
+                bodyEl.classList.remove('noscroll');
+
             } else {
                 this.classList.add('active');
                 mobMenu.classList.add('active');
                 overlayBlock.classList.add('active');
-                bodyEl.classList.add('active');
+                bodyEl.classList.add('noscroll');
+
             }
         });
         window.addEventListener('resize', function () {
             menuToggle.classList.remove('active');
             overlayBlock.classList.remove('active');
-            bodyEl.classList.remove('active');
+            bodyEl.classList.remove('noscroll');
             mobMenu.classList.remove('active');
+
         });
+        mobMenu.addEventListener('click', function () {
+            this.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlayBlock.classList.remove('active');
+            bodyEl.classList.remove('noscroll');
+
+        })
     }
 
     //main-slider
@@ -30,6 +51,9 @@ $(document).ready(function () {
         items: 1,
         nav: false,
         loop: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        autoplayTimeout: 5000,
         smartSpeed: 800,
         dots: true,
         navSpeed: 800,
@@ -48,7 +72,8 @@ $(document).ready(function () {
     let minusBtn = $('.product-counter--minus');
 
 
-    plusBtn.on('click', function () {
+    plusBtn.on('click', function (e) {
+        e.preventDefault()
         startCount = $(this).siblings('.product-counter--num').html();
         if (startCount < 20) {
             startCount = ++startCount;
@@ -58,7 +83,8 @@ $(document).ready(function () {
 
     });
 
-    minusBtn.on('click', function () {
+    minusBtn.on('click', function (e) {
+        e.preventDefault()
         startCount = $(this).siblings('.product-counter--num').html();
         if (startCount > 1) {
             startCount = --startCount;
@@ -86,7 +112,6 @@ $(document).ready(function () {
             });
             card.addEventListener('click', function (e) {
                 e.stopPropagation;
-                console.log('555');
                 if (e.target == cardBtnHideBack) {
                     cardBackSide.classList.remove('active')
                 }
@@ -109,6 +134,123 @@ $(document).ready(function () {
     }
 
 
+    // маска для телефона
+    $(".phone").mask("+7(999)999-99-99");
+    $.fn.setCursorPosition = function (pos) {
+        if ($(this).get(0).setSelectionRange) {
+            $(this).get(0).setSelectionRange(pos, pos);
+        } else if ($(this).get(0).createTextRange) {
+            var range = $(this).get(0).createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    };
+    $('input.phone').click(function () {
+        $(this).setCursorPosition(3); // set position number
+    });
 
+
+    const checkboxGroup = document.querySelectorAll('label.form-label');
+    const requiredInputs = document.querySelectorAll('.form-group  input[type="text"]');
+    const textareaElement = document.querySelector('.form-group textarea');
+
+    //активировать чекбокс по клику на фейковый
+    for (let checkbox of checkboxGroup) {
+        const thisParent = checkbox.closest('li');
+        const thisInputCheckbox = thisParent.querySelector('input');
+        checkbox.addEventListener('click', function () {
+            thisInputCheckbox.checked != thisInputCheckbox.checked;
+            if (thisInputCheckbox.checked) {
+                thisParent.classList.add('check-item');
+            } else {
+                thisParent.classList.remove('check-item');
+            }
+        })
+    }
+
+    for (let item of requiredInputs) {
+        //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
+        const thisParent = item.closest('.form-group');
+        item.addEventListener('focus', function () {
+            thisParent.classList.remove('error');
+            thisParent.querySelector('.fake-placeholder').classList.add('active');
+
+        });
+        //по блюру у пустого инпута деактивируем плейсхолдер
+        item.addEventListener('blur', function () {
+            if (this.value.length == 0) {
+                thisParent.querySelector('.fake-placeholder').classList.remove('active');
+            }
+        })
+    }
+    // для текстареа активируем и деактивируем плейсхолдер при фокусе и блюре
+    textareaElement.addEventListener('focus', function () {
+        const thisParent = this.closest('.form-group');
+        thisParent.querySelector('.fake-placeholder').classList.add('active');
+
+    });
+    textareaElement.addEventListener('blur', function () {
+        const thisParent = this.closest('.form-group');
+        if (this.value.length == '0') {
+            thisParent.querySelector('.fake-placeholder').classList.remove('active');
+            console.log('');
+        }
+    });
+
+    /*ВАЛИДАЦИЯ ФОРМЫ */
+    $("#contact-form").on('submit', function (event) {
+        event.preventDefault();
+
+        let success = false;
+
+        for (let item of requiredInputs) {
+            const thisParent = item.closest('.form-group');
+
+            if (item.value.length == 0) {
+                thisParent.classList.add('error');
+                success = false;
+
+            } else {
+                success = true;
+            }
+        }
+
+        if (success) {
+            var string = $("#contact-form").serialize(); // Соханяем данные введенные в форму в строку.
+
+            // Формируем ajax запрос
+            $.ajax({
+                type: "POST", // Тип запроса - POST
+                url: "php/mail.php", // Куда отправляем запрос
+                data: string, // Какие даные отправляем, в данном случае отправляем переменную string
+
+                // Функция если все прошло успешно
+                success: function (html) {
+                    $("#contact-form").slideUp(800);
+                    $('#answer').html(html);
+                }
+            });
+
+            // Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепчку срабатывания остальных функций
+            return false;
+        }
+
+    });
+    /*кнопка вверх */
+    $("#back-top").hide();
+
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('#back-top').fadeIn();
+            } else {
+                $('#back-top').fadeOut();
+            }
+        });
+
+    });
 
 })

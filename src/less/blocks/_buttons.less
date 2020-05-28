@@ -29,24 +29,24 @@
 
 .page-button--yellow {
 	background-color: @yellow;
-	color: @mainText;
+	color: @black;
 	border: 2px solid @yellow;
 
 	&:hover {
 		background-color: @lgYellow;
-		color: @mainText;
+		color: @black;
 		border: 2px solid @lgYellow;
 	}
 }
 
 .page-button--light {
 	background-color: transparent;
-	border: 2px solid @mainText;
-	color: @mainText;
+	border: 1px solid @black;
+	color: @black;
 
 	&:hover {
 		opacity: .6;
-		color: @mainText;
+		color: @black;
 	}
 }
 
@@ -59,34 +59,29 @@
 	padding-right: 5px;
 }
 
-.form-checkbox {
-	width: 0.01px;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-}
-
-.form-checkbox:focus+.custom-checkbox {
-	// border: 1px solid #eee;
-}
-
-.custom-checkbox {
+.form-group input.page-btn2,
+.page-btn2 {
+	height: 48px;
 	display: inline-block;
-	width: 15px;
-	height: 15px;
-	background: #EEEEEE;
-	box-shadow: 0px 0px 1px rgba(31, 31, 31, 0.35);
-	border-radius: 4px;
+	padding-left: 25px;
+	padding-right: 25px;
+	line-height: 48px;
+	font-size: 16px;
+	border: 0px;
+	color: @black;
+	border-radius: 10px;
+	background-color: @yellow;
+	cursor: pointer;
+	.tr;
 
-	background-image: url(../img/check.png);
-	background-size: auto;
-	background-repeat: no-repeat;
-	background-position: center -15px;
-	transition: 0.3s ease-out;
-	margin-right: 10px;
+	i {
+		margin-left: 10px;
+		font-size: 18px;
+		position: relative;
+		top: 2px;
+	}
 
-}
-
-.form-checkbox:checked+.custom-checkbox {
-	background-position: center;
-
+	&:hover {
+		background-color: #cbac1d;
+	}
 }

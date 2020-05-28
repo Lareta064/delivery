@@ -1,24 +1,79 @@
 mixin social-icons
 	.social-icons&attributes(attributes)
 		a(href="#")
-			+telegram
-		a(href="#")
 			+viber
+		a(href="#")
+			+telegram
 		a(href="#")
 			+whatsapp
 		a(href="#")
 			+instagram
+mixin saleCard(imgName, periodDate, title, text)
+	a(href="#!").sale-card.m-auto
+		span.card__badge  Акции
+		.sale-card__img.lazy(data-src="img/"+ imgName +".jpg")
+		.sale-card__desckrip
+			.sale-card__period
+				p Действует до&nbsp;#[span #{periodDate}]
+			.sale-card__text
+				h3.title-3 !{title}
+				p !{text}
+mixin basketItem
+	.basket-item
+		.row
+			.col-4.col-md-3.col-lg-2
+				.basket-item__img
+					img(src="img/basket-product1.png", alt="product" width='170')
+			.col-8.col-md-3.col-lg-3
+				.basket-item__head
+					h3.title-34 
+						span Пицца
+						span “Особая”
+					.basket-item__property
+						.product-card__filters
+							span.filter-name Тесто:
+							.filters-type
+								.filters-type__item
+									label
+										input(type="radio" name="product_testo" value="Традиционное" checked)
+										.fake-radiobutton Традиционное
+						.product-card__filters
+							span.filter-name Pазмер:
+							.filters-type
+								.filters-type__item
+									label
+										input(type="radio" name="product_diameter" value="33" checked)
+										.fake-radiobutton 33 см
+			.col-md-6.col-lg-4.border-col
+				.basket-item__descrip.text-16
+					.basic-descrip
+						p Говядина, халапеньо, моцарелла, помидоры, куриное филе, томатный соус.
+					.addition-set
+						button.remove-item.remove-addition
+							+times(16, 16)
+						p Дополнительно: Сыр моцарелла 50&nbsp;гр. Пепперони 30&nbsp;гр. Ветчина 30&nbsp;гр. Маслины&nbsp;20гр. Оливковое масло 20&nbsp;гр.
+			.col-lg-3
+				.basket-item__calc
+					button.remove-item.remove-basket-item
+						+times(30, 30)
+					.basket-item__addInfo Вес: 550 гр
+					.basket-item__summ
+						+counter(class="product-counter--big")
+						.basket-item__cost
+							.basket-item__cost-val.title-34 650
+							.basket-item__cost-dim руб
+
 mixin main-product-card
 	.product-card&attributes(attributes)
-		.card-labels
-			span.card-label.card-label--sale Акция!
-			span.card-label.card-label--new Новинка
-			span.card-label.card-label--favorite Популярное
+		.card-badges
+			span.card-badge.card-badge--sale Акция!
+			span.card-badge.card-badge--new Новинка
+			span.card-badge.card-badge--favorite Популярное
 		form(action="#")
 			input(type="hidden" name="product_name"  value="Пицца Карбонара")
 			input(type="hidden" name="product_weight" value="500 гр")
 			.product-card__img
-				img.lazy(data-src="img/products/prod1@1x.jpg", alt="product")
+				img.lazy(data-src="img/prod1.jpg", alt="product" width="280")
 			.product-card__title
 				h2.product-title(title="Пицца Карбонара") Пицца Карбонара
 				span.card-text 500 гр
@@ -118,9 +173,9 @@ mixin arrow
 
 mixin counter
 	.product-counter&attributes(attributes)
-		span.product-counter--minus -
+		button.product-counter--minus -
 		span.product-counter--num 1
-		span.product-counter--plus +
+		button.product-counter--plus +
 		input(type="hidden" name="product_count" value='1')
 
 mixin inputCheckbox(inpuName, text)
@@ -130,14 +185,19 @@ mixin inputCheckbox(inpuName, text)
 		| #{text}
 
 //-восклиц знак в кружке
-mixin error-icon
-	svg(width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
-		path(fill-rule="evenodd" clip-rule="evenodd" d="M10 18.75C14.8325 18.75 18.75 14.8325 18.75 10C18.75 5.16751 14.8325 1.25 10 1.25C5.16751 1.25 1.25 5.16751 1.25 10C1.25 14.8325 5.16751 18.75 10 18.75Z" fill="#d7001a")
-		path(fill-rule="evenodd" clip-rule="evenodd" d="M10.7063 5H9.30001V11.875H10.7063V5ZM10.9375 14.6875C10.9375 15.2053 10.5178 15.625 10 15.625C9.48223 15.625 9.0625 15.2053 9.0625 14.6875C9.0625 14.1697 9.48223 13.75 10 13.75C10.5178 13.75 10.9375 14.1697 10.9375 14.6875Z" fill="white")
-		mask#mask0(mask-type="alpha" maskunits="userSpaceOnUse" x="9" y="5" width="2" height="11")
-		path(fill-rule="evenodd" clip-rule="evenodd" d="M10.7063 5H9.30001V11.875H10.7063V5ZM10.9375 14.6875C10.9375 15.2053 10.5178 15.625 10 15.625C9.48223 15.625 9.0625 15.2053 9.0625 14.6875C9.0625 14.1697 9.48223 13.75 10 13.75C10.5178 13.75 10.9375 14.1697 10.9375 14.6875Z" fill="white")
-		g(mask="url(#mask0)")
-
+//- mixin error-icon
+//- 	svg(width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+//- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10 18.75C14.8325 18.75 18.75 14.8325 18.75 10C18.75 5.16751 14.8325 1.25 10 1.25C5.16751 1.25 1.25 5.16751 1.25 10C1.25 14.8325 5.16751 18.75 10 18.75Z" fill="#d7001a")
+//- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10.7063 5H9.30001V11.875H10.7063V5ZM10.9375 14.6875C10.9375 15.2053 10.5178 15.625 10 15.625C9.48223 15.625 9.0625 15.2053 9.0625 14.6875C9.0625 14.1697 9.48223 13.75 10 13.75C10.5178 13.75 10.9375 14.1697 10.9375 14.6875Z" fill="white")
+//- 		mask#mask0(mask-type="alpha" maskunits="userSpaceOnUse" x="9" y="5" width="2" height="11")
+//- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10.7063 5H9.30001V11.875H10.7063V5ZM10.9375 14.6875C10.9375 15.2053 10.5178 15.625 10 15.625C9.48223 15.625 9.0625 15.2053 9.0625 14.6875C9.0625 14.1697 9.48223 13.75 10 13.75C10.5178 13.75 10.9375 14.1697 10.9375 14.6875Z" fill="white")
+//- 		g(mask="url(#mask0)")
+mixin times(wid, hei)
+	svg(width= wid height= hei viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+		path(fill-rule="evenodd" clip-rule="evenodd" d="M8.707 8L12 4.707L11.293 4L8 7.293L4.707 4L4 4.707L7.293 8L4 11.293L4.707 12L8 8.707L11.293 12L12 11.293L8.707 8Z" fill="#D7001A")
+		mask#mask0(mask-type="alpha" maskunits="userSpaceOnUse" x="4" y="4" width="8" height="8")
+			path(fill-rule="evenodd" clip-rule="evenodd" d="M8.707 8L12 4.707L11.293 4L8 7.293L4.707 4L4 4.707L7.293 8L4 11.293L4.707 12L8 8.707L11.293 12L12 11.293L8.707 8Z" fill="white")
+		
 mixin telegram
 	svg(width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg")
 		path(d="M12.8 24C19.4274 24 24.8 18.6274 24.8 12C24.8 5.37258 19.4274 0 12.8 0C6.17257 0 0.799988 5.37258 0.799988 12C0.799988 18.6274 6.17257 24 12.8 24Z" fill="url(#paint0_linear)")
