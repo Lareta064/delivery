@@ -176,22 +176,21 @@ input:-webkit-autofill {
 		margin-right: auto;
 	}
 
-	.agree-text {
-		font-size: 16px;
-		line-height: 24px;
-		color: @black;
+}
 
-		a {
-			color: @yellow;
-			border-bottom: 1px solid @yellow;
+form .agree-text {
+	font-size: 16px;
+	line-height: 24px;
+	color: @black;
 
-			&:hover {
-				opacity: .5;
-			}
+	a {
+		color: @yellow;
+		border-bottom: 1px solid @yellow;
+
+		&:hover {
+			opacity: .5;
 		}
 	}
-
-
 }
 
 .modal-content {
@@ -253,6 +252,142 @@ input:-webkit-autofill {
 	@media(max-width:767px) {
 		font-size: 24px;
 	}
+}
+
+.form-group input.page-button--red {
+	color: #fff;
+	background-color: @red;
+	border: 0px;
+}
+
+/*КАСТОМНЫЕ РАДИОКНОПКИ*/
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+	position: absolute;
+	left: -9999px;
+}
+
+[type="radio"]:checked+label,
+[type="radio"]:not(:checked)+label {
+	position: relative;
+	padding-left: 22px;
+	cursor: pointer;
+	display: inline-block;
+
+}
+
+[type="radio"]:checked+label:before,
+[type="radio"]:not(:checked)+label:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #1f1f1f;
+	border-radius: 100%;
+	background: #fff;
+}
+
+[type="radio"]:not(:checked)+label:before {
+	border: 1px solid #e5e5e5;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"]:not(:checked)+label:after {
+	content: '';
+	width: 8px;
+	height: 8px;
+	background: #1f1f1f;
+
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	border-radius: 100%;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.4s ease;
+}
+
+[type="radio"]:not(:checked)+label:after {
+	opacity: 0;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+
+.form-block label {
+	span {
+		display: block;
+	}
+
+	.text-12;
+	color: @black;
+	color: @dark;
+	margin-top: 4px;
+
+	span:first-child {
+		color: @black;
+		margin-top: 0px;
+	}
+}
+
+.tooltip-div {
+	position: relative;
+	padding: 17px;
+	width: 335px;
+	padding-right: 55px;
+	background: #FFFFFF;
+	border: 1px solid #EEE6E2;
+	border-radius: 5px;
+	color: #A3A7B4;
+	.text-12;
+}
+
+.close-toooltip {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background-color: transparent;
+	z-index: 3;
+
+
+
+}
+
+.tooltip-div:after {
+	content: '';
+	position: absolute;
+	left: -11px;
+	bottom: -3px;
+	width: 0;
+	height: 0;
+	border: 9px solid #EEE6E2;
+	border-bottom: 0px;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	transform: rotate(-57deg);
+	z-index: 2;
+}
+
+.tooltip-div:before {
+	content: '';
+	position: absolute;
+	left: -9px;
+	bottom: -1px;
+	width: 0;
+	height: 0;
+	border: 17px solid #fff;
+	border-bottom: 0px;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	transform: rotate(-57deg);
+	z-index: 3;
 }
 
 /*--FORM STYLE*/

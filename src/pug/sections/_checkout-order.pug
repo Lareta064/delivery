@@ -1,0 +1,76 @@
+section.checkout-page
+	.hidden-layout
+	.container
+		h1.page-title Оформление заказа
+		form.checkout-content#contact-form
+			.row
+				.col-xl-6
+					.form-column
+						h3.title-3 1. Контактные данные
+						
+							.form-group
+								input(type="text" name="userName" )
+								span.fake-placeholder Имя*
+								span.error-notify
+								span.error-text Введите имя
+							.form-group 
+								input(type="text" name="userPhone"  class="phone")
+								span.fake-placeholder Телефон*
+								span.error-notify
+								span.error-text Введите номер телефона
+							.form-group
+								input(type="text" name="addressStreet" )
+								span.fake-placeholder Улица*
+								span.error-notify
+								span.error-text Введите улицу
+							.form-group
+								input(type="text" name="addressHouse" )
+								span.fake-placeholder Дом*
+								span.error-notify
+								span.error-text Введите дом
+							.form-group
+								input(type="text" name="addressNumber" )
+								span.fake-placeholder Квартира*
+								span.error-notify
+								span.error-text Введите номер квартиры
+							.form-group
+								textarea(type="text" name="message"  )
+								span.fake-placeholder Комментарий к заказу
+							.form-group.agree-text
+								p Заполняя информацию, Вы даете согласие на обработку персональных данных в соответствии с #[a(href="#") политикой конфиденциальности].
+							.form-group.form-group--btn
+								a(href="basket-page.html") 
+									i.fas.fa-long-arrow-alt-left
+									| Назад к заказам
+								input.page-button.page-button--red(type="submit" value="Отправить")
+						#answer
+				.col-md-6.col-xl-3
+					.form-column
+						h3.title-3 2. Варианты доставки 
+						.form-block
+							+radioBlock('rad1', 'Самовывоз', 'г. Энгельс, ул. Трудовая 12/2', 'radio-gr1','', 'checked')
+							+radioBlock('rad2', ' Доставка курьером', 'Минимальный заказ для бесплатной доставки 500 руб.', 'radio-gr1')
+					.form-column
+						h3.title-3 3. Способы оплаты
+						.form-block
+							+radioBlock('rad3', ' Оплата наличными', 'Оплата при получении лично или курьеру', 'radio-gr2','', 'check')
+							+radioBlock('rad4', ' Оплата через Яндекс', 'Оплата на сайте через систему Яндекс.Деньги', 'radio-gr2')
+							+radioBlock('rad5', ' Банковской картой онлайн', 'Оплата заказа на сайте через защищенный шлюз Яндекса', 'radio-gr2')
+							+radioBlock('rad6', 'Оплата картой при получении', 'Оплата банковской картой при получении заказа при самовывозе или получении курьером', 'radio-gr2')
+				.col-md-6.col-xl-3
+					.form-column
+						h3.title-3 4. Дополнительно
+						.form-block
+							+radioBlock('rad7', 'Как можно скорее', 'Мы доставляем заказ в течении 40 мин.', 'radio-gr3','', 'check')
+							+radioBlock('rad8', 'Доставка на определенное время', 'Укажите время доставки', 'radio-gr3')
+						.form-block
+							+radioBlock('rad9', 'У меня есть промокод', 'Укажите промокод', 'radio-gr4', '444', 'check')
+							
+							.tooltip-group
+								span.tooltip-icon ?
+								.tooltip-div
+									button.close-toooltip
+										span
+											+times(16, 16)
+									p Найдите промокод на наших страницах ВКонтакте, в Facebook или Твиттере, где мы иногда будем их публиковать.
+										

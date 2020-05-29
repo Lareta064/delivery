@@ -1,3 +1,13 @@
+mixin radioBlock( itemId,text1,text2, radioName,  text3, check)
+	.form-group
+		if check
+			input(type="radio" id= itemId name= radioName checked)
+		else
+			input(type="radio" id= itemId name= radioName )
+		label(for= itemId)
+			span #{text1}
+			span #{text2}
+			span #{text3}
 mixin social-icons
 	.social-icons&attributes(attributes)
 		a(href="#")
