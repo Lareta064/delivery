@@ -2,6 +2,7 @@ section.user-profile
 	.hidden-layout 
 	.container
 		h1.page-title Личный кабинет
+		// табы
 		.user-profile__tabs
 			nav
 				#nav-tab.nav.nav-tabs(role="tablist")
@@ -9,7 +10,9 @@ section.user-profile
 					a#user-history-tab.nav-item.nav-link(data-toggle="tab" href="#user-history" role="tab" aria-controls="nav-profile" aria-selected="false") История заказов
 					
 				#nav-tabContent.tab-content
-					#user-data.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="user-data-tab") hhhhhh
+					// вкладка Личные данные
+					#user-data.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="user-data-tab") Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam illum ex corporis nam debitis distinctio maiores consectetur officiis quaerat laborum perferendis inventore quae quibusdam, suscipit, labore atque quas esse harum.
+					// вкладка История заказов
 					#user-history.tab-pane.fade(role="tabpanel" aria-labelledby="user-history-tab")
 						#accordion.orders-history(role="tablist" aria-multiselectable="true")
 							.panel.panel-default

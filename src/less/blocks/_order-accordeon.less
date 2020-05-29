@@ -139,8 +139,20 @@
 	.nav-item {
 		text-transform: uppercase;
 		font-size: 25px;
-		line-height: 30px;
+		line-height: 1.2;
 		color: @black;
+
+		@media(max-width:1199px) {
+			font-size: 22px;
+		}
+
+		@media(max-width:767px) {
+			font-size: 20px;
+		}
+
+		@media(max-width:375px) {
+			font-size: 16px;
+		}
 	}
 
 	.nav-tabs,
@@ -167,5 +179,9 @@
 
 	.tab-content {
 		padding-top: 32px;
+
+		@media(max-width:1199px) {
+			padding-top: 25px;
+		}
 	}
 }
