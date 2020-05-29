@@ -19,10 +19,10 @@ section.user-profile
 								a#heading1.panel-heading(role="tab" data-toggle="collapse" href="#collapse1" aria-expanded="true")
 									.accordion-item__title
 										.text-phrase
-											span Номер заказа
+											span Заказ №:
 											span 14151617
 										.text-phrase
-											span Дата заказа
+											span Дата заказа:
 											span 25.02.2020
 										.accordion-item__icon
 											span Свернуть
@@ -55,10 +55,10 @@ section.user-profile
 								a.collapsed#heading2.panel-heading(role="tab" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2")
 									.accordion-item__title
 										.text-phrase
-											span Номер заказа
+											span Заказ №:
 											span 14151617
 										.text-phrase
-											span Дата заказа
+											span Дата заказа:
 											span 25.02.2020
 										.accordion-item__icon
 											span Развернуть
@@ -66,3 +66,22 @@ section.user-profile
 								#collapse2.panel-collapse.collapse(role="tabpanel" aria-labelledby="heading2" data-parent="#accordion")
 									.basket-table
 										+basketItem
+									.basket-result
+										.row
+											.col-md-6.col-lg-5.offset-lg-1.col-xl-4.offset-xl-3.order-md-2
+												.total-amount
+													span.title-3 Итого:
+													span 14&nbsp;шт на сумму 
+													.basket-item__cost
+														.basket-item__cost-val.title-34 1650
+														.basket-item__cost-dim руб
+											.col-md-6.col-xl-5.order-md-1
+												.basket-btn
+													.page-button.page-button--red Повторить
+													button.basket-clean
+														span Удалить из истории
+														span
+															svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+																path(fill-rule="evenodd" clip-rule="evenodd" d="M10 1H6V2H10V1ZM2 4V3H14V4H13V14C13 14.5523 12.5523 15 12 15H4C3.44772 15 3 14.5523 3 14V4H2ZM6 6H7V12H6V6ZM9 6H10V12H9V6ZM4 14V4H12V14H4Z" fill="#1F1F1F")
+																mask(id="mask-del" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="1" width="12" height="14")
+																	path(fill-rule="evenodd" clip-rule="evenodd" d="M10 1H6V2H10V1ZM2 4V3H14V4H13V14C13 14.5523 12.5523 15 12 15H4C3.44772 15 3 14.5523 3 14V4H2ZM6 6H7V12H6V6ZM9 6H10V12H9V6ZM4 14V4H12V14H4Z" fill="white")
