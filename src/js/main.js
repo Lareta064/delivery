@@ -253,4 +253,46 @@ $(document).ready(function () {
 
     });
 
+    $('.orders-history .panel-collapse').on('show.bs.collapse', function () {
+        let tabIcon = $("#" + $(this).attr("aria-labelledby")).children().children('.accordion-item__icon').children("i");
+        let tabIconText = $("#" + $(this).attr("aria-labelledby")).children().children('.accordion-item__icon').children("span");
+        tabIcon.addClass("up");
+        tabIconText.text("Свернуть");
+    });
+
+    $('.orders-history .panel-collapse').on('hide.bs.collapse', function () {
+        let tabIcon = $("#" + $(this).attr("aria-labelledby")).children().children('.accordion-item__icon').children("i");
+        let tabIconText = $("#" + $(this).attr("aria-labelledby")).children().children('.accordion-item__icon').children("span");
+        tabIcon.removeClass("up");
+        tabIconText.text("Развернуть");
+    });
+    // //-accordion
+    //const accordionItems = document.querySelectorAll('.orders-history .panel-collapse')
+
+    //for (let i = 0; i < accordionItems.length; i++) {
+
+    // accordionItems[i].addEventListener('click', function () {
+
+    //     const thisIcon = this.querySelector('.accordion-item__icon i')
+    //     const thisIconText = this.querySelector('.accordion-item__icon span')
+
+    //     thisIcon.classList.toggle('up');
+    //     if (this.nextElementSibling.classList.contains('collapsed')) {
+    //         thisIconText.textContent = 'Свернуть';
+
+    //     } else {
+    //         thisIconText.textContent = 'Развернуть';
+
+
+    //     }
+    // })
+    //accordionItems[i].addEventListener('hide.bs.collapse', function () {
+    //    console.log("kek");
+    //});
+    //console.log(accordionItems[i]);
+    //}
+
+
+
+
 })
