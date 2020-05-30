@@ -30,12 +30,84 @@
 	}
 }
 
+.form-column {
+	position: relative;
+}
+
 .form-column .title-3 {
 	margin-bottom: 20px;
+
 }
 
 .form-column .form-block {
 	margin-bottom: 30px;
+}
+
+.form-column .total-amount {
+	justify-content: flex-start;
+
+	.title-3 {
+		margin-bottom: 0;
+	}
+
+	.hide-mob {
+		display: inline;
+
+		@media(max-width:574px) {
+			display: none;
+			padding-left: 4px;
+		}
+	}
+}
+
+.tooltip-div {
+	position: relative;
+	padding: 17px;
+	width: 335px;
+	padding-right: 55px;
+	background: #FFFFFF;
+	border: 1px solid #EEE6E2;
+	border-radius: 5px;
+	color: #A3A7B4;
+	.text-12;
+}
+
+.close-toooltip {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background-color: transparent;
+	z-index: 3;
+}
+
+.tooltip-div:after {
+	content: '';
+	position: absolute;
+	left: -11px;
+	bottom: -3px;
+	width: 0;
+	height: 0;
+	border: 9px solid #EEE6E2;
+	border-bottom: 0px;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	transform: rotate(-57deg);
+	z-index: 2;
+}
+
+.tooltip-div:before {
+	content: '';
+	position: absolute;
+	left: -9px;
+	bottom: -1px;
+	width: 0;
+	height: 0;
+	border: 17px solid #fff;
+	border-bottom: 0px;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	transform: rotate(-57deg);
+	z-index: 3;
 }
 
 .tooltip-group {
@@ -74,18 +146,57 @@
 
 @keyframes shake {
 	0% {
-		transform: rotate(2deg);
+		transform: rotate(2deg) translate(100%, -103%);
 	}
 
 	50% {
-		transform: rotate(-3deg);
+		transform: rotate(-3deg) translate(100%, -103%);
 	}
 
 	70% {
-		transform: rotate(3deg);
+		transform: rotate(3deg) translate(100%, -103%);
 	}
 
 	100% {
-		transform: rotate(0deg);
+		transform: rotate(0deg) translate(100%, -103%);
+	}
+}
+
+.checkout-content__footer {
+	transform: translateY(-50%);
+
+	@media(max-width:1199px) {
+		transform: translateY(-100%);
+
+	}
+
+	@media(max-width:991px) {
+		transform: translateY(0%);
+
+	}
+
+	.form-group--btn {
+		flex-direction: row-reverse;
+	}
+
+	@media(max-width:991px) {
+		margin-top: 20px;
+
+	}
+
+	@media(max-width:574px) {
+		.form-group--btn {
+			flex-direction: column;
+
+			.page-button {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+.checkout-content__footer .agree-text {
+	@media(max-width:767px) {
+		font-size: 12px;
 	}
 }
