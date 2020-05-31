@@ -156,48 +156,58 @@ $(document).ready(function () {
     const requiredInputs = document.querySelectorAll('.form-group  input[type="text"]');
     const textareaElement = document.querySelector('.form-group textarea');
 
-    //активировать чекбокс по клику на фейковый
-    for (let checkbox of checkboxGroup) {
-        const thisParent = checkbox.closest('li');
-        const thisInputCheckbox = thisParent.querySelector('input');
-        checkbox.addEventListener('click', function () {
-            thisInputCheckbox.checked != thisInputCheckbox.checked;
-            if (thisInputCheckbox.checked) {
-                thisParent.classList.add('check-item');
-            } else {
-                thisParent.classList.remove('check-item');
-            }
-        })
-    }
+    if (checkboxGroup.length > 0) {
+        console.log(checkboxGroup);
 
-    for (let item of requiredInputs) {
-        //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
-        const thisParent = item.closest('.form-group');
-        item.addEventListener('focus', function () {
-            thisParent.classList.remove('error');
+        //активировать чекбокс по клику на фейковый
+        for (let checkbox of checkboxGroup) {
+            const thisParent = checkbox.closest('li');
+            const thisInputCheckbox = thisParent.querySelector('input');
+            checkbox.addEventListener('click', function () {
+                thisInputCheckbox.checked != thisInputCheckbox.checked;
+                if (thisInputCheckbox.checked) {
+                    thisParent.classList.add('check-item');
+                } else {
+                    thisParent.classList.remove('check-item');
+                }
+            })
+        }
+
+        for (let item of requiredInputs) {
+            //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
+            const thisParent = item.closest('.form-group');
+            item.addEventListener('focus', function () {
+                thisParent.classList.remove('error');
+                thisParent.querySelector('.fake-placeholder').classList.add('active');
+
+            });
+            //по блюру у пустого инпута деактивируем плейсхолдер
+            item.addEventListener('blur', function () {
+                if (this.value.length == 0) {
+                    thisParent.querySelector('.fake-placeholder').classList.remove('active');
+                }
+            })
+        }
+        // для текстареа активируем и деактивируем плейсхолдер при фокусе и блюре
+        textareaElement.addEventListener('focus', function () {
+            const thisParent = this.closest('.form-group');
             thisParent.querySelector('.fake-placeholder').classList.add('active');
 
         });
-        //по блюру у пустого инпута деактивируем плейсхолдер
-        item.addEventListener('blur', function () {
-            if (this.value.length == 0) {
+        textareaElement.addEventListener('blur', function () {
+            const thisParent = this.closest('.form-group');
+            if (this.value.length == '0') {
                 thisParent.querySelector('.fake-placeholder').classList.remove('active');
+                console.log('');
             }
-        })
-    }
-    // для текстареа активируем и деактивируем плейсхолдер при фокусе и блюре
-    textareaElement.addEventListener('focus', function () {
-        const thisParent = this.closest('.form-group');
-        thisParent.querySelector('.fake-placeholder').classList.add('active');
+        });
 
-    });
-    textareaElement.addEventListener('blur', function () {
-        const thisParent = this.closest('.form-group');
-        if (this.value.length == '0') {
-            thisParent.querySelector('.fake-placeholder').classList.remove('active');
-            console.log('');
-        }
-    });
+
+
+
+
+    }
+
 
     /*ВАЛИДАЦИЯ ФОРМЫ */
     $("#contact-form").on('submit', function (event) {
@@ -266,33 +276,19 @@ $(document).ready(function () {
         tabIcon.removeClass("up");
         tabIconText.text("Развернуть");
     });
-    // //-accordion
-    //const accordionItems = document.querySelectorAll('.orders-history .panel-collapse')
+    //TOOLTIP
+    const tooltip = document.querySelector('.tooltip-div');
+    const tooltipShowIcon = document.querySelector('.tooltip-icon');
+    const tooltipCloseIcon = tooltip.querySelector('.close-toooltip');
+    if (tooltip) {
 
-    //for (let i = 0; i < accordionItems.length; i++) {
-
-    // accordionItems[i].addEventListener('click', function () {
-
-    //     const thisIcon = this.querySelector('.accordion-item__icon i')
-    //     const thisIconText = this.querySelector('.accordion-item__icon span')
-
-    //     thisIcon.classList.toggle('up');
-    //     if (this.nextElementSibling.classList.contains('collapsed')) {
-    //         thisIconText.textContent = 'Свернуть';
-
-    //     } else {
-    //         thisIconText.textContent = 'Развернуть';
-
-
-    //     }
-    // })
-    //accordionItems[i].addEventListener('hide.bs.collapse', function () {
-    //    console.log("kek");
-    //});
-    //console.log(accordionItems[i]);
-    //}
-
-
-
-
+        tooltipShowIcon.addEventListener('click', function (e) {
+            e.preventDefault();
+            tooltip.classList.add('active');
+        });
+        tooltipCloseIcon.addEventListener('click', function (e) {
+            e.preventDefault();
+            tooltip.classList.remove('active');
+        });
+    }
 })

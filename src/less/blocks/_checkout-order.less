@@ -30,6 +30,16 @@
 	}
 }
 
+.form-group.form-group--bb {
+	border-bottom: 1px solid #BFBFBF;
+
+	span:first-child {
+		margin-bottom: 17px;
+		display: block;
+
+	}
+}
+
 .form-column {
 	position: relative;
 }
@@ -65,11 +75,16 @@
 	padding: 17px;
 	width: 335px;
 	padding-right: 55px;
-	background: #FFFFFF;
-	border: 1px solid #EEE6E2;
+	background: #FFF6E5;
+	// border: 1px solid #EEE6E2;
 	border-radius: 5px;
 	color: #A3A7B4;
 	.text-12;
+
+	@media(max-width:1700px) {
+		width: 275px;
+		padding-right: 25px;
+	}
 }
 
 .close-toooltip {
@@ -80,20 +95,28 @@
 	z-index: 3;
 }
 
-.tooltip-div:after {
-	content: '';
-	position: absolute;
-	left: -11px;
-	bottom: -3px;
-	width: 0;
-	height: 0;
-	border: 9px solid #EEE6E2;
-	border-bottom: 0px;
-	border-left-color: transparent;
-	border-right-color: transparent;
-	transform: rotate(-57deg);
-	z-index: 2;
-}
+// .tooltip-div:after {
+// 	content: '';
+// 	position: absolute;
+// 	left: -11px;
+// 	bottom: -3px;
+// 	width: 0;
+// 	height: 0;
+// 	border: 9px solid #FFF6E5;
+// 	// border: 9px solid green;
+// 	border-bottom: 0px;
+// 	border-left-color: transparent;
+// 	border-right-color: transparent;
+// 	transform: rotate(-57deg);
+// 	z-index: 2;
+
+// 	@media(max-width:1199px) {
+// 		left: 47.5%;
+// 		bottom: -10px;
+// 		transform: rotate(0deg);
+
+// 	}
+// }
 
 .tooltip-div:before {
 	content: '';
@@ -102,45 +125,92 @@
 	bottom: -1px;
 	width: 0;
 	height: 0;
-	border: 17px solid #fff;
+	border: 17px solid #FFF6E5;
+	// border: 17px solid red;
 	border-bottom: 0px;
 	border-left-color: transparent;
 	border-right-color: transparent;
 	transform: rotate(-57deg);
 	z-index: 3;
+
+	@media(max-width:1700px) {
+		left: 75%;
+		bottom: -8px;
+		transform: rotate(0deg);
+		// border: 7px solid red;
+		border: 8px solid #FFF6E5;
+		border-bottom: 0px;
+		border-left-color: transparent;
+		border-right-color: transparent;
+
+	}
+
+	@media(max-width:991px) {
+		left: 48%;
+
+	}
+}
+
+.set-promo {
+	padding-left: 16px;
+	position: relative;
+	max-width: 200px;
 }
 
 .tooltip-group {
 	position: relative;
 	width: 16px;
 	height: 16px;
+	position: absolute;
+	right: 42px;
+	top: -18px;
 
-	.tooltip-icon {
+	span.tooltip-icon {
+		cursor: pointer;
 		width: 16px;
 		height: 16px;
 		border-radius: 50%;
 		border: 1px solid @yellow;
-		color: @yellow;
+		color: @yellow  !important;
 		text-align: center;
 		line-height: 14px;
 		display: block;
 		z-index: 5;
-		position: relative;
+		// position: relative;
 		font-size: 12px;
+		// position: absolute;
+		// right: -140px;
+		// top: -18px;
+		// cursor: pointer;
 	}
 
 	.tooltip-div {
 		opacity: 0;
+		// opacity: 1;
 		position: absolute;
+		z-index: -1;
 		top: 0;
 		right: -10px;
 		transform: translate(100%, -103%);
 		transition: .3s;
+
+		@media(max-width:1700px) {
+			transform: translate(15%, -112%);
+
+		}
+
+		@media(max-width:991px) {
+			transform: translate(43%, -112%);
+
+		}
+
 	}
 
-	&:hover .tooltip-div {
+	.active.tooltip-div {
 		opacity: 1;
 		animation: shake 500ms ease-in-out forwards;
+		z-index: 5;
+
 	}
 }
 
@@ -158,7 +228,48 @@
 	}
 
 	100% {
-		transform: rotate(0deg) translate(100%, -103%);
+		transform: rotate(0deg) translate(100%, -112%);
+	}
+
+}
+
+@media(max-width:1700px) {
+	@keyframes shake {
+		0% {
+			transform: rotate(2deg) translate(15%, -112%);
+		}
+
+		50% {
+			transform: rotate(-3deg) translate(15%, -112%);
+		}
+
+		70% {
+			transform: rotate(3deg) translate(15%, -112%);
+		}
+
+		100% {
+			transform: rotate(0deg) translate(15%, -112%);
+		}
+	}
+}
+
+@media(max-width:991px) {
+	@keyframes shake {
+		0% {
+			transform: rotate(2deg) translate(43%, -112%);
+		}
+
+		50% {
+			transform: rotate(-3deg) translate(43%, -112%);
+		}
+
+		70% {
+			transform: rotate(3deg) translate(43%, -112%);
+		}
+
+		100% {
+			transform: rotate(0deg) translate(43%, -112%);
+		}
 	}
 }
 
@@ -199,4 +310,33 @@
 	@media(max-width:767px) {
 		font-size: 12px;
 	}
+}
+
+.form-column {
+	// overflow: hidden;
+
+	@media(max-width: 767px) {
+		overflow: hidden;
+	}
+}
+
+.tool-block {
+	color: @black;
+	position: relative;
+	display: flex;
+
+	p:first-child {
+		margin-right: 10px;
+	}
+
+}
+
+.form-group--checkbox {
+	p {
+		color: #1f1f1f;
+	}
+}
+
+.sale-text {
+	margin-top: 5px;
 }

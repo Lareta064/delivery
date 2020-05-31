@@ -36,13 +36,6 @@ section.checkout-page
 							.form-group
 								textarea(type="text" name="message"  )
 								span.fake-placeholder Комментарий к заказу
-							
-							//- .form-group.form-group--btn
-							//- 	a(href="basket-page.html") 
-							//- 		i.fas.fa-long-arrow-alt-left
-							//- 		| Назад к заказам
-							//- 	input.page-button.page-button--red(type="submit" value="Отправить")
-						
 				
 				.col-lg-6
 					.row
@@ -64,10 +57,34 @@ section.checkout-page
 							.form-column
 								h3.title-3 4. Дополнительно
 								.form-block
-									+radioBlock('rad7', 'Как можно скорее', 'Мы доставляем заказ в течении 40 мин.', 'radio-gr3','', 'check')
-									+radioBlock('rad8', 'Доставка на определенное время', 'Укажите время доставки', 'radio-gr3')
+									input(type="checkbox" id= 'speedCheck' name= 'speedUp' checked)
+									label(for= 'speedCheck')
+										span Как можно скорее
+										span Мы доставляем заказ в течении 40 мин.
+									//- +radioBlock('rad7', 'Как можно скорее', 'Мы доставляем заказ в течении 40 мин.', 'radio-gr3','', 'check')
 								.form-block
-									+radioBlock('rad9', 'У меня есть промокод', 'Укажите промокод', 'radio-gr4', '444', 'check')
+									.form-group.form-group--checkbox
+										input(type="checkbox" id= 'timeCheck' name= 'timeCheckbox' )
+										label(for= 'timeCheck')
+											p Доставка на определенное время
+											input(type="text" name="deliveryTime" placeholder="Ведите время доставки*")
+											
+								.form-block
+									.form-group
+										input(type="checkbox" id= 'promoCheck' name= 'promoCode' )
+										label(for= 'promoCheck')
+											span У меня есть промокод
+										.set-promo
+											input(type="text" placeholder="Введите промокод*")
+											p.sale-text  Скидка по промокоду 10% 
+											.tooltip-group
+												span.tooltip-icon ?
+												.tooltip-div
+													button.close-toooltip
+														span
+															+times(16, 16)
+													p Найдите промокод на наших страницах ВКонтакте, в Facebook или Твиттере, где мы иногда будем их публиковать.
+
 						.col-lg-6
 							.form-column
 								.total-amount

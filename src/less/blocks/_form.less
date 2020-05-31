@@ -261,12 +261,16 @@ form .agree-text {
 }
 
 /*КАСТОМНЫЕ РАДИОКНОПКИ*/
+.checkout-content [type="checkbox"]:checked,
+.checkout-content [type="checkbox"]:not(:checked),
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
 	position: absolute;
 	left: -9999px;
 }
 
+.checkout-content [type="checkbox"]:checked+label,
+.checkout-content [type="checkbox"]:not(:checked)+label,
 [type="radio"]:checked+label,
 [type="radio"]:not(:checked)+label {
 	position: relative;
@@ -274,8 +278,11 @@ form .agree-text {
 	cursor: pointer;
 	display: inline-block;
 
+
 }
 
+.checkout-content [type="checkbox"]:checked+label:before,
+.checkout-content [type="checkbox"]:not(:checked)+label:before,
 [type="radio"]:checked+label:before,
 [type="radio"]:not(:checked)+label:before {
 	content: '';
@@ -289,10 +296,13 @@ form .agree-text {
 	background: #fff;
 }
 
+.checkout-content [type="checkbox"]:not(:checked)+label:before,
 [type="radio"]:not(:checked)+label:before {
 	border: 1px solid #e5e5e5;
 }
 
+.checkout-content [type="checkbox"]:checked+label:after,
+.checkout-content [type="checkbox"]:not(:checked)+label:after,
 [type="radio"]:checked+label:after,
 [type="radio"]:not(:checked)+label:after {
 	content: '';
@@ -308,12 +318,15 @@ form .agree-text {
 	transition: all 0.4s ease;
 }
 
+.checkout-content [type="checkbox"]:not(:checked)+label:after,
+
 [type="radio"]:not(:checked)+label:after {
 	opacity: 0;
 	-webkit-transform: scale(0);
 	transform: scale(0);
 }
 
+.checkout-content [type="checkbox"]:checked+label:after,
 [type="radio"]:checked+label:after {
 	opacity: 1;
 	-webkit-transform: scale(1);

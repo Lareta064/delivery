@@ -1,5 +1,5 @@
 mixin radioBlock( itemId,text1,text2, radioName,  text3, check)
-	.form-group
+	.form-group&attributes(attributes)
 		if check
 			input(type="radio" id= itemId name= radioName checked)
 		else
