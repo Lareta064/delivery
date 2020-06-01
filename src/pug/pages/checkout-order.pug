@@ -1,0 +1,11 @@
+extends ../layouts/layout.pug
+
+block content
+	
+	include ../sections/_header.pug
+	.content-wrapper
+		include ../sections/_checkout-order.pug	
+		include ../sections/_footer.pug
+	
+block variables
+	-var title = "Оформить заказ";

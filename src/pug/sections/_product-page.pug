@@ -1,0 +1,81 @@
+section.product-page
+	.hidden-layout
+	.container
+		h1.page-title Пицца особая
+		.product-page__content
+			.row
+				.col-lg-5.col-xl-6
+					.product-image
+						img(src="img/pizza.png", alt="pizza" width='1100')
+				.col-lg-7.col-xl-6
+					.product-set
+						.product-set__row
+							.text-16.ingredients
+								p Говядина, халапеньо, моцарелла, помидоры, куриное филе, томатный соус.
+							
+							.text-16--light
+								p Вес: 500гр
+
+						.product-set__row.product-set__row-wrap
+							.product-card__filters
+								span.filter-name.text-16--bold Размеры:
+								.filters-type
+									.filters-type__item
+										label
+											input(type= "radio" name="product_diameter" value="26см")
+											.fake-radiobutton 26см
+									.filters-type__item
+										label
+											input(type= "radio" name="product_diameter" value="33см")
+											.fake-radiobutton 33см
+									.filters-type__item
+										label
+											input(type= "radio" name="product_diameter" value="40см")
+											.fake-radiobutton 40см
+									
+							.product-card__filters
+								span.filter-name.text-16--bold Тесто:
+								.filters-type
+									.filters-type__item
+										label
+											input(type="radio" name="product_testo" value="Традиционное")
+											.fake-radiobutton Традиционное
+									.filters-type__item
+										label
+											input(type="radio" name="product_testo" value="Тонкое")
+											.fake-radiobutton Тонкое
+						.product-set__row.product-set__column
+							.text-16--bold.mb-19 Дополнительно:
+							.product-set__types.d-flex
+								.products-group__List
+									ul
+										li
+											+inputCheckbox('group1', 'Сыр моцарелла 50 гр., 40руб')
+										li
+											+inputCheckbox('group1', 'Пепперони 30 гр., 40руб')
+										li
+											+inputCheckbox('group1', 'Ветчина 30 гр., 40руб')
+										li
+											+inputCheckbox('group1', 'Курица 50 гр.')
+											
+
+								.product-set__col
+									.products-group__List
+										ul
+											li
+												+inputCheckbox('group1', 'Сыр моцарелла 50 гр., 40руб')
+											li
+												+inputCheckbox('group1', 'Пепперони 30 гр., 40руб')
+											li
+												+inputCheckbox('group1', 'Ветчина 30 гр., 40руб')
+											li
+												+inputCheckbox('group1', 'Курица 50 гр.')
+						.product-set__footer
+							.total-amount
+								div.d-flex
+									span.title-16--bold Количество:
+									+counter 
+									.basket-item__cost
+										.basket-item__cost-val.title-34 350
+										.basket-item__cost-dim руб
+								button.page-button.page-button--red В корзину

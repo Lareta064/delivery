@@ -1,7 +1,10 @@
 /*****ШАПКА****/
 .header {
 	position: relative;
-
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	padding-top: 15px;
 
 	background-color: #fff;
@@ -18,7 +21,7 @@
 
 	@media(max-width:767px) {
 		height: auto;
-		position: relative;
+		// position: relative;
 		padding-bottom: 10px;
 		padding-top: 0;
 		height: 70px;
@@ -26,19 +29,19 @@
 	}
 }
 
-.header.header--fixed {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	animation-name: showFade;
-	animation-duration: .5s;
-	animation-fill-mode: forwards;
+// .header.header--fixed {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	animation-name: showFade;
+// 	animation-duration: 1s;
+// 	animation-fill-mode: forwards;
 
-	@media(max-width:767px) {
-		animation: none;
-	}
-}
+// 	@media(max-width:767px) {
+// 		animation: none;
+// 	}
+// }
 
 @keyframes showFade {
 	0% {

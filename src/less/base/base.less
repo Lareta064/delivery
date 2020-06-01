@@ -98,6 +98,18 @@ input {
 	}
 }
 
+.hidden-layout {
+	height: 130px;
+
+	@media(max-width:1199px) {
+		height: 100px;
+	}
+
+	@media(max-width: 767px) {
+		height: 70px;
+	}
+}
+
 .content-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -162,6 +174,11 @@ input {
 	.tr;
 }
 
+.text-24 {
+	font-size: 24px;
+	line-height: 29px;
+}
+
 .title-4 {
 	.title;
 	font-size: 25px;
@@ -189,9 +206,25 @@ input {
 	line-height: 24px;
 }
 
+.text-16--bold {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+.text-16--light {
+	font-size: 16px;
+	line-height: 24px;
+	color: #A3A7B4;
+}
+
 .btn-text {
 	font-size: 20px;
 	line-height: 28px;
+}
+
+.mb-19 {
+	margin-bottom: 20px;
 }
 
 /*кнопка вверх*/
