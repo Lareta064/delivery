@@ -37,7 +37,7 @@ mixin basketItem
 					img(src="img/basket-product1.png", alt="product" width='170')
 			.col-8.col-md-3.col-lg-3
 				.basket-item__head
-					h3.title-34 
+					a(href="product-card.html").title-34 
 						span Пицца
 						span “Особая”
 					.basket-item__property
@@ -86,7 +86,7 @@ mixin main-product-card
 			.product-card__img
 				img.lazy(data-src="img/prod1.jpg", alt="product" width="280")
 			.product-card__title
-				h2.product-title(title="Пицца Карбонара") Пицца Карбонара
+				a(href="product-card.html" title="Пицца Карбонара").product-title Пицца Карбонара
 				span.card-text 500 гр
 			.product-card__deskrip
 				
@@ -136,7 +136,7 @@ mixin main-product-card
 								li
 									+inputCheckbox('group1', 'острый соус 40гр.')
 									span 50&#8381;
-					.products-group
+					
 						h4.products-group__title Соусы
 						.products-group__List
 							ul
