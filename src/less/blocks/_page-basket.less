@@ -228,13 +228,20 @@
 .remove-basket-item {
 	position: absolute;
 	right: 0px;
-	top: 5px;
+	top: 30px;
 	font-size: 26px;
 	color: @red;
 
-	@media(max-width:767px) {
+	@media(max-width:991px) {
 		right: -15px;
-		top: -8px;
+		top: auto;
+		bottom: 12px;
+	}
+
+	@media(max-width:767px) {
+		right: -5px;
+		top: 20px;
+		bottom: auto;
 	}
 }
 

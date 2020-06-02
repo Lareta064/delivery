@@ -71,31 +71,54 @@
 
 	&.active {
 		color: @yellow;
+		font-weight: 700;
 
-		&:after {
-			width: 100%;
+		&:after,
+		&:before {
+			width: 50%;
+			background-color: @yellow ;
 
 		}
 
 		@media(max-width:1199px) {}
 	}
 
-	&:after {
+	&:after,
+	&:before {
 		content: '';
 		position: absolute;
-		left: 0;
+
 		bottom: -1px;
 		width: 0;
 		height: 2px;
-		background-color: @yellow;
+		background-color: @black;
 		transition: .3s;
 	}
 
+	&:after {
+		left: 50%;
+	}
+
+	&:before {
+		right: 50%;
+
+	}
+
 	&:hover {
-		color: @yellow;
+		color: @black;
 
 		&:after {
-			width: 100%;
+			width: 50%;
+			left: 0;
+
+			@media(max-width:1199px) {
+				width: 0;
+			}
+		}
+
+		&:before {
+			width: 50%;
+			right: 0;
 
 			@media(max-width:1199px) {
 				width: 0;

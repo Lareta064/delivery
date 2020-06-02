@@ -21,6 +21,10 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+
+	@media(max-width:374px) {
+		padding: 20px 10px 30px;
+	}
 }
 
 .product-set__row {
@@ -92,6 +96,10 @@
 .product-set__footer {
 	.d-flex {
 		align-items: center;
+
+		@media(max-width:767px) {
+			margin-bottom: 15px;
+		}
 	}
 
 	.product-counter {

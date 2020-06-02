@@ -56,20 +56,21 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	max-width: 95%;
+	max-width: 98%;
 	font-size: 35px;
 	position: relative;
-	margin-top: -20px;
+	// margin-top: -20px;
 	position: relative;
 
 	.sale-amimate {
 		position: absolute;
 		right: 0;
-		top: 10%;
+		top: 25%;
+		transform: translateY(-50%);
 		max-width: 400px;
 		width: 50%;
 		animation-name: swingElement;
-		animation-duration: 4s;
+		animation-duration: 8s;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 		z-index: 1;
@@ -123,13 +124,15 @@
 }
 
 .slide-title {
-	font-size: 120px;
-	font-size: 3.4285em;
-
-	.title;
+	font-size: 3.4em;
+	font-family: 'Chekharda-BoldItalic.ttf';
 	line-height: 1;
 	position: relative;
 	z-index: 2;
+
+	@media(max-width:767px) {
+		font-size: 2.7em;
+	}
 }
 
 .product-descrip {

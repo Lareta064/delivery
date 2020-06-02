@@ -51,7 +51,7 @@ $(document).ready(function () {
         items: 1,
         nav: false,
         loop: true,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 2000,
         autoplayTimeout: 5000,
         smartSpeed: 800,
@@ -157,7 +157,6 @@ $(document).ready(function () {
     const textareaElement = document.querySelector('.form-group textarea');
 
     if (checkboxGroup.length > 0) {
-        console.log(checkboxGroup);
 
         //активировать чекбокс по клику на фейковый
         for (let checkbox of checkboxGroup) {
@@ -201,11 +200,6 @@ $(document).ready(function () {
                 console.log('');
             }
         });
-
-
-
-
-
     }
 
 
@@ -279,9 +273,9 @@ $(document).ready(function () {
     //TOOLTIP
     const tooltip = document.querySelector('.tooltip-div');
     const tooltipShowIcon = document.querySelector('.tooltip-icon');
-    const tooltipCloseIcon = tooltip.querySelector('.close-toooltip');
-    if (tooltip) {
 
+    if (tooltip) {
+        const tooltipCloseIcon = tooltip.querySelector('.close-toooltip');
         tooltipShowIcon.addEventListener('click', function (e) {
             e.preventDefault();
             tooltip.classList.add('active');
@@ -291,4 +285,26 @@ $(document).ready(function () {
             tooltip.classList.remove('active');
         });
     }
+
+    let buttonBay = $('.product-set__footer .page-button')
+    let imgToAnimate = $('.product-image img')
+    let cartIcon = $('.user-basket')
+    buttonBay.on('click', function (item) {
+        let cloneImg = imgToAnimate.width()
+        imgToAnimate.clone().css({
+            'width': cloneImg,
+            'position': 'absolute',
+            'z-index': 100,
+            'top': imgToAnimate.offset()['top'],
+            'left': imgToAnimate.offset()['left'],
+        }).appendTo('body').animate({
+            'opacity': 0.3,
+            'top': cartIcon.offset()['top'],
+            'left': cartIcon.offset()['left'],
+            'width': 20
+        }, 2000, function () {
+            $(this).remove()
+        })
+    })
+
 })
