@@ -285,7 +285,7 @@ $(document).ready(function () {
             tooltip.classList.remove('active');
         });
     }
-
+    /*--------------ANIMATE ADD PRODUCT IN BASKET   ------------ */
     let buttonBay = $('.product-set__footer .page-button')
     let imgToAnimate = $('.product-image img')
     let cartIcon = $('.user-basket')
@@ -305,6 +305,59 @@ $(document).ready(function () {
         }, 2000, function () {
             $(this).remove()
         })
+    });
+
+    /*-------------PAGE-BASKET-------------*/
+
+    /*-------REMOVE BASKET ITEM-----*/
+    const basketPage = document.querySelector('.basket');
+    const basketItems = Array.from(basketPage.querySelectorAll('.basket-item'));
+    const cleanBasket = basketPage.querySelector('.basket-clean');
+    const basketTable = basketPage.querySelector('.basket-table');
+    const basketResultRow = basketPage.querySelector('.basket-result');
+    const basketStateText = basketPage.querySelector('.basket-state');
+
+    if (basketPage) {
+        for (let i = 0; i < basketItems.length; i++) {
+
+            const iconRemoveItem = basketItems[i].querySelector('.remove-basket-item');
+            const iconRemoveAddProduct = basketItems[i].querySelector('.remove-addition');
+            const addProducts = basketItems[i].querySelector('.addition-set');
+
+            basketItems[i].addEventListener('click', function (e) {
+
+                if (e.target == iconRemoveAddProduct) {
+                    e.stopPropagation();
+                    addProducts.remove();
+
+                }
+                if (e.target == iconRemoveItem) {
+                    console.log(basketItems.length);
+                    if (basketItems.length == 1) {
+                        e.stopPropagation();
+                        this.remove();
+                        basketResultRow.remove();
+                        basketStateText.classList.remove('d-none');
+
+
+                    } else {
+                        e.stopPropagation();
+                        basketItems.splice(i, 1);
+                        this.remove();
+
+                    }
+
+
+                }
+            })
+        }
+    }
+
+    /*  очистить по клику на иконку корзины*/
+    cleanBasket.addEventListener('click', function () {
+        basketTable.remove();
+        basketResultRow.remove();
+        basketStateText.classList.remove('d-none');
     })
 
 })

@@ -166,6 +166,11 @@
 	font-size: 18px;
 	color: @red;
 	background-color: transparent;
+	z-index: 2;
+
+	svg {
+		pointer-events: none;
+	}
 
 }
 
@@ -385,4 +390,8 @@
 	@media(max-width:767px) {
 		margin-top: 20px;
 	}
+}
+
+.basket-state {
+	color: @dark ;
 }
