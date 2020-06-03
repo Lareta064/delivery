@@ -204,14 +204,7 @@ mixin inputCheckbox(inpuName, text)
 		span.custom-checkbox
 		| #{text}
 
-//-восклиц знак в кружке
-//- mixin error-icon
-//- 	svg(width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
-//- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10 18.75C14.8325 18.75 18.75 14.8325 18.75 10C18.75 5.16751 14.8325 1.25 10 1.25C5.16751 1.25 1.25 5.16751 1.25 10C1.25 14.8325 5.16751 18.75 10 18.75Z" fill="#d7001a")
-//- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10.7063 5H9.30001V11.875H10.7063V5ZM10.9375 14.6875C10.9375 15.2053 10.5178 15.625 10 15.625C9.48223 15.625 9.0625 15.2053 9.0625 14.6875C9.0625 14.1697 9.48223 13.75 10 13.75C10.5178 13.75 10.9375 14.1697 10.9375 14.6875Z" fill="white")
-//- 		mask#mask0(mask-type="alpha" maskunits="userSpaceOnUse" x="9" y="5" width="2" height="11")
-//- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10.7063 5H9.30001V11.875H10.7063V5ZM10.9375 14.6875C10.9375 15.2053 10.5178 15.625 10 15.625C9.48223 15.625 9.0625 15.2053 9.0625 14.6875C9.0625 14.1697 9.48223 13.75 10 13.75C10.5178 13.75 10.9375 14.1697 10.9375 14.6875Z" fill="white")
-//- 		g(mask="url(#mask0)")
+
 mixin times(wid, hei)
 	svg(width= wid height= hei viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
 		path(fill-rule="evenodd" clip-rule="evenodd" d="M8.707 8L12 4.707L11.293 4L8 7.293L4.707 4L4 4.707L7.293 8L4 11.293L4.707 12L8 8.707L11.293 12L12 11.293L8.707 8Z" fill="#D7001A")

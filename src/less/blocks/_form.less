@@ -350,6 +350,85 @@ form .agree-text {
 	}
 }
 
+.subscribes-block {
+	p {
+		font-size: 12px;
+		color: @dark;
+		padding-left: 20px;
+		margin-top: 5px;
+
+		@media(max-width:1199px) {
+			max-width: 400px
+		}
+
+		@media(max-width:767px) {
+			max-width: auto;
+
+		}
+
+		@media(max-width:374px) {
+			padding-left: 0;
+
+		}
+	}
+}
+
+.subscribes-block__top {
+	display: flex;
+	align-items: center;
+
+	p {
+		margin-right: 20px;
+		font-size: 12px;
+		position: relative;
+		padding-left: 20px;
+		white-space: nowrap;
+
+		&:before {
+			content: '';
+			width: 16px;
+			height: 16px;
+			background: url(../img/main/admin.png);
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		@media(max-width:374px) {
+			padding-left: 0;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+.subscribes-block__inputs {
+	display: flex;
+	align-items: center;
+
+	label {
+		margin-right: 15px;
+		font-size: 12px;
+		white-space: nowrap;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.custom-checkbox {
+			margin-left: 10px;
+			border-color: #eeeeee;
+			position: relative;
+			top: 3px;
+		}
+	}
+
+}
 
 
 /*--FORM STYLE*/

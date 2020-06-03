@@ -159,18 +159,20 @@ $(document).ready(function () {
     if (checkboxGroup.length > 0) {
 
         //активировать чекбокс по клику на фейковый
-        for (let checkbox of checkboxGroup) {
-            const thisParent = checkbox.closest('li');
-            const thisInputCheckbox = thisParent.querySelector('input');
-            checkbox.addEventListener('click', function () {
-                thisInputCheckbox.checked != thisInputCheckbox.checked;
-                if (thisInputCheckbox.checked) {
-                    thisParent.classList.add('check-item');
-                } else {
-                    thisParent.classList.remove('check-item');
-                }
-            })
-        }
+
+        // for (let checkbox of checkboxGroup) {
+        //     const thisParent = checkbox.closest('li');
+        //     const thisInputCheckbox = thisParent.querySelector('input');
+        //     checkbox.addEventListener('click', function () {
+        //         thisInputCheckbox.checked != thisInputCheckbox.checked;
+        //         if (thisInputCheckbox.checked) {
+
+        //             thisParent.classList.add('check-item');
+        //         } else {
+        //             thisParent.classList.remove('check-item');
+        //         }
+        //     })
+        // }
 
         for (let item of requiredInputs) {
             //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
@@ -311,13 +313,16 @@ $(document).ready(function () {
 
     /*-------REMOVE BASKET ITEM-----*/
     const basketPage = document.querySelector('.basket');
-    const basketItems = Array.from(basketPage.querySelectorAll('.basket-item'));
-    const cleanBasket = basketPage.querySelector('.basket-clean');
-    const basketTable = basketPage.querySelector('.basket-table');
-    const basketResultRow = basketPage.querySelector('.basket-result');
-    const basketStateText = basketPage.querySelector('.basket-state');
-
     if (basketPage) {
+
+        const basketTable = document.getElementById('basket-table')
+        const basketItems = basketTable.querySelectorAll('.basket-item');
+        const cleanBasket = basketPage.querySelector('.basket-clean');
+
+        const basketResultRow = basketPage.querySelector('.basket-result');
+        const basketStateText = basketPage.querySelector('.basket-state');
+
+
         for (let i = 0; i < basketItems.length; i++) {
 
             const iconRemoveItem = basketItems[i].querySelector('.remove-basket-item');
@@ -329,11 +334,13 @@ $(document).ready(function () {
                 if (e.target == iconRemoveAddProduct) {
                     e.stopPropagation();
                     addProducts.remove();
-
                 }
+
                 if (e.target == iconRemoveItem) {
                     console.log(basketItems.length);
-                    if (basketItems.length == 1) {
+                    const data = basketTable.querySelectorAll('.basket-item');
+
+                    if (data.length == 1) {
                         e.stopPropagation();
                         this.remove();
                         basketResultRow.remove();
@@ -342,7 +349,7 @@ $(document).ready(function () {
 
                     } else {
                         e.stopPropagation();
-                        basketItems.splice(i, 1);
+
                         this.remove();
 
                     }
@@ -351,13 +358,32 @@ $(document).ready(function () {
                 }
             })
         }
+
+        /*  очистить по клику на иконку корзины*/
+        cleanBasket.addEventListener('click', function () {
+            basketTable.remove();
+            basketResultRow.remove();
+            basketStateText.classList.remove('d-none');
+        })
+
     }
 
-    /*  очистить по клику на иконку корзины*/
-    cleanBasket.addEventListener('click', function () {
-        basketTable.remove();
-        basketResultRow.remove();
-        basketStateText.classList.remove('d-none');
-    })
+
+
+    /*---------ЛИЧНЫЕ ДАННЫЕ------- */
+    const showPasswIcon = document.querySelector('#toggle-passw');
+    if (showPasswIcon) {
+
+        showPasswIcon.addEventListener('click', function () {
+            if (this.classList.contains('active')) {
+                this.classList.remove('active');
+                this.nextElementSibling.setAttribute('type', 'password')
+            } else {
+                this.classList.add('active');
+                this.nextElementSibling.setAttribute('type', 'text')
+            }
+        })
+    }
+
 
 })

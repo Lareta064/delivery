@@ -5,7 +5,7 @@ section.basket
 		.basket-state.d-none
 			h2 В корзине нет товаров
 		.basket-content
-			.basket-table
+			.basket-table#basket-table
 				+basketItem
 				+basketItem
 				+basketItem
@@ -24,7 +24,7 @@ section.basket
 					.col-md-6.col-xl-5.order-md-1
 						.basket-btn
 							a(href="checkout-order.html").page-button.page-button--red Перейти к оформлению
-							button.basket-clean
+							button.basket-clean.page-btn3
 								span Очистить корзину
 								span
 									svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
