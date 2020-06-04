@@ -27,7 +27,7 @@
 		}
 	}
 
-	@media(max-width:767px) {
+	@media(max-width:374px) {
 		padding: 2.7em 10px 2em;
 	}
 }
@@ -60,7 +60,7 @@
 	font-size: 2em;
 	font-family: @mainfont;
 	color: @mainText;
-	width: 80%;
+	width: 86%;
 	white-space: nowrap;
 	overflow: hidden;
 	.tr;
@@ -87,8 +87,12 @@
 
 .filter-name {
 	color: @mainText;
-	margin-right: 4px;
+	margin-right: 10px;
 	font-size: 15px;
+
+	// @media(max-width:1199px) {
+	// 	margin-right: 4px;
+	// }
 }
 
 .filters-type {
@@ -300,6 +304,10 @@ span.dim {
 	margin-bottom: 12px;
 }
 
+.products-group__List {
+	margin-bottom: 25px;
+}
+
 .products-group__List li {
 	display: flex;
 	justify-content: space-between;
@@ -325,6 +333,7 @@ span.dim {
 	position: absolute;
 	bottom: 20px;
 	left: 20px;
+	padding-top: 2px;
 
 }
 

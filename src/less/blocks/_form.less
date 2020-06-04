@@ -67,6 +67,9 @@ input:-webkit-autofill {
 }
 
 .form-group .error-text {
+	position: absolute;
+	left: 0;
+	bottom: -20px;
 	display: none;
 }
 
@@ -260,6 +263,10 @@ form .agree-text {
 	border: 0px;
 }
 
+.form-group span span {
+	color: @red;
+}
+
 /*КАСТОМНЫЕ РАДИОКНОПКИ*/
 .checkout-content [type="checkbox"]:checked,
 .checkout-content [type="checkbox"]:not(:checked),
@@ -350,6 +357,91 @@ form .agree-text {
 	}
 }
 
+.subscribes-block {
+	p {
+		font-size: 12px;
+		color: @dark;
+		padding-left: 20px;
+		margin-top: 5px;
+
+		@media(max-width:1199px) {
+			max-width: 400px
+		}
+
+		@media(max-width:767px) {
+			max-width: auto;
+
+		}
+
+		@media(max-width:374px) {
+			padding-left: 0;
+
+		}
+	}
+}
+
+.subscribes-block__top {
+	display: flex;
+	align-items: center;
+
+	p {
+		margin-right: 20px;
+		font-size: 12px;
+		position: relative;
+		padding-left: 20px;
+		white-space: nowrap;
+		color: @black;
+
+		&:before {
+			content: '';
+			width: 16px;
+			height: 16px;
+			background: url(../img/main/admin.png);
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		@media(max-width:374px) {
+			padding-left: 0;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+.subscribes-block__inputs {
+	display: flex;
+	align-items: center;
+
+	label {
+		margin-right: 15px;
+		font-size: 12px;
+		white-space: nowrap;
+		color: @black;
+		display: flex;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.custom-checkbox {
+			margin-left: 10px;
+			border-color: #eeeeee;
+			position: relative;
+			top: 2px;
+			// margin-left: 0;
+			margin-right: 0;
+
+		}
+	}
+
+}
 
 
 /*--FORM STYLE*/

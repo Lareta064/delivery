@@ -21,6 +21,7 @@
 
 .page-button--red {
 	background-color: @red;
+	min-width: 156px;
 
 	&:hover {
 		background-color: @hoverred;
@@ -51,13 +52,42 @@
 	}
 }
 
-.product-card .page-button--yellow,
+.page-button--light .product-card .page-button--yellow,
 .product-card .page-button--light {
 	height: 36px;
 	line-height: 30px;
 	width: 130px;
 	padding-left: 5px;
 	padding-right: 5px;
+}
+
+.page-btn3 {
+	background-color: transparent;
+	border-radius: 10px;
+	border: 1px solid transparent;
+	.tr;
+	padding: 5px 10px;
+
+	&:hover {
+		border: 1px solid @red;
+		color: @red;
+	}
+
+}
+
+.page-btn4 {
+	background-color: #fff;
+	border: 1px solid @red;
+	color: @red;
+	padding-left: 56px;
+	padding-right: 56px;
+	font-size: 12px;
+
+	&:hover {
+		border: 1px solid @red;
+		color: white;
+		background-color: @red;
+	}
 }
 
 .form-group input.page-btn2,

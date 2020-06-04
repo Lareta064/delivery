@@ -1,4 +1,4 @@
-.orders-history {
+.content-inner {
 	background: #FFFFFF;
 	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.18);
 	border-radius: 20px;
@@ -166,6 +166,8 @@
 		border-bottom: 3px solid transparent;
 		margin-right: 1.1em;
 		font-family: @mainfont;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.nav-tabs .nav-link.active {
@@ -182,6 +184,114 @@
 
 		@media(max-width:1199px) {
 			padding-top: 25px;
+		}
+	}
+}
+
+/*ЛИЧНЫЕ ДАННЫЕ*/
+.personal-data {
+	@media(max-width:1199px) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+}
+
+.content-inner--pt {
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	.form-body {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		@media(max-width:767px) {
+			flex-direction: column;
+		}
+	}
+
+	.form-col {
+		width: 48%;
+
+		@media(max-width:767px) {
+			width: 100%;
+		}
+	}
+
+	.form-group {
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		label {
+			min-width: 90px;
+			font-weight: 700;
+		}
+	}
+
+	#toggle-passw {
+		position: absolute;
+		cursor: pointer;
+		right: 0;
+		top: 10px;
+
+		svg {
+			pointer-events: none;
+		}
+
+		svg path {
+			fill: @dark;
+		}
+	}
+
+	#toggle-passw.active {
+		svg path {
+			fill: @black;
+		}
+	}
+
+	.politic-agree p {
+		position: relative;
+		padding-left: 30px;
+
+		a {
+			color: @yellow;
+			border-bottom: 1px solid @yellow;
+		}
+
+		&:before {
+			content: '';
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			left: 0;
+			top: 1px;
+			background-image: url(../img/warning.svg);
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+}
+
+.form-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 5px;
+	margin-bottom: 40px;
+
+	@media(max-width:767px) {
+		display: block;
+	}
+
+	.flex-wrapper {
+
+
+		@media(max-width:767px) {
+			text-align: center;
+			margin-top: 20px;
 		}
 	}
 }

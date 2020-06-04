@@ -102,12 +102,66 @@
 	line-height: 24px;
 	font-weight: 700;
 	color: #FBD10E;
-	animation: pulse 3.5s linear infinite;
+	// animation: pulse 3.5s linear infinite;
 
 	@media(max-width:991px) {
 		right: 0;
 		top: 10px;
 		transform: translateY(-100%);
 		animation: none;
+	}
+}
+
+.pagination-block {
+	display: flex;
+	align-items: center;
+
+	@media(max-width:767px) {
+		justify-content: center;
+	}
+
+	button {
+		width: 25px;
+		height: 25px;
+		background: #FFFFFF;
+		border: 1px solid #EEEEEE;
+		color: #BFBFBF;
+		text-align: center;
+		display: block;
+		font-size: 12px;
+		line-height: 24px;
+		cursor: pointer;
+		.tr;
+
+		&:first-child {
+			border-radius: 12px 0 0 12px;
+		}
+
+		&:last-child {
+			border-radius: 0 12px 12px 0;
+		}
+
+		span path {
+			.tr;
+		}
+
+		&.active {
+			font-weight: 700;
+			color: @yellow;
+
+			span path {
+				stroke: @yellow;
+				stroke-width: 2px;
+			}
+		}
+
+		&:hover {
+			color: @black;
+
+			span path {
+				stroke: @black;
+
+			}
+		}
 	}
 }

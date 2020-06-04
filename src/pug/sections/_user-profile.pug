@@ -11,10 +11,53 @@ section.user-profile
 					
 				#nav-tabContent.tab-content
 					// вкладка Личные данные
-					#user-data.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="user-data-tab") Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam illum ex corporis nam debitis distinctio maiores consectetur officiis quaerat laborum perferendis inventore quae quibusdam, suscipit, labore atque quas esse harum.
+					#user-data.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="user-data-tab")
+						.content-inner.content-inner--pt
+							form.personal-data
+								.form-body
+									.form-col
+										.form-group
+											label Имя:
+											input(type="text" name="userName" value="Иванов Иван")
+										.form-group
+											label Телефон:
+											input(type="text" name="userName" class="phone" value="+7 999 999 50 50")
+										.form-group
+											label Улица:
+											input(type="text" name="addressStreet" value="Ленина" )
+									.form-col
+										.form-group
+											label Дом:
+											input(type="text" name="addressHouse"  value="25")
+										.form-group
+											label Квартира:
+											input(type="text" name="addressNumber" class="text" value="26")
+										.form-group
+											label Пароль:										
+											#toggle-passw
+												svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+													path( d="M10 4.03906C6.17879 4.03906 2.71351 6.12968 0.15649 9.52541C-0.0521632 9.80361 -0.0521632 10.1923 0.15649 10.4705C2.71351 13.8703 6.17879 15.9609 10 15.9609C13.8212 15.9609 17.2865 13.8703 19.8435 10.4746C20.0522 10.1964 20.0522 9.8077 19.8435 9.5295C17.2865 6.12968 13.8212 4.03906 10 4.03906ZM10.2741 14.1976C7.73755 14.3572 5.64284 12.2665 5.80239 9.72588C5.93331 7.63117 7.63118 5.9333 9.72589 5.80238C12.2625 5.64283 14.3572 7.73345 14.1976 10.2741C14.0626 12.3647 12.3647 14.0626 10.2741 14.1976ZM10.1473 12.2584C8.78081 12.3443 7.65163 11.2192 7.74164 9.85271C7.81119 8.72353 8.72763 7.81118 9.85681 7.73754C11.2233 7.65162 12.3525 8.77671 12.2625 10.1432C12.1888 11.2765 11.2724 12.1888 10.1473 12.2584Z" fill="#1F1F1F")
+											input(type="password" name="userPass"  value="12345678")
+								.form-footer
+									.subscribes-block
+										.subscribes-block__top
+											p Согласен на отправку:
+											.subscribes-block__inputs
+												label.form-label sms
+													input.form-checkbox(type="checkbox" name='smsCheck' checked)
+													span.custom-checkbox
+												label.form-label email
+													input.form-checkbox(type="checkbox" name='smsCheck')
+													span.custom-checkbox
+										p Мы не рассылаем спам. Вы будете получать только актуальную информацию о наших акциях.
+									.flex-wrapper
+										button.page-button.page-btn4 Изменить данные
+							.text-16.politic-agree
+								p Работа с персональными данными на этом сайте ведется в соответствии с #[a(href="#") политикой конфиденциальности].
+					
 					// вкладка История заказов
 					#user-history.tab-pane.fade(role="tabpanel" aria-labelledby="user-history-tab")
-						#accordion.orders-history(role="tablist" aria-multiselectable="true")
+						#accordion.content-inner(role="tablist" aria-multiselectable="true")
 							.panel.panel-default
 								a#heading1.panel-heading(role="tab" data-toggle="collapse" href="#collapse1" aria-expanded="true")
 									.accordion-item__title
@@ -42,7 +85,7 @@ section.user-profile
 											.col-md-6.col-xl-5.order-md-1
 												.basket-btn
 													.page-button.page-button--red Повторить
-													button.basket-clean
+													button.basket-clean.page-btn3
 														span Удалить из истории
 														span
 															svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -78,7 +121,7 @@ section.user-profile
 											.col-md-6.col-xl-5.order-md-1
 												.basket-btn
 													.page-button.page-button--red Повторить
-													button.basket-clean
+													button.basket-clean.page-btn3
 														span Удалить из истории
 														span
 															svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")

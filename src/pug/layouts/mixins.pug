@@ -31,6 +31,8 @@ mixin saleCard(imgName, periodDate, title, text)
 					p !{text}
 mixin basketItem
 	.basket-item
+		button.remove-item.remove-basket-item
+			+times(30, 30)
 		.row
 			.col-4.col-md-3.col-lg-2
 				.basket-item__img
@@ -65,8 +67,8 @@ mixin basketItem
 						p Дополнительно: Сыр моцарелла 50&nbsp;гр. Пепперони 30&nbsp;гр. Ветчина 30&nbsp;гр. Маслины&nbsp;20гр. Оливковое масло 20&nbsp;гр.
 			.col-lg-3
 				.basket-item__calc
-					button.remove-item.remove-basket-item
-						+times(30, 30)
+					//- button.remove-item.remove-basket-item
+					//- 	+times(30, 30)
 					.basket-item__addInfo Вес: 550 гр
 					.basket-item__summ
 						+counter(class="product-counter--big")
@@ -74,23 +76,23 @@ mixin basketItem
 							.basket-item__cost-val.title-34 650
 							.basket-item__cost-dim руб
 
-mixin main-product-card
+mixin main-product-card(title, imgSrc, weight, desk, price, oldPrice)
 	.product-card&attributes(attributes)
 		.card-badges
 			span.card-badge.card-badge--sale Акция!
 			span.card-badge.card-badge--new Новинка
 			span.card-badge.card-badge--favorite Популярное
 		form(action="#")
-			input(type="hidden" name="product_name"  value="Пицца Карбонара")
+			input(type="hidden" name="product_name"  value=""+ title)
 			input(type="hidden" name="product_weight" value="500 гр")
 			.product-card__img
-				img.lazy(data-src="img/prod1.jpg", alt="product" width="280")
+				img.lazy(data-src="img/main/"+ imgSrc +".png", alt="product" width="280")
 			.product-card__title
-				a(href="product-card.html" title="Пицца Карбонара").product-title Пицца Карбонара
-				span.card-text 500 гр
+				a(href="product-card.html" title=""+ title).product-title #{title}
+				span.card-text #{weight} гр
 			.product-card__deskrip
 				
-				p Сливки, сыр Моцарелла, сыр Пармезан, бекон, шампиньоны
+				p #{desk}
 				.product-card__filters
 					span.filter-name Размеры:
 					.filters-type
@@ -125,33 +127,31 @@ mixin main-product-card
 						.products-group__List
 							ul
 								li
-									+inputCheckbox('group1', 'острый соус 40гр.')
+									+inputCheckbox('group1', 'Пепперони 40 гр.')
 									span 50&#8381;
 								li
-									+inputCheckbox('group1', 'острый соус 40гр.')
+									+inputCheckbox('group1', 'Красный лук 30 гр.')
+									span 30&#8381;
+								li
+									+inputCheckbox('group1', 'Шампиньоны 30 гр.')
 									span 50&#8381;
 								li
-									+inputCheckbox('group1', 'острый соус 40гр.')
-									span 50&#8381;
-								li
-									+inputCheckbox('group1', 'острый соус 40гр.')
+									+inputCheckbox('group1', 'Перец Халапеньо 20 гр.')
 									span 50&#8381;
 					
 						h4.products-group__title Соусы
 						.products-group__List
 							ul
 								li
-									+inputCheckbox('group1', 'острый соус 40гр.')
+									+inputCheckbox('group2', 'Соус для пиццы 50 гр.')
 									span 50&#8381;
 								li
-									+inputCheckbox('group1', 'острый соус 40гр.')
+									+inputCheckbox('group2', 'Сливочно чесночный соус 50 гр.')
 									span 50&#8381;
 								li
-									+inputCheckbox('group1', 'острый соус 40гр.')
+									+inputCheckbox('group2', 'Соус Ранч 50 гр.')
 									span 50&#8381;
-								li
-									+inputCheckbox('group1', 'острый соус 40гр.')
-									span 50&#8381;
+								
 
 				button.page-button--light.page-button.hide-back(type='button')
 					+arrow
@@ -160,17 +160,19 @@ mixin main-product-card
 				.product-card__calc
 					.product-card__prises
 						span.new-price
-							span.value 500
+							span.value #{price}
 							span.dim &#8381;
-						span.old-price
-							span.value 800
-							span.dim &#8381;
+						if oldPrice
+							span.old-price
+								span.value 800
+								span.dim &#8381;
 					+counter
 				
 				.product-card__buttons
 					button.page-button--light.page-button.show-back(type='button') Дополнительно
 					.form-btn
-						input(type="submit" value="Купить").page-button--yellow.page-button
+						button.page-button--yellow.page-button Купить
+						//- input(type="submit" value="Купить").page-button--yellow.page-button
 
 
 mixin arrow
@@ -202,14 +204,7 @@ mixin inputCheckbox(inpuName, text)
 		span.custom-checkbox
 		| #{text}
 
-//-восклиц знак в кружке
-//- mixin error-icon
-//- 	svg(width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
-//- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10 18.75C14.8325 18.75 18.75 14.8325 18.75 10C18.75 5.16751 14.8325 1.25 10 1.25C5.16751 1.25 1.25 5.16751 1.25 10C1.25 14.8325 5.16751 18.75 10 18.75Z" fill="#d7001a")
-//- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10.7063 5H9.30001V11.875H10.7063V5ZM10.9375 14.6875C10.9375 15.2053 10.5178 15.625 10 15.625C9.48223 15.625 9.0625 15.2053 9.0625 14.6875C9.0625 14.1697 9.48223 13.75 10 13.75C10.5178 13.75 10.9375 14.1697 10.9375 14.6875Z" fill="white")
-//- 		mask#mask0(mask-type="alpha" maskunits="userSpaceOnUse" x="9" y="5" width="2" height="11")
-//- 		path(fill-rule="evenodd" clip-rule="evenodd" d="M10.7063 5H9.30001V11.875H10.7063V5ZM10.9375 14.6875C10.9375 15.2053 10.5178 15.625 10 15.625C9.48223 15.625 9.0625 15.2053 9.0625 14.6875C9.0625 14.1697 9.48223 13.75 10 13.75C10.5178 13.75 10.9375 14.1697 10.9375 14.6875Z" fill="white")
-//- 		g(mask="url(#mask0)")
+
 mixin times(wid, hei)
 	svg(width= wid height= hei viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
 		path(fill-rule="evenodd" clip-rule="evenodd" d="M8.707 8L12 4.707L11.293 4L8 7.293L4.707 4L4 4.707L7.293 8L4 11.293L4.707 12L8 8.707L11.293 12L12 11.293L8.707 8Z" fill="#D7001A")

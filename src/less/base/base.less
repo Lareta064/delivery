@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'Chekharda-BoldItalic.ttf';
+	/* Имя шрифта */
+	src: url(../fonts/Chekharda-BoldItalic.ttf);
+
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -60,6 +67,7 @@ img {
 button {
 	cursor: pointer;
 	padding: 0;
+	white-space: nowrap;
 }
 
 textarea,
@@ -189,6 +197,7 @@ input {
 	font-family: @titleLight;
 	font-size: 25px;
 	line-height: 1.2;
+	font-weight: 400;
 }
 
 .text-2 {
@@ -270,7 +279,7 @@ input {
 	}
 
 	50% {
-		transform: translateY(30px)
+		transform: translateY(15px)
 	}
 
 	100% {
@@ -302,18 +311,18 @@ input {
 // 	}
 // }
 
-@keyframes pulse {
-	0% {
-		transform: scale(1)
-	}
+// @keyframes pulse {
+// 	0% {
+// 		transform: scale(1)
+// 	}
 
-	50% {
-		transform: scale(.85)
-	}
+// 	50% {
+// 		transform: scale(.85)
+// 	}
 
 
 
-	100% {
-		transform: scale(1)
-	}
-}
+// 	100% {
+// 		transform: scale(1)
+// 	}
+// }
