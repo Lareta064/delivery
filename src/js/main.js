@@ -174,7 +174,7 @@ $(document).ready(function () {
     //         }
     //     })
     // }
-
+    /*---ПОКАЗАТЬ ВОСКЛИЦАТЕЛЬНЫЙ ЗНАК В ИНПУТЕ */
     for (let item of requiredInputs) {
         //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
         const thisParent = item.closest('.form-group');
@@ -190,7 +190,7 @@ $(document).ready(function () {
             }
         })
     }
-    // для текстареа активируем и деактивируем плейсхолдер при фокусе и блюре
+    // для текстареа активируем и деактивируем кастомный плейсхолдер при фокусе и блюре
     textareaElement.addEventListener('focus', function () {
         const thisParent = this.closest('.form-group');
         thisParent.querySelector('.fake-placeholder').classList.add('active');
@@ -259,7 +259,7 @@ $(document).ready(function () {
         });
 
     });
-
+    /*ЗАКРЫВАТЬ ОТКРЫТУЮ ПЛАШКУ АККОРДЕОНА В ИСТОРИИ ЗАКАЗОВ*/
     $('.orders-history .panel-collapse').on('show.bs.collapse', function () {
         let tabIcon = $("#" + $(this).attr("aria-labelledby")).children().children('.accordion-item__icon').children("i");
         let tabIconText = $("#" + $(this).attr("aria-labelledby")).children().children('.accordion-item__icon').children("span");
@@ -273,7 +273,8 @@ $(document).ready(function () {
         tabIcon.removeClass("up");
         tabIconText.text("Развернуть");
     });
-    //TOOLTIP
+
+    /*----ВСПЛЫВАЮЩАЯ ПОДСКАЗКА TOOLTIP СТРАНИЦА ОФОРМЛЕНИЯ ЗАКАЗА----*/
     const tooltip = document.querySelector('.tooltip-div');
     const tooltipShowIcon = document.querySelector('.tooltip-icon');
 
@@ -292,7 +293,7 @@ $(document).ready(function () {
     let buttonBay = $('.product-set__footer .page-button')
     let imgToAnimate = $('.product-image img')
     let cartIcon = $('.user-basket')
-    buttonBay.on('click', function (item) {
+    buttonBay.on('click', function () {
         let cloneImg = imgToAnimate.width()
         imgToAnimate.clone().css({
             'width': cloneImg,
@@ -309,6 +310,32 @@ $(document).ready(function () {
             $(this).remove()
         })
     });
+
+    /*  АНИМАЦИЯ ПОЛЕТА В КОРЗИНУ НА КАРТОЧКАХ НА ГЛАВНОЙ */
+
+    $('.product-card__buttons .form-btn button').each(function () {
+        $(this).on('click', function (e) {
+            e.preventDefault()
+            const cardImage = $(this).closest('.product-card').find('.product-card__img img')
+
+            let cloneImg = cardImage.width()
+            cardImage.clone().css({
+                'width': cloneImg,
+                'position': 'absolute',
+                'z-index': 100,
+                'top': cardImage.offset()['top'],
+                'left': cardImage.offset()['left'],
+            }).appendTo('body').animate({
+                'opacity': 0.3,
+                'top': cartIcon.offset()['top'],
+                'left': cartIcon.offset()['left'],
+                'width': 20
+            }, 2000, function () {
+                $(this).remove()
+            })
+        })
+    })
+
 
     /*-------------PAGE-BASKET-------------*/
 
@@ -354,8 +381,6 @@ $(document).ready(function () {
                         this.remove();
 
                     }
-
-
                 }
             })
         }
@@ -366,12 +391,11 @@ $(document).ready(function () {
             basketResultRow.remove();
             basketStateText.classList.remove('d-none');
         })
-
     }
 
 
 
-    /*---------ЛИЧНЫЕ ДАННЫЕ------- */
+    /*---------ЛИЧНЫЕ ДАННЫЕ   ПОКАЗАТЬ ПАРОЛЬ------- */
     const showPasswIcon = document.querySelector('#toggle-passw');
     if (showPasswIcon) {
 
