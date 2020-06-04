@@ -67,6 +67,9 @@ input:-webkit-autofill {
 }
 
 .form-group .error-text {
+	position: absolute;
+	left: 0;
+	bottom: -20px;
 	display: none;
 }
 
@@ -260,6 +263,10 @@ form .agree-text {
 	border: 0px;
 }
 
+.form-group span span {
+	color: @red;
+}
+
 /*КАСТОМНЫЕ РАДИОКНОПКИ*/
 .checkout-content [type="checkbox"]:checked,
 .checkout-content [type="checkbox"]:not(:checked),
@@ -383,6 +390,7 @@ form .agree-text {
 		position: relative;
 		padding-left: 20px;
 		white-space: nowrap;
+		color: @black;
 
 		&:before {
 			content: '';
@@ -415,6 +423,8 @@ form .agree-text {
 		margin-right: 15px;
 		font-size: 12px;
 		white-space: nowrap;
+		color: @black;
+		display: flex;
 
 		&:last-child {
 			margin-right: 0;
@@ -424,7 +434,10 @@ form .agree-text {
 			margin-left: 10px;
 			border-color: #eeeeee;
 			position: relative;
-			top: 3px;
+			top: 2px;
+			// margin-left: 0;
+			margin-right: 0;
+
 		}
 	}
 

@@ -2,35 +2,34 @@ section.checkout-page
 	.hidden-layout
 	.container
 		h1.page-title Оформление заказа
-		form.checkout-content
+		form.checkout-form
 			.row
 				.col-lg-6
 					.form-column
-						h3.title-3 1. Контактные данные
-						
+						h3.title-3.mb-20 1. Контактные данные						
 							.form-group
 								input(type="text" name="userName" )
-								span.fake-placeholder Имя*
+								span.fake-placeholder Имя #[span *]
 								span.error-notify
 								span.error-text Введите имя
 							.form-group 
 								input(type="text" name="userPhone"  class="phone")
-								span.fake-placeholder Телефон*
+								span.fake-placeholder Телефон #[span *]
 								span.error-notify
 								span.error-text Введите номер телефона
 							.form-group
 								input(type="text" name="addressStreet" )
-								span.fake-placeholder Улица*
+								span.fake-placeholder Улица #[span *]
 								span.error-notify
 								span.error-text Введите улицу
 							.form-group
 								input(type="text" name="addressHouse" )
-								span.fake-placeholder Дом*
+								span.fake-placeholder Дом #[span *]
 								span.error-notify
 								span.error-text Введите дом
 							.form-group
 								input(type="text" name="addressNumber" )
-								span.fake-placeholder Квартира*
+								span.fake-placeholder Квартира #[span *]
 								span.error-notify
 								span.error-text Введите номер квартиры
 							.form-group
@@ -39,7 +38,7 @@ section.checkout-page
 				
 				.col-lg-6
 					.row
-						.col-md-6
+						.col-md-6.form-column--2
 							.form-column
 								h3.title-3 2. Варианты доставки 
 								.form-block
@@ -57,23 +56,20 @@ section.checkout-page
 							.form-column
 								h3.title-3 4. Дополнительно
 								.form-block
-									input(type="checkbox" id= 'speedCheck' name= 'speedUp' checked)
-									label(for= 'speedCheck')
-										span Как можно скорее
-										span Мы доставляем заказ в течении 40 мин.
-									//- +radioBlock('rad7', 'Как можно скорее', 'Мы доставляем заказ в течении 40 мин.', 'radio-gr3','', 'check')
-								.form-block
-									.form-group.form-group--checkbox
-										input(type="checkbox" id= 'timeCheck' name= 'timeCheckbox' )
-										label(for= 'timeCheck')
-											p Доставка на определенное время
-											input(type="text" name="deliveryTime" placeholder="Ведите время доставки*")
-											
+									+radioBlock('rad7', 'Как можно скорее', 'Мы доставляем заказ в течении 40 мин.', 'radio-gr3','', 'check')
 								.form-block
 									.form-group
-										input(type="checkbox" id= 'promoCheck' name= 'promoCode' )
-										label(for= 'promoCheck')
-											span У меня есть промокод
+										input(type="radio" id="rad8" name="radio-gr3") 
+										label(for="rad8")
+											span Доставка на определенное время                      
+										input.setTime(type="text" name="deliveryTime" placeholder="Ведите время доставки* ")
+											
+								.form-block
+									.form-group.form-group--check
+										label(class="form-label")
+											input(class="form-checkbox" type="checkbox" name="promoCheck")
+											span.custom-checkbox
+											| У меня есть промокод
 										.set-promo
 											input(type="text" placeholder="Введите промокод*")
 											p.sale-text  Скидка по промокоду 10% 
@@ -84,6 +80,18 @@ section.checkout-page
 														span
 															+times(16, 16)
 													p Найдите промокод на наших страницах ВКонтакте, в Facebook или Твиттере, где мы иногда будем их публиковать.
+								.form-block
+									.subscribes-block
+										.subscribes-block__top
+											p Согласен на отправку:
+											.subscribes-block__inputs
+												label.form-label sms
+													input.form-checkbox(type="checkbox" name='smsCheck' checked)
+													span.custom-checkbox
+												label.form-label Email
+													input.form-checkbox(type="checkbox" name='smsCheck')
+													span.custom-checkbox
+										p Мы не рассылаем спам. Вы будете получать только актуальную информацию о наших акциях.
 
 						.col-lg-6
 							.form-column
@@ -102,13 +110,3 @@ section.checkout-page
 							a(href="basket-page.html")
 								i.fas.fa-long-arrow-alt-left
 								| Назад к заказам
-							
-							
-							//- .tooltip-group
-							//- 	span.tooltip-icon ?
-							//- 	.tooltip-div
-							//- 		button.close-toooltip
-							//- 			span
-							//- 				+times(16, 16)
-							//- 		p Найдите промокод на наших страницах ВКонтакте, в Facebook или Твиттере, где мы иногда будем их публиковать.
-										

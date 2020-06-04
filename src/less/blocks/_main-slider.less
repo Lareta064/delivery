@@ -64,8 +64,8 @@
 
 	.sale-amimate {
 		position: absolute;
-		right: 0;
-		top: 25%;
+		right: -130px;
+		top: 30%;
 		transform: translateY(-50%);
 		max-width: 400px;
 		width: 50%;
@@ -74,6 +74,27 @@
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 		z-index: 1;
+
+		@media(max-width:1919px) {
+			right: -100px;
+			width: 30%;
+		}
+
+		@media(max-width:1360px) {
+			right: -50px;
+			top: 30%;
+			width: 25%;
+		}
+
+		@media(max-width:991px) {
+			top: 10%;
+			width: 35%;
+		}
+
+		@media(max-width:767px) {
+
+			width: 40%;
+		}
 	}
 
 	.page-button {
@@ -81,6 +102,10 @@
 		padding-left: 30px;
 		padding-right: 30px;
 		max-width: 170px;
+
+		@media(max-width:767px) {
+			margin-top: 30px;
+		}
 	}
 
 	@media(max-width:1199px) {
@@ -117,6 +142,7 @@
 	width: fit-content;
 	border-bottom: 4px solid #fff;
 	line-height: 1.2;
+	margin-bottom: 10px;
 
 	@media(max-width:1199px) {
 		border-bottom: 2px solid #fff;
@@ -126,7 +152,7 @@
 .slide-title {
 	font-size: 3.4em;
 	font-family: 'Chekharda-BoldItalic.ttf';
-	line-height: 1;
+	line-height: 1.1;
 	position: relative;
 	z-index: 2;
 
@@ -194,7 +220,7 @@
 	justify-content: center;
 
 	@media(max-width: 767px) {
-		display: none;
+		// display: none;
 	}
 
 }

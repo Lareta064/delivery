@@ -52,6 +52,7 @@ $(document).ready(function () {
         nav: false,
         loop: true,
         // autoplay: true,
+        autoplayHoverPause: true,
         autoplaySpeed: 2000,
         autoplayTimeout: 5000,
         smartSpeed: 800,
@@ -156,53 +157,53 @@ $(document).ready(function () {
     const requiredInputs = document.querySelectorAll('.form-group  input[type="text"]');
     const textareaElement = document.querySelector('.form-group textarea');
 
-    if (checkboxGroup.length > 0) {
+    if (checkboxGroup.length > 0) {}
 
-        //активировать чекбокс по клику на фейковый
+    //активировать чекбокс по клику на фейковый
 
-        // for (let checkbox of checkboxGroup) {
-        //     const thisParent = checkbox.closest('li');
-        //     const thisInputCheckbox = thisParent.querySelector('input');
-        //     checkbox.addEventListener('click', function () {
-        //         thisInputCheckbox.checked != thisInputCheckbox.checked;
-        //         if (thisInputCheckbox.checked) {
+    // for (let checkbox of checkboxGroup) {
+    //     const thisParent = checkbox.closest('li');
+    //     const thisInputCheckbox = thisParent.querySelector('input');
+    //     checkbox.addEventListener('click', function () {
+    //         thisInputCheckbox.checked != thisInputCheckbox.checked;
+    //         if (thisInputCheckbox.checked) {
 
-        //             thisParent.classList.add('check-item');
-        //         } else {
-        //             thisParent.classList.remove('check-item');
-        //         }
-        //     })
-        // }
+    //             thisParent.classList.add('check-item');
+    //         } else {
+    //             thisParent.classList.remove('check-item');
+    //         }
+    //     })
+    // }
 
-        for (let item of requiredInputs) {
-            //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
-            const thisParent = item.closest('.form-group');
-            item.addEventListener('focus', function () {
-                thisParent.classList.remove('error');
-                thisParent.querySelector('.fake-placeholder').classList.add('active');
-
-            });
-            //по блюру у пустого инпута деактивируем плейсхолдер
-            item.addEventListener('blur', function () {
-                if (this.value.length == 0) {
-                    thisParent.querySelector('.fake-placeholder').classList.remove('active');
-                }
-            })
-        }
-        // для текстареа активируем и деактивируем плейсхолдер при фокусе и блюре
-        textareaElement.addEventListener('focus', function () {
-            const thisParent = this.closest('.form-group');
+    for (let item of requiredInputs) {
+        //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
+        const thisParent = item.closest('.form-group');
+        item.addEventListener('focus', function () {
+            thisParent.classList.remove('error');
             thisParent.querySelector('.fake-placeholder').classList.add('active');
 
         });
-        textareaElement.addEventListener('blur', function () {
-            const thisParent = this.closest('.form-group');
-            if (this.value.length == '0') {
+        //по блюру у пустого инпута деактивируем плейсхолдер
+        item.addEventListener('blur', function () {
+            if (this.value.length == 0) {
                 thisParent.querySelector('.fake-placeholder').classList.remove('active');
-                console.log('');
             }
-        });
+        })
     }
+    // для текстареа активируем и деактивируем плейсхолдер при фокусе и блюре
+    textareaElement.addEventListener('focus', function () {
+        const thisParent = this.closest('.form-group');
+        thisParent.querySelector('.fake-placeholder').classList.add('active');
+
+    });
+    textareaElement.addEventListener('blur', function () {
+        const thisParent = this.closest('.form-group');
+        if (this.value.length == '0') {
+            thisParent.querySelector('.fake-placeholder').classList.remove('active');
+            console.log('');
+        }
+    });
+
 
 
     /*ВАЛИДАЦИЯ ФОРМЫ */

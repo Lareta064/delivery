@@ -21,6 +21,7 @@
 
 .page-button--red {
 	background-color: @red;
+	min-width: 156px;
 
 	&:hover {
 		background-color: @hoverred;
@@ -81,6 +82,12 @@
 	padding-left: 56px;
 	padding-right: 56px;
 	font-size: 12px;
+
+	&:hover {
+		border: 1px solid @red;
+		color: white;
+		background-color: @red;
+	}
 }
 
 .form-group input.page-btn2,
