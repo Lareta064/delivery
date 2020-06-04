@@ -2,7 +2,7 @@ extends ../layouts/layout.pug
 
 block content
 	
-	include ../sections/_header.pug
+	+header([{hrefLink: 'index.html', text: 'Главная', addClass:'active'}, {hrefLink: 'main.html#main-menu', text: 'Меню'}, {hrefLink: 'delivery-page.html', text: 'Доставка и оплата' }, {hrefLink: 'page-sales.html', text: 'Новости и акции'}, {hrefLink: 'aboutus.html', text: 'О нас'}, {hrefLink: 'contacts.html', text: 'Контакты'}])
 	include ../sections/_main-slider.pug
 	include ../sections/_main-section-menu.pug
 	include ../sections/_main-cta.pug

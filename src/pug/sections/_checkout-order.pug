@@ -62,7 +62,10 @@ section.checkout-page
 										input(type="radio" id="rad8" name="radio-gr3") 
 										label(for="rad8")
 											span Доставка на определенное время                      
-										input.setTime(type="text" name="deliveryTime" placeholder="Ведите время доставки* ")
+										//- input.setTime(type="text" name="deliveryTime" placeholder="Ведите время доставки* ")
+										.form-group
+											input.setTime(type="text" name="DeliveryTime" )
+											span.fake-placeholder.pl-20 Введите время доставки #[span *]
 											
 								.form-block
 									.form-group.form-group--check
@@ -71,7 +74,9 @@ section.checkout-page
 											span.custom-checkbox
 											| У меня есть промокод
 										.set-promo
-											input(type="text" placeholder="Введите промокод*")
+											//- input(type="text" placeholder="Введите промокод*")
+											input(type="text" name="promoCode" )
+											span.fake-placeholder.pl-20 Введите промокод #[span *]
 											p.sale-text  Скидка по промокоду 10% 
 											.tooltip-group
 												span.tooltip-icon ?

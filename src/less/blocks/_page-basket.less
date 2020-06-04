@@ -71,10 +71,12 @@
 	border-radius: 20px;
 	width: 100%;
 	max-width: 170px;
-	// height: 160px;
+	min-height: 160px;
 	overflow: hidden;
 	justify-content: center;
 	align-items: center;
+	display: flex;
+	justify-content: center;
 	padding: 5px;
 
 	@media(max-width:1199px) {
@@ -392,4 +394,9 @@
 
 .basket-state {
 	color: @dark ;
+}
+
+.basket-clean {
+	min-width: 200px;
+	cursor: pointer;
 }

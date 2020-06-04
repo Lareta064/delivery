@@ -409,5 +409,13 @@ $(document).ready(function () {
         })
     }
 
+    /*-------СТРАНИЦА ОДНОЙ АКЦИИ  ПОДБОР ВЫСОТЫ КАРТИНКИ------*/
+    let articleBlock = document.querySelector('.flex-height');
+    if (articleBlock) {
+        let articleBlockHeight = articleBlock.clientHeight;
+        const articleImgWrapper = articleBlock.querySelector('.text-block__img');
+        articleImgWrapper.style.height = articleBlockHeight + 'px'
+        console.log(articleBlockHeight);
+    }
 
 })
