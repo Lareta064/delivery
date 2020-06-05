@@ -173,6 +173,7 @@
 		font-family: @mainfont;
 		padding-left: 0;
 		padding-right: 0;
+
 	}
 
 	.nav-tabs .nav-link.active {
@@ -180,7 +181,7 @@
 		padding-left: 0;
 		padding-right: 0;
 		color: @red;
-		// font-weight: 700;
+		font-weight: 700;
 
 	}
 
@@ -246,14 +247,25 @@
 		}
 
 		svg path {
-			fill: @dark;
+			fill: @black;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: -2px;
+			height: 1px;
+			background-color: @black;
+			transform: rotate(45deg);
+			width: 24px;
+			display: none;
+			box-shadow: 0 -1px #fff
 		}
 	}
 
-	#toggle-passw.active {
-		svg path {
-			fill: @black;
-		}
+	#toggle-passw.active:after {
+		display: block;
 	}
 
 	.politic-agree p {

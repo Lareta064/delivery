@@ -2,7 +2,7 @@ extends ../layouts/layout.pug
 
 block content
 	
-	+header([{hrefLink: 'index.html', text: 'Главная', addClass:'active'}, {hrefLink: 'main.html#main-menu', text: 'Меню'}, {hrefLink: 'delivery-page.html', text: 'Доставка и оплата' }, {hrefLink: 'page-sales.html', text: 'Новости и акции'}, {hrefLink: 'aboutus.html', text: 'О нас'}, {hrefLink: 'contacts.html', text: 'Контакты'}])
+	+header([{hrefLink: 'index.html', text: 'Главная', addClass:'active'}, {hrefLink: 'index.html#main-menu', text: 'Меню'}, {hrefLink: 'delivery-page.html', text: 'Доставка и оплата' }, {hrefLink: 'page-sales.html', text: 'Новости и акции'}, {hrefLink: 'aboutus.html', text: 'О нас'}, {hrefLink: 'contacts.html', text: 'Контакты'}])
 	.content-wrapper
 		include ../sections/_user-profile.pug	
 		include ../sections/_footer.pug

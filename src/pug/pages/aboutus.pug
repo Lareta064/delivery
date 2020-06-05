@@ -3,7 +3,7 @@ extends ../layouts/layout.pug
 block content
 	
 	//- include ../sections/_header.pug
-	+header([{hrefLink: 'index.html', text: 'Главная'}, {hrefLink: 'main.html#main-menu', text: 'Меню'}, {hrefLink: 'delivery-page.html', text: 'Доставка и оплата'}, {hrefLink: 'page-sales.html', text: 'Новости и акции'}, {hrefLink: 'aboutus.html', text: 'О нас', addClass:'active'}, {hrefLink: 'contacts.html', text: 'Контакты'}])
+	+header([{hrefLink: 'index.html', text: 'Главная'}, {hrefLink: 'index.html#main-menu', text: 'Меню'}, {hrefLink: 'delivery-page.html', text: 'Доставка и оплата'}, {hrefLink: 'page-sales.html', text: 'Новости и акции'}, {hrefLink: 'aboutus.html', text: 'О нас', addClass:'active'}, {hrefLink: 'contacts.html', text: 'Контакты'}])
 	.content-wrapper
 		include ../sections/_aboutus-page.pug	
 		include ../sections/_footer.pug

@@ -118,6 +118,7 @@ $(document).ready(function () {
 
             });
         }
+
     }
 
     /* MIXITUP3*/
@@ -155,24 +156,31 @@ $(document).ready(function () {
     const checkboxGroup = document.querySelectorAll('label.form-label');
     const requiredInputs = document.querySelectorAll('.form-group  input[type="text"]');
     const textareaElement = document.querySelector('.form-group textarea');
+    console.log(mainProductCard);
+    if (mainProductCard.length > 0) {
 
-    if (checkboxGroup.length > 0) {}
+        if (checkboxGroup.length > 0) {
 
-    //активировать чекбокс по клику на фейковый
+            //активировать чекбокс на карточке товара главной страницы по клику на фейковый
 
-    // for (let checkbox of checkboxGroup) {
-    //     const thisParent = checkbox.closest('li');
-    //     const thisInputCheckbox = thisParent.querySelector('input');
-    //     checkbox.addEventListener('click', function () {
-    //         thisInputCheckbox.checked != thisInputCheckbox.checked;
-    //         if (thisInputCheckbox.checked) {
+            for (let checkbox of checkboxGroup) {
+                const thisParent = checkbox.closest('li');
+                const thisInputCheckbox = thisParent.querySelector('input');
+                checkbox.addEventListener('click', function () {
+                    thisInputCheckbox.checked != thisInputCheckbox.checked;
+                    if (thisInputCheckbox.checked) {
 
-    //             thisParent.classList.add('check-item');
-    //         } else {
-    //             thisParent.classList.remove('check-item');
-    //         }
-    //     })
-    // }
+                        thisParent.classList.add('check-item');
+                    } else {
+                        thisParent.classList.remove('check-item');
+                    }
+                })
+            }
+        }
+
+
+    }
+
     /*---ПОКАЗАТЬ ВОСКЛИЦАТЕЛЬНЫЙ ЗНАК В ИНПУТЕ */
     for (let item of requiredInputs) {
         //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер

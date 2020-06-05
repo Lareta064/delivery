@@ -79,7 +79,7 @@
 .menu-products__controls button:after {
 	content: '';
 	position: absolute;
-	left: 0;
+	right: 50%;
 	width: 0;
 	bottom: -1px;
 	height: 2px;
@@ -87,15 +87,34 @@
 	.tr;
 }
 
+.menu-products__controls button:before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	width: 0;
+	bottom: -1px;
+	height: 2px;
+	background-color: #ffa800;
+	.tr;
+}
+
+.menu-products__controls button:hover:before,
 .menu-products__controls button:hover:after {
-	width: 100%;
+	width: 50%;
+	background-color: @black ;
 }
 
 .menu-products .control-active {
 	color: @red;
 
+	&:before,
 	&:after {
-		width: 100%;
+		width: 50%;
+	}
+
+	&:hover:before,
+	&:hover:after {
+		background-color: #ffa800;
 	}
 }
 
