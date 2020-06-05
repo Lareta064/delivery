@@ -1,4 +1,4 @@
-mixin header(menuItems)
+mixin header(menuItems, avatarSrc)
 	header.header
 		.container
 			.header-content
@@ -29,9 +29,15 @@ mixin header(menuItems)
 						.contact-phone
 							a(href="tel:+79055555555") +7 (905) 555-55-55
 						.user-controls
-							.user-log-in
-								a(href="user-profile.html")
-									+log-in
+							if avatarSrc
+								.user-avatar
+									span
+									a(href="#")
+										img(src="img/main/"+  avatarSrc +".jpg", width="38" alt="avatar")
+							else
+								.user-log-in
+									a(href="user-profile.html")
+										+log-in
 							.user-basket
 								a(href="page-basket.html")
 									+cart-icon
