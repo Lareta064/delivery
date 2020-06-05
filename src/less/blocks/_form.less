@@ -447,5 +447,57 @@ form .agree-text {
 
 }
 
+/*USER-PROFILE FORM*/
+form.personal-data {
+	position: relative;
+}
+
+.add-avatar {
+	display: flex;
+	align-items: flex-end;
+	right: 0px;
+	top: -95px;
+	position: absolute;
+
+	@media(max-width:767px) {
+		top: -85px;
+	}
+
+	label {
+		cursor: pointer;
+		.tr;
+	}
+
+	.user-avatar {
+		left: 0;
+		right: 0;
+	}
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+
+}
+
+.inputfile+label {
+	display: inline-block;
+	background-color: transparent;
+	color: @dark;
+	font-size: 12px;
+	border-radius: 4px;
+	padding: 12px;
+
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+	background-color: transparent;
+	color: @yellow;
+}
 
 /*--FORM STYLE*/
