@@ -32,8 +32,8 @@ mixin header(menuItems, avatarSrc)
 							if avatarSrc
 								.user-avatar
 									span
-									a(href="#")
-										img(src="img/main/"+  avatarSrc +".jpg", width="38" alt="avatar")
+									a(href="#" style="background-image: url(img/main/noavatar.jpg), url(img/main/"+  avatarSrc +".jpg)")
+										
 							else
 								.user-log-in
 									a(href="user-profile.html")
