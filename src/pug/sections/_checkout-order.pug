@@ -74,7 +74,6 @@ section.checkout-page
 											span.custom-checkbox
 											| У меня есть промокод
 										.set-promo
-											//- input(type="text" placeholder="Введите промокод*")
 											input(type="text" name="promoCode" )
 											span.fake-placeholder.pl-20 Введите промокод #[span *]
 											p.sale-text  Скидка по промокоду 10% 
@@ -109,7 +108,10 @@ section.checkout-page
 				.col-lg-6
 					.checkout-content__footer
 						.form-group.agree-text
-							p Заполняя информацию, Вы даете согласие на обработку персональных данных в соответствии с #[a(href="#") политикой конфиденциальности].
+							label(class="form-label")
+									input(class="form-checkbox" type="checkbox" name="agreePolitic")
+									span.custom-checkbox
+									| Принимаю  #[a(href="#") условия обработки] моих данных.
 						.form-group.form-group--btn
 							input.page-button.page-button--red(type="submit" value="Отправить")
 							a(href="basket-page.html")

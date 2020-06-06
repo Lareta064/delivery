@@ -3,7 +3,7 @@ section.contacts
 	.container
 		.contacts-content
 			.row
-				.col-lg-6
+				.col-lg-6.col-xl-7
 					.feedback-form
 						h2.title-2 Обратная связь						
 						form(action="").contact-form
@@ -22,11 +22,14 @@ section.contacts
 								textarea(type="text" name="message"  )
 								span.fake-placeholder Введите сообщение
 							.form-group.agree-text
-								p Заполняя информацию, Вы даете согласие на обработку персональных данных в соответствии с #[a(href="#") политикой конфиденциальности].
+								label(class="form-label")
+									input(class="form-checkbox" type="checkbox" name="agreePolitic")
+									span.custom-checkbox
+									| Принимаю  #[a(href="#") условия обработки] моих данных.
 							.form-group
 								input.page-btn2(type="submit" value="Отправить")
 						#answer
-				.col-lg-6.col-xl-5.offset-xl-1
+				.col-lg-6.col-xl-4.offset-xl-1
 					.address-block
 						h2.title-2 Контакты
 						.address-block__item

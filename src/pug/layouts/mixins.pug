@@ -135,7 +135,7 @@ mixin main-product-card(title, imgSrc, weight, desk, price, oldPrice)
 		form(action="#")
 			input(type="hidden" name="product_name"  value=""+ title)
 			input(type="hidden" name="product_weight" value="500 гр")
-			.product-card__img
+			a(href="product-card.html" title=""+ title).product-card__img
 				img.lazy(data-src="img/main/"+ imgSrc +".png", alt="product" width="280")
 			.product-card__title
 				a(href="product-card.html" title=""+ title).product-title #{title}
