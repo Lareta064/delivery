@@ -427,6 +427,7 @@ $(document).ready(function () {
             let articleBlockHeight = articleBlock.clientHeight;
             const articleImgWrapper = articleBlock.querySelector('.text-block__img');
             articleImgWrapper.style.height = articleBlockHeight + 'px'
+            console.log(articleBlockHeight);
 
         }
 
