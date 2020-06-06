@@ -1,6 +1,36 @@
 /*****ГЛАВНАЯ - ПАРАЛЛАКС-БЛОК****/
 .main-cta {
 	position: relative;
+	height: 468px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media(max-width:1199px) {
+		height: 350px;
+	}
+
+	@media(max-width:991px) {
+		height: 300px;
+	}
+
+	@media(max-width:767px) {
+		height: 250px;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, .5);
+
+	}
 
 	h2,
 	p {
@@ -8,12 +38,14 @@
 	}
 
 	.title-group {
-		position: absolute;
-		top: 100px;
-		left: 0;
-		right: 0;
-
+		position: relative;
 		z-index: 2;
+		// position: absolute;
+		// top: 100px;
+		// left: 0;
+		// right: 0;
+
+		// z-index: 2;
 
 		h2 {
 			text-transform: uppercase;
@@ -28,13 +60,13 @@
 		}
 	}
 
-	.parallax {
+	// .parallax {
 
-		height: 300px;
-		background-attachment: fixed;
-		background-position: left top;
-		background-repeat: no-repeat;
-		background-size: cover;
-		position: relative;
-	}
+	// 	height: 300px;
+	// 	background-attachment: fixed;
+	// 	background-position: left top;
+	// 	background-repeat: no-repeat;
+	// 	background-size: cover;
+	// 	position: relative;
+	// }
 }

@@ -51,10 +51,9 @@ $(document).ready(function () {
         items: 1,
         nav: false,
         loop: true,
-        // autoplay: true,
+        autoplay: true,
         autoplayHoverPause: true,
-        autoplaySpeed: 2000,
-        autoplayTimeout: 5000,
+        autoplaySpeed: 3000,
         smartSpeed: 800,
         dots: true,
         navSpeed: 800,
@@ -119,6 +118,7 @@ $(document).ready(function () {
 
             });
         }
+
     }
 
     /* MIXITUP3*/
@@ -156,25 +156,32 @@ $(document).ready(function () {
     const checkboxGroup = document.querySelectorAll('label.form-label');
     const requiredInputs = document.querySelectorAll('.form-group  input[type="text"]');
     const textareaElement = document.querySelector('.form-group textarea');
+    console.log(mainProductCard);
+    if (mainProductCard.length > 0) {
 
-    if (checkboxGroup.length > 0) {}
+        if (checkboxGroup.length > 0) {
 
-    //активировать чекбокс по клику на фейковый
+            //активировать чекбокс на карточке товара главной страницы по клику на фейковый
 
-    // for (let checkbox of checkboxGroup) {
-    //     const thisParent = checkbox.closest('li');
-    //     const thisInputCheckbox = thisParent.querySelector('input');
-    //     checkbox.addEventListener('click', function () {
-    //         thisInputCheckbox.checked != thisInputCheckbox.checked;
-    //         if (thisInputCheckbox.checked) {
+            for (let checkbox of checkboxGroup) {
+                const thisParent = checkbox.closest('li');
+                const thisInputCheckbox = thisParent.querySelector('input');
+                checkbox.addEventListener('click', function () {
+                    thisInputCheckbox.checked != thisInputCheckbox.checked;
+                    if (thisInputCheckbox.checked) {
 
-    //             thisParent.classList.add('check-item');
-    //         } else {
-    //             thisParent.classList.remove('check-item');
-    //         }
-    //     })
-    // }
+                        thisParent.classList.add('check-item');
+                    } else {
+                        thisParent.classList.remove('check-item');
+                    }
+                })
+            }
+        }
 
+
+    }
+
+    /*---ПОКАЗАТЬ ВОСКЛИЦАТЕЛЬНЫЙ ЗНАК В ИНПУТЕ */
     for (let item of requiredInputs) {
         //по клику в текстовый инпут убираем восклиц знак и активируем плейсхолдер
         const thisParent = item.closest('.form-group');
@@ -190,7 +197,7 @@ $(document).ready(function () {
             }
         })
     }
-    // для текстареа активируем и деактивируем плейсхолдер при фокусе и блюре
+    // для текстареа активируем и деактивируем кастомный плейсхолдер при фокусе и блюре
     textareaElement.addEventListener('focus', function () {
         const thisParent = this.closest('.form-group');
         thisParent.querySelector('.fake-placeholder').classList.add('active');
@@ -259,7 +266,7 @@ $(document).ready(function () {
         });
 
     });
-
+    /*ЗАКРЫВАТЬ ОТКРЫТУЮ ПЛАШКУ АККОРДЕОНА В ИСТОРИИ ЗАКАЗОВ*/
     $('.orders-history .panel-collapse').on('show.bs.collapse', function () {
         let tabIcon = $("#" + $(this).attr("aria-labelledby")).children().children('.accordion-item__icon').children("i");
         let tabIconText = $("#" + $(this).attr("aria-labelledby")).children().children('.accordion-item__icon').children("span");
@@ -273,7 +280,8 @@ $(document).ready(function () {
         tabIcon.removeClass("up");
         tabIconText.text("Развернуть");
     });
-    //TOOLTIP
+
+    /*----ВСПЛЫВАЮЩАЯ ПОДСКАЗКА TOOLTIP СТРАНИЦА ОФОРМЛЕНИЯ ЗАКАЗА----*/
     const tooltip = document.querySelector('.tooltip-div');
     const tooltipShowIcon = document.querySelector('.tooltip-icon');
 
@@ -292,7 +300,7 @@ $(document).ready(function () {
     let buttonBay = $('.product-set__footer .page-button')
     let imgToAnimate = $('.product-image img')
     let cartIcon = $('.user-basket')
-    buttonBay.on('click', function (item) {
+    buttonBay.on('click', function () {
         let cloneImg = imgToAnimate.width()
         imgToAnimate.clone().css({
             'width': cloneImg,
@@ -309,6 +317,32 @@ $(document).ready(function () {
             $(this).remove()
         })
     });
+
+    /*  АНИМАЦИЯ ПОЛЕТА В КОРЗИНУ НА КАРТОЧКАХ НА ГЛАВНОЙ */
+
+    $('.product-card__buttons .form-btn button').each(function () {
+        $(this).on('click', function (e) {
+            e.preventDefault()
+            const cardImage = $(this).closest('.product-card').find('.product-card__img img')
+
+            let cloneImg = cardImage.width()
+            cardImage.clone().css({
+                'width': cloneImg,
+                'position': 'absolute',
+                'z-index': 100,
+                'top': cardImage.offset()['top'],
+                'left': cardImage.offset()['left'],
+            }).appendTo('body').animate({
+                'opacity': 0.3,
+                'top': cartIcon.offset()['top'],
+                'left': cartIcon.offset()['left'],
+                'width': 20
+            }, 2000, function () {
+                $(this).remove()
+            })
+        })
+    })
+
 
     /*-------------PAGE-BASKET-------------*/
 
@@ -354,8 +388,6 @@ $(document).ready(function () {
                         this.remove();
 
                     }
-
-
                 }
             })
         }
@@ -366,12 +398,11 @@ $(document).ready(function () {
             basketResultRow.remove();
             basketStateText.classList.remove('d-none');
         })
-
     }
 
 
 
-    /*---------ЛИЧНЫЕ ДАННЫЕ------- */
+    /*---------ЛИЧНЫЕ ДАННЫЕ   ПОКАЗАТЬ ПАРОЛЬ------- */
     const showPasswIcon = document.querySelector('#toggle-passw');
     if (showPasswIcon) {
 
@@ -386,5 +417,49 @@ $(document).ready(function () {
         })
     }
 
+    /*-------СТРАНИЦА ОДНОЙ АКЦИИ  ПОДБОР ВЫСОТЫ КАРТИНКИ------*/
+    let articleBlock = document.querySelector('.flex-height');
+    if (articleBlock) {
+        let articleBlockHeight = articleBlock.clientHeight;
+        const articleImgWrapper = articleBlock.querySelector('.text-block__img');
+        articleImgWrapper.style.height = articleBlockHeight + 'px'
+        console.log(articleBlockHeight);
+    }
+    /* КАСТОМНЫЙ ВЫБОР ФАЙЛА АВАТАР ЮЗЕРА*/
+    ;
+    (function (document, window, index) {
+        var inputs = document.querySelectorAll('.inputfile');
+        Array.prototype.forEach.call(inputs, function (input) {
+            var label = input.nextElementSibling,
+                labelVal = label.innerHTML;
 
+            input.addEventListener('change', function (e) {
+                var fileName = '';
+                if (this.files && this.files.length > 1)
+                    fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+                else
+                    fileName = e.target.value.split('\\').pop();
+
+                if (fileName) {
+
+                    if (label.firstChild.nodeType === Node.ELEMENT_NODE) {
+                        label.querySelector('span').innerHTML = fileName;
+                    } else {
+                        label.nextElementSibling.innerHTML = fileName;
+                    }
+
+                    console.log(fileName);
+                } else
+                    label.innerHTML = labelVal;
+            });
+
+            // Firefox bug fix
+            input.addEventListener('focus', function () {
+                input.classList.add('has-focus');
+            });
+            input.addEventListener('blur', function () {
+                input.classList.remove('has-focus');
+            });
+        });
+    }(document, window, 0));
 })

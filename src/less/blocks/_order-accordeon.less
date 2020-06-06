@@ -132,10 +132,21 @@
 			padding-left: 30px;
 			padding-right: 30px;
 		}
+
+		&:hover {
+			color: #fff;
+			background-color: @red;
+		}
 	}
 }
 
 .user-profile__tabs {
+	.nav-tabs {
+		@media(max-width:767px) {
+			margin-bottom: 20px;
+		}
+	}
+
 	.nav-item {
 		text-transform: uppercase;
 		font-size: 25px;
@@ -168,6 +179,7 @@
 		font-family: @mainfont;
 		padding-left: 0;
 		padding-right: 0;
+
 	}
 
 	.nav-tabs .nav-link.active {
@@ -175,7 +187,7 @@
 		padding-left: 0;
 		padding-right: 0;
 		color: @red;
-		// font-weight: 700;
+		font-weight: 700;
 
 	}
 
@@ -241,14 +253,25 @@
 		}
 
 		svg path {
-			fill: @dark;
+			fill: @black;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: -2px;
+			height: 1px;
+			background-color: @black;
+			transform: rotate(45deg);
+			width: 24px;
+			display: none;
+			box-shadow: 0 -1px #fff
 		}
 	}
 
-	#toggle-passw.active {
-		svg path {
-			fill: @black;
-		}
+	#toggle-passw.active:after {
+		display: block;
 	}
 
 	.politic-agree p {
@@ -267,7 +290,7 @@
 			position: absolute;
 			left: 0;
 			top: 1px;
-			background-image: url(../img/warning.svg);
+			background-image: url(../img/main/warning.svg);
 			background-position: 0 0;
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -287,8 +310,6 @@
 	}
 
 	.flex-wrapper {
-
-
 		@media(max-width:767px) {
 			text-align: center;
 			margin-top: 20px;

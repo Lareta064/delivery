@@ -88,7 +88,7 @@ input:-webkit-autofill {
 	top: 14px;
 	width: 20px;
 	height: 20px;
-	background: url(../img/warning.svg);
+	background: url(../img/main/warning.svg);
 	background-position: center;
 	background-repeat: no-repeat;
 	display: none;
@@ -119,6 +119,10 @@ input:-webkit-autofill {
 	pointer-events: none;
 }
 
+.fake-placeholder.pl-20 {
+	padding-left: 22px;
+}
+
 .form-group .fake-placeholder.active {
 	top: -6px;
 	color: @yellow;
@@ -144,7 +148,7 @@ input:-webkit-autofill {
 	border-radius: 4px;
 	border: 1px solid #939393;
 
-	background-image: url(../img/check.png);
+	background-image: url(../img/main/check.png);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center -15px;
@@ -443,5 +447,57 @@ form .agree-text {
 
 }
 
+/*USER-PROFILE FORM*/
+form.personal-data {
+	position: relative;
+}
+
+.add-avatar {
+	display: flex;
+	align-items: flex-end;
+	right: 0px;
+	top: -95px;
+	position: absolute;
+
+	@media(max-width:767px) {
+		top: -85px;
+	}
+
+	label {
+		cursor: pointer;
+		.tr;
+	}
+
+	.user-avatar {
+		left: 0;
+		right: 0;
+	}
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+
+}
+
+.inputfile+label {
+	display: inline-block;
+	background-color: transparent;
+	color: @dark;
+	font-size: 12px;
+	border-radius: 4px;
+	padding: 12px;
+
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+	background-color: transparent;
+	color: @yellow;
+}
 
 /*--FORM STYLE*/

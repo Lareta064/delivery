@@ -71,23 +71,31 @@
 	border-radius: 20px;
 	width: 100%;
 	max-width: 170px;
-	// height: 160px;
+	min-height: 160px;
 	overflow: hidden;
 	justify-content: center;
 	align-items: center;
+	display: flex;
+	justify-content: center;
 	padding: 5px;
 
 	@media(max-width:1199px) {
 
-		// width: 170px;
-		// height: 160px;
+		min-width: 130px;
+		min-height: 130px;
 		margin-bottom: 20px;
 	}
 
 	@media(max-width:767px) {
 
-		// width: 110px;
-		// height: 100px;
+		min-width: 110px;
+		// min-height: 100px;
+	}
+
+	@media(max-width:424px) {
+
+		min-width: 90px;
+		min-height: 80px;
 	}
 
 	@media(max-width:575px) {
@@ -351,45 +359,56 @@
 .basket-btn {
 	display: flex;
 
-	@media(max-width: 500px) {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	@media(max-width:991px) {
+	@media(max-width:1199px) {
 		.page-button {
 			padding-left: 2px;
 			padding-right: 2px;
-			width: 170px;
+			min-width: 170px;
 			margin-right: 10px;
 		}
+	}
 
-		@media(max-width: 767px) {
-			.page-button {
-				width: 240px;
+	@media(max-width: 767px) {
+		margin-top: 20px;
 
-				padding-left: 30px;
-				padding-right: 30px;
+		.page-button {
+			min-width: 240px;
 
-			}
-
-		}
-
-		@media(max-width: 500px) {
-			.page-button {
-				margin-bottom: 15px;
-				margin-right: 0;
-			}
+			padding-left: 30px;
+			padding-right: 30px;
 
 		}
 
 	}
 
-	@media(max-width:767px) {
-		margin-top: 20px;
+	@media(max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+
+		.page-button {
+			margin-bottom: 15px;
+			margin-right: 0;
+		}
+
 	}
 }
 
+
+
+
 .basket-state {
 	color: @dark ;
+}
+
+.basket-clean {
+	min-width: 200px;
+	cursor: pointer;
+
+	@media(max-width:991px) {
+		min-width: 170px;
+	}
+
+	@media(max-width:767px) {
+		min-width: 200px;
+	}
 }
