@@ -156,7 +156,7 @@ $(document).ready(function () {
     const checkboxGroup = document.querySelectorAll('label.form-label');
     const requiredInputs = document.querySelectorAll('.form-group  input[type="text"]');
     const textareaElement = document.querySelector('.form-group textarea');
-    console.log(mainProductCard);
+
     if (mainProductCard.length > 0) {
 
         if (checkboxGroup.length > 0) {
@@ -165,16 +165,19 @@ $(document).ready(function () {
 
             for (let checkbox of checkboxGroup) {
                 const thisParent = checkbox.closest('li');
-                const thisInputCheckbox = thisParent.querySelector('input');
-                checkbox.addEventListener('click', function () {
-                    thisInputCheckbox.checked != thisInputCheckbox.checked;
-                    if (thisInputCheckbox.checked) {
+                if (thisParent) {
+                    const thisInputCheckbox = thisParent.querySelector('input');
+                    checkbox.addEventListener('click', function () {
+                        thisInputCheckbox.checked != thisInputCheckbox.checked;
+                        if (thisInputCheckbox.checked) {
 
-                        thisParent.classList.add('check-item');
-                    } else {
-                        thisParent.classList.remove('check-item');
-                    }
-                })
+                            thisParent.classList.add('check-item');
+                        } else {
+                            thisParent.classList.remove('check-item');
+                        }
+                    })
+                }
+
             }
         }
 
@@ -207,7 +210,7 @@ $(document).ready(function () {
         const thisParent = this.closest('.form-group');
         if (this.value.length == '0') {
             thisParent.querySelector('.fake-placeholder').classList.remove('active');
-            console.log('');
+
         }
     });
 
@@ -372,7 +375,7 @@ $(document).ready(function () {
                 }
 
                 if (e.target == iconRemoveItem) {
-                    console.log(basketItems.length);
+
                     const data = basketTable.querySelectorAll('.basket-item');
 
                     if (data.length == 1) {
@@ -420,10 +423,13 @@ $(document).ready(function () {
     /*-------СТРАНИЦА ОДНОЙ АКЦИИ  ПОДБОР ВЫСОТЫ КАРТИНКИ------*/
     let articleBlock = document.querySelector('.flex-height');
     if (articleBlock) {
-        let articleBlockHeight = articleBlock.clientHeight;
-        const articleImgWrapper = articleBlock.querySelector('.text-block__img');
-        articleImgWrapper.style.height = articleBlockHeight + 'px'
-        console.log(articleBlockHeight);
+        if (window.innerWidth >= 1200) {
+            let articleBlockHeight = articleBlock.clientHeight;
+            const articleImgWrapper = articleBlock.querySelector('.text-block__img');
+            articleImgWrapper.style.height = articleBlockHeight + 'px'
+
+        }
+
     }
     /* КАСТОМНЫЙ ВЫБОР ФАЙЛА АВАТАР ЮЗЕРА*/
     ;
@@ -448,7 +454,7 @@ $(document).ready(function () {
                         label.nextElementSibling.innerHTML = fileName;
                     }
 
-                    console.log(fileName);
+
                 } else
                     label.innerHTML = labelVal;
             });

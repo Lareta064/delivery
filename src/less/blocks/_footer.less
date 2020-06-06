@@ -5,6 +5,7 @@
 	color: #fff;
 	font-size: 13px;
 	position: relative;
+	overflow: hidden;
 
 	@media(max-width:767px) {
 		padding-top: 0px;
@@ -43,15 +44,25 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
+		height: 432px;
 		// filter: grayscale();
 		filter: hue-rotate(160deg);
 
+		@media(max-width:1199px) {
+			height: 451px;
+		}
+
+		@media(max-width:991px) {
+			height: 498px;
+		}
 
 		@media(max-width:767px) {
 			position: relative;
 			margin-bottom: 25px;
 			height: 250px;
+
 		}
+
 	}
 }
 
