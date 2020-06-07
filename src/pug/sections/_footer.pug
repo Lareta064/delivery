@@ -26,6 +26,7 @@ footer.footer#footer
 		span
 			i.fas.fa-angle-double-up
 
+//----MODAL WINDOW----//
 #callForm.modal.fade(tabindex="-1" role="dialog"  aria-hidden="true")
 	.modal-dialog.modal-dialog-centered(role="document")
 		.modal-content
@@ -33,9 +34,7 @@ footer.footer#footer
 				button.close(type="button" data-dismiss="modal" aria-label="Close")
 					span(aria-hidden="true")
 						i.fas.fa-times
-
 			.modal-body
-				
 				.feedback-form
 					form#contact-form
 						h3 Оставьте свою заявку, и мы перезвоним вам в течение 5&nbsp;минут!
@@ -44,11 +43,11 @@ footer.footer#footer
 							span.fake-placeholder Имя #[span *]
 							span.error-notify
 							span.error-text Введите имя
-						.form-group 
+						.form-group
 							input(type="text" name="userPhone"  class="phone")
 							span.fake-placeholder Телефон #[span *]
 							span.error-notify
-							span.error-text Введите номер телефона							
+							span.error-text Введите номер телефона
 						.form-group
 							textarea(type="text" name="message"  )
 							span.fake-placeholder Комментарий к заказу

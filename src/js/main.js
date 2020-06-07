@@ -403,8 +403,6 @@ $(document).ready(function () {
         })
     }
 
-
-
     /*---------ЛИЧНЫЕ ДАННЫЕ   ПОКАЗАТЬ ПАРОЛЬ------- */
     const showPasswIcon = document.querySelector('#toggle-passw');
     if (showPasswIcon) {
@@ -423,11 +421,24 @@ $(document).ready(function () {
     /*-------СТРАНИЦА ОДНОЙ АКЦИИ  ПОДБОР ВЫСОТЫ КАРТИНКИ------*/
     let articleBlock = document.querySelector('.flex-height');
     if (articleBlock) {
+        let articleBlockText = document.querySelectorAll('.flex-height p');
+
         if (window.innerWidth >= 1200) {
             let articleBlockHeight = articleBlock.clientHeight;
             const articleImgWrapper = articleBlock.querySelector('.text-block__img');
             articleImgWrapper.style.height = articleBlockHeight + 'px'
-            console.log(articleBlockHeight);
+
+            if (articleImgWrapper.style.height == 210 + 'px') {
+                articleImgWrapper.style.marginBottom = 30 + 'px';
+            }
+            // let textLength = 0;
+            // for (let item of articleBlockText) {
+            //     const itemLength = +item.textContent.length;
+            //     textLength = textLength + itemLength;
+            // }
+            // if (textLength > 800) {
+            //     articleImgWrapper.style.height = 410 + 'px';
+            // };
 
         }
 
