@@ -1,0 +1,11 @@
+extends ../layouts/layout.pug
+
+block content
+	
+	+header([{hrefLink: 'index.html', text: 'Главная'}, {hrefLink: 'index.html#main-menu', text: 'Меню'}, {hrefLink: 'delivery-page.html', text: 'Доставка и оплата'}, {hrefLink: 'page-sales.html', text: 'Новости и акции'}, {hrefLink: 'aboutus.html', text: 'О нас'}, {hrefLink: 'contacts.html', text: 'Контакты'}])
+	.content-wrapper
+		include ../sections/_autorization.pug	
+		include ../sections/_footer.pug
+	
+block variables
+	-var title = "Авторизация";
