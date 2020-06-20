@@ -1,0 +1,30 @@
+.hidden-layout
+section.order-receiver
+	.container
+		h1.page-title Оформление заказа
+		p.title-light Ваш заказ получен
+		.order-table
+			.table-row.table-row--head
+				.row
+					.col-md-2
+						.table-cell.table-cell__img
+					.col-md-6
+						.table-cell.table-cell__deskrip
+							h5 Наименование
+					.col-md-2
+						.table-cell.table-cell__count
+							h5 Количество
+					.col-md-2
+						.table-cell.table-cell__amount
+							h5 Стоимость
+			+receivwedTableRow('bavariya', '"Пицца особая"', 'Размер: 28см Тесто: Традиционное Дополнительно: Сыр моцарелла 50 гр. Пепперони 30 гр.', '650')
+			+receivwedTableRow('carbonara', '"Пицца карбонара"', 'Размер: 28см Тесто: Традиционное Дополнительно: Сыр моцарелла 50 гр. Пепперони 30 гр.', '350')
+			+receivwedTableRow('pepperoni', "'Пицца пипперони'", 'Размер: 28см Тесто: Традиционное Дополнительно: Сыр моцарелла 50 гр. Пепперони 30 гр.', '450')
+			
+			.table-row.table-row__result
+				p Итого, сумма заказа с доставкой:
+				.total-amount.title-34
+					span 1365
+					span руб
+
+			
