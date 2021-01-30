@@ -78,7 +78,7 @@
 }
 
 .product-card__deskrip {
-	height: 155px;
+	height: 165px;
 	line-height: 1.2;
 	display: flex;
 	flex-direction: column;
@@ -277,10 +277,42 @@ span.dim {
 	margin-top: 10px;
 }
 
+.page-button.show-back {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		pointer-events: none;
+	}
+
+	span {
+		display: block;
+		background-color: #fff;
+		position: relative;
+		z-index: 1;
+		opacity: 1;
+		pointer-events: none;
+	}
+
+
+}
+
+.page-button.show-back.active {
+	span {
+		opacity: 0;
+	}
+}
+
 .product-card__addition {
 	position: absolute;
 	top: 0;
-	bottom: 0;
+	bottom: 117px;
 	left: 0;
 	right: 0;
 	z-index: 2;

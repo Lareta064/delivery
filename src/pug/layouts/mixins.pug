@@ -21,7 +21,7 @@ mixin header(menuItems, avatarSrc)
 								else
 									li
 										a(href=" "+ item.hrefLink) #{item.text}
-							
+
 							.menu-social
 								+social-icons
 				.fix-wrapper
@@ -33,7 +33,7 @@ mixin header(menuItems, avatarSrc)
 								.user-avatar
 									span
 									a(href="#" style="background-image: url(img/main/"+  avatarSrc +".jpg), url(img/main/noavatar.jpg) ")
-										
+
 							else
 								.user-log-in
 									a(href="user-profile.html")
@@ -89,7 +89,7 @@ mixin basketItem(imgSrc)
 						img(src="img/main/nofoto.jpg", alt="product" width='170')
 			.col-8.col-md-3.col-lg-3
 				.basket-item__head
-					a(href="product-card.html").title-34 
+					a(href="product-card.html").title-34
 						span Пицца
 						span “Особая”
 					.basket-item__property
@@ -141,7 +141,7 @@ mixin main-product-card(title, imgSrc, weight, desk, price, oldPrice)
 				a(href="product-card.html" title=""+ title).product-title #{title}
 				span.card-text #{weight} гр
 			.product-card__deskrip
-				
+
 				p #{desk}
 				.product-card__filters
 					span.filter-name Размеры:
@@ -169,7 +169,7 @@ mixin main-product-card(title, imgSrc, weight, desk, price, oldPrice)
 							label
 								input(type="radio" name="product_testo" value="Тонкое")
 								.fake-radiobutton Тонкое
-			
+
 			.product-card__addition
 				.products-group__wrapper
 					.products-group
@@ -188,7 +188,7 @@ mixin main-product-card(title, imgSrc, weight, desk, price, oldPrice)
 								li
 									+inputCheckbox('group1', 'Перец Халапеньо 20 гр.')
 									span 50&#8381;
-					
+
 						h4.products-group__title Соусы
 						.products-group__List
 							ul
@@ -201,11 +201,6 @@ mixin main-product-card(title, imgSrc, weight, desk, price, oldPrice)
 								li
 									+inputCheckbox('group2', 'Соус Ранч 50 гр.')
 									span 50&#8381;
-								
-
-				button.page-button--light.page-button.hide-back(type='button')
-					+arrow
-
 			.product-card-footer
 				.product-card__calc
 					.product-card__prises
@@ -217,12 +212,15 @@ mixin main-product-card(title, imgSrc, weight, desk, price, oldPrice)
 								span.value 800
 								span.dim &#8381;
 					+counter
-				
+
 				.product-card__buttons
-					button.page-button--light.page-button.show-back(type='button') Дополнительно
+
+					button.page-button--light.page-button.show-back(type='button')
+						span Дополнительно
+						+arrow
 					.form-btn
 						button.page-button--yellow.page-button Купить
-						//- input(type="submit" value="Купить").page-button--yellow.page-button
+
 
 //оформление заказа таблицы строка
 mixin receivwedTableRow(imgSrc, title, desk, amount)
@@ -277,7 +275,7 @@ mixin times(wid, hei)
 		path(fill-rule="evenodd" clip-rule="evenodd" d="M8.707 8L12 4.707L11.293 4L8 7.293L4.707 4L4 4.707L7.293 8L4 11.293L4.707 12L8 8.707L11.293 12L12 11.293L8.707 8Z" fill="#D7001A")
 		mask#mask0(mask-type="alpha" maskunits="userSpaceOnUse" x="4" y="4" width="8" height="8")
 			path(fill-rule="evenodd" clip-rule="evenodd" d="M8.707 8L12 4.707L11.293 4L8 7.293L4.707 4L4 4.707L7.293 8L4 11.293L4.707 12L8 8.707L11.293 12L12 11.293L8.707 8Z" fill="white")
-		
+
 mixin telegram
 	svg(width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg")
 		path(d="M12.8 24C19.4274 24 24.8 18.6274 24.8 12C24.8 5.37258 19.4274 0 12.8 0C6.17257 0 0.799988 5.37258 0.799988 12C0.799988 18.6274 6.17257 24 12.8 24Z" fill="url(#paint0_linear)")
