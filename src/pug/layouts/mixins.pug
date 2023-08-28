@@ -1,4 +1,4 @@
-mixin header(menuItems, avatarSrc)
+mixin header(avatarSrc)
 	header.header
 		.container
 			.header-content
@@ -14,13 +14,40 @@ mixin header(menuItems, avatarSrc)
 						ul.header-menu
 							li.menu-logo
 								img(src="img/main/logo-menu.png", alt="logo")
-							each item in menuItems
-								if item.addClass
-									li(class=" "+ item.addClass)
-										a(href=" "+ item.hrefLink) #{item.text}
-								else
+							li.active.first
+								a(href="index.html") Пиццы
+							li
+								a(href="index.html#main-menu") Бургеры
+							li
+								a(href="delivery-page.html") Бизнес-ланч
+							li
+								a(href="page-sales.html") Шашлык-меню
+							li
+								a(href="contacts.html") Халяль
+							li
+								a(href="contacts.html") Роллы
+							li
+								a(href="aboutus.html") Закуски
+							li
+								a(href="contacts.html") Суши
+							li.menu-dots.last
+								a(href="#!") ...
+								.menu-submenu
+									ul
+										li
+											a(href="contacts.html") О нас
+										li
+											a(href="contacts.html") Контакты
+										li
+											a(href="contacts.html") Доставка и оплата
+							li.mobile-list
+								ul
 									li
-										a(href=" "+ item.hrefLink) #{item.text}
+										a(href="contacts.html") О нас
+									li
+										a(href="contacts.html") Контакты
+									li
+										a(href="contacts.html") Доставка и оплата
 
 							.menu-social
 								+social-icons

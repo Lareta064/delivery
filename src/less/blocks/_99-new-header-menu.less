@@ -1,0 +1,44 @@
+/*******************NEW HEADER MENU *********************/
+.header-menu .menu-dots {
+	position: relative;
+
+	.menu-submenu {
+		display: none;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		transform: translateY(100%);
+	}
+
+	&:hover .menu-submenu {
+		display: block;
+		padding: 15px;
+		z-index: 3;
+		background-color: #fff;
+	}
+
+	&:after,
+	&:before {
+		display: none;
+	}
+}
+
+.header-menu  li a {
+	white-space: nowrap;
+}
+
+ul.header-menu   li.mobile-list {
+	display: none;
+
+	@media(max-width: 1199px) {
+		display: block;
+	}
+}
+
+ul.header-menu li.menu-dots {
+	@media(max-width: 1199px) {
+		display: none;
+	}
+}
+
+/****************************************/

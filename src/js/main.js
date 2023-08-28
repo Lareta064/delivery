@@ -135,17 +135,28 @@ $(document).ready(function () {
 
 	/* MIXITUP3*/
 	let containerEl = document.querySelector('.menu-products__content');
+	// Filter menu
+    let btns = document.querySelector('.menu-products__controls').children
+    // Initialize default filter variable
+    let defFilter;
+    // If no value stored - set first bookmark, else load previous one
+    defFilter = btns[+sessionStorage.getItem('bookmark')].dataset.filter;
+
 	if (containerEl) {
 		let mixer = mixitup(containerEl, {
 			classNames: {
 				block: ""
 			},
 			load: {
-				filter: '.cat1'
+				// filter: '.cat1'
+				filter: defFilter
 			}
 		})
 	}
-
+	for(let i = 0; i < btns.length; i++)
+    {
+        btns[i].addEventListener('click', ()=>{sessionStorage.setItem('bookmark', i)})
+    }
 
 	// маска для телефона
 	$(".phone").mask("+7(999)999-99-99");
@@ -269,8 +280,6 @@ $(document).ready(function () {
 	});
 	/*кнопка вверх */
 	$("#back-top").hide();
-
-
 	$(function () {
 		$(window).scroll(function () {
 			if ($(this).scrollTop() > 200) {
@@ -492,7 +501,7 @@ $(document).ready(function () {
 			});
 		});
 	}(document, window, 0));
-	// slider - lenta 
+	// slider - lenta
 
 	let sliderLine = $('.slider-line');
 	sliderLine.owlCarousel({
@@ -541,6 +550,7 @@ $(document).ready(function () {
 		sliderLine.trigger("next.owl.carousel");
 
 	});
+	
 	$("button.nav-btn--right").click(function () {
 		sliderLine.trigger("prev.owl.carousel");
 
